@@ -1,8 +1,5 @@
 export const IMAGES = {
   dogs: 'assets/manus-storage/img-02_a9bcb6e9.png',
-  lion: 'assets/manus-storage/img-02_442cc92e.jpg',
-  jaguar: 'assets/manus-storage/img-03_827e0ff9.jpg',
-  tiger: 'assets/manus-storage/panthera-tigris-bengal_f758e19f.jpg',
   chromatogram: 'assets/manus-storage/img-02_4b2df534.jpg',
   centromeres: 'assets/manus-storage/img-02_31c0d8d7.png',
   fusion: 'assets/manus-storage/img-02_f9506d8d.png',
@@ -84,12 +81,6 @@ export const FLASHCARDS = [
     front: 'What can habitat water reveal?',
     back: 'Environmental DNA is genetic material shed into a habitat by organisms. Researchers collect and analyse samples to detect species without capturing or directly observing them.',
   },
-];
-
-export const BINOMIAL_SPECIES = [
-  {name: 'Panthera leo', common: 'Lion', image: IMAGES.lion, source: 'Part 1, slide 21'},
-  {name: 'Panthera onca', common: 'Jaguar', image: IMAGES.jaguar, source: 'Part 1, slide 21'},
-  {name: 'Panthera tigris', common: 'Tiger', image: IMAGES.tiger, source: 'Public-domain Bengal tiger reference photo'},
 ];
 
 export const GENOME_DATA = [
@@ -263,7 +254,6 @@ export const IMAGE_CREDITS = {
   sparrow: {credit: 'Laitche · Public domain', url: 'https://commons.wikimedia.org/wiki/File:Tree_Sparrow_August_2007_Osaka_Japan.jpg'},
   dove: {credit: 'Shantanu Kuveskar · CC BY-SA 4.0', url: 'https://commons.wikimedia.org/wiki/File:Spotted_Dove_(Streptopelia_chinensis)_Photograph_by_Shantanu_Kuveskar.jpg'},
   bulbul: {credit: 'Davidvraju · CC BY 4.0', url: 'https://commons.wikimedia.org/wiki/File:Red_whiskered_bulbul_-_1.jpg'},
-  tiger: {credit: 'John and Karen Hollingsworth / U.S. Fish and Wildlife Service; retouched by Zwoenitzer; public domain', url: 'https://commons.wikimedia.org/wiki/File:Panthera_tigris_tigris.jpg'},
 };
 
 export const FAUNA = {

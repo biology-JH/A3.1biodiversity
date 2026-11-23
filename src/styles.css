@@ -71,3 +71,88 @@ body.dark-mode .study-notes p,body.dark-mode .diagram-gallery-heading p{color:#c
 .diagram-scroll{width:100%;overflow-x:auto;overscroll-behavior-inline:contain;scrollbar-color:#91b49a #edf3ed;scrollbar-width:thin}
 .diagram-scroll:focus-visible{outline:3px solid var(--fern);outline-offset:-3px}
 @media(max-width:760px){.diagram-card svg{min-width:760px}}
+
+
+/* Study-guide update: retain the BioAtlas palette while enforcing a true 20px text floor. */
+:root{--type-floor:20px;--type-reading:24px;--type-heading:32px}
+body{font-size:var(--type-floor)!important;line-height:1.55}
+body *,body *::before,body *::after{font-size:max(var(--type-floor),1em)!important}
+body .hero h1{font-size:clamp(46px,5.3vw,72px)!important;line-height:1.04}
+body .intro-strip h2,body .section-title h2{font-size:clamp(32px,3.1vw,42px)!important;line-height:1.13}
+body .learning-card h3,body .note-topic h3,body .guide-gallery-heading h3,body .guide-glossary-heading h3,body .diagram-gallery-heading h3{font-size:28px!important;line-height:1.25}
+body .quiz-question h4{font-size:24px!important;line-height:1.4}
+body .study-notes>summary strong{font-size:26px!important;line-height:1.3}
+body .section-number,body .intro-mark{font-size:20px!important}
+body .hero-lede,body .body-copy,body .study-notes p,body .study-notes li,body .diagram-gallery-heading p{font-size:24px!important;line-height:1.5}
+body .note-source,body figcaption,body .figure-caption,body .micro-note,body .image-credit,body .panthera-card small{font-size:20px!important;line-height:1.45}
+body input,body select,body textarea,body button{font-size:max(20px,1em)!important;min-height:48px}
+body .skip-link{font-size:20px!important}
+body .eyebrow,body .pill{letter-spacing:.08em;line-height:1.35}
+.module-nav a{padding:10px 14px}
+.module-nav a span{font-family:'DM Mono',monospace}
+.header-inner{min-height:76px;padding-top:14px;padding-bottom:14px}
+.header-progress{flex-wrap:wrap;justify-content:flex-end;gap:4px 10px;max-width:42vw}
+.hero{min-height:500px;padding-top:72px;padding-bottom:72px}
+.hero-meta{max-width:560px;line-height:1.4}
+.learning-card{padding:26px}
+.flash-card,.flash-inner,.flash-flip{min-height:310px}
+.flash-front img{height:150px}
+.flash-back{padding:22px}
+.flash-back p{line-height:1.5}
+.study-notes{margin-top:28px}
+.study-notes>summary{padding:23px 27px}
+.study-notes-content{padding:8px 28px 20px}
+.note-topic{padding:22px 0 18px}
+.note-topic h3{margin:8px 0 12px}
+.note-source{color:#66756e!important}
+.diagram-card svg{width:100%;min-width:900px;height:auto}
+.diagram-scroll{overflow-x:auto;overscroll-behavior-inline:contain}
+.guide-glossary{margin:0 0 24px;padding:20px 22px;border:1px solid var(--line);border-radius:20px;background:linear-gradient(135deg,#f2f7e8,#edf5ef);box-shadow:var(--shadow)}
+.guide-glossary-heading{margin-bottom:14px}
+.guide-glossary-heading h3{margin:5px 0 0;color:var(--forest);font-family:'Fraunces',Georgia,serif}
+.guide-term-list{display:flex;flex-wrap:wrap;gap:10px;list-style:none;margin:0;padding:0}
+.guide-term{display:flex;flex-wrap:wrap;align-items:baseline;gap:7px 12px;max-width:100%;padding:10px 13px;border:1px solid #d6e4d9;border-radius:13px;background:rgba(255,255,255,.82);color:#314d3f}
+.guide-term strong{font-weight:700}
+.guide-term span{color:#64746a;font-family:system-ui,sans-serif}
+.guide-gallery{margin:28px 0 36px;padding:24px;border:1px solid var(--line);border-radius:22px;background:var(--card);box-shadow:var(--shadow)}
+.guide-gallery-heading{margin:0 0 18px}
+.guide-gallery-heading h3{margin:6px 0;color:var(--forest);font-family:'Fraunces',Georgia,serif}
+.guide-gallery-heading p{max-width:900px;margin:4px 0;color:#62726a;line-height:1.45}
+.guide-figure-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.guide-figure{position:relative;min-width:0;margin:0;padding:12px;border:1px solid var(--line);border-radius:16px;background:#fbfdfb;overflow:hidden}
+.guide-figure--diagram{grid-column:1/-1}
+.guide-figure-number{position:absolute;z-index:1;top:18px;left:18px;display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:rgba(15,61,51,.92);color:#fff;font:500 20px/1 'DM Mono',monospace!important}
+.guide-figure img{display:block;width:100%;height:290px;object-fit:contain;object-position:center;background:#f6f8f6;border-radius:11px}
+.guide-figure--diagram img{height:auto;min-width:900px;max-width:none}
+.guide-image-pan{max-width:100%;overflow-x:auto;overscroll-behavior-inline:contain;scrollbar-width:thin;scrollbar-color:#91b49a #edf3ed}
+.guide-image-pan:focus-visible{outline:3px solid var(--fern);outline-offset:2px}
+.guide-figure figcaption{margin:10px 3px 2px;color:#53655b;line-height:1.45}
+body.dark-mode .guide-glossary{background:linear-gradient(135deg,#263631,#22332d);border-color:#3a5044}
+body.dark-mode .guide-glossary-heading h3,body.dark-mode .guide-gallery-heading h3{color:#d8edce}
+body.dark-mode .guide-term,body.dark-mode .guide-figure{background:#263631;border-color:#3b4d43;color:#e1e9e3}
+body.dark-mode .guide-term span,body.dark-mode .guide-gallery-heading p,body.dark-mode .guide-figure figcaption{color:#c0cbc4}
+body.dark-mode .guide-figure img{background:#fff}
+@media(max-width:1050px){.header-progress{max-width:44vw}.page-shell{gap:24px}.guide-figure img{height:260px}}
+@media(max-width:760px){
+  .header-inner{min-height:72px;padding:10px 12px;gap:9px}
+  .brand{gap:7px}.brand-mark{width:34px;height:34px}.brand-copy{max-width:115px}.brand-copy small{display:none}
+  .header-progress{max-width:38vw;gap:3px 6px}.header-progress span:last-child{display:none}
+  .theme-toggle{min-width:48px;padding:8px 10px}.theme-label{display:none}
+  .module-nav{padding:0 10px 10px;gap:4px}.module-nav a{padding:9px 12px}
+  .hero{min-height:0;padding:54px 20px 0;flex-direction:column;align-items:flex-start}.hero-text{max-width:100%}.hero h1{font-size:46px!important}.hero-lede{max-width:100%;font-size:24px!important}
+  .hero-visual{display:none}.hero-footer{position:relative;inset:auto;flex:none;width:calc(100% + 40px);margin:34px -20px 0;padding:14px 20px;justify-content:center;gap:0;line-height:1.35;letter-spacing:.04em}.hero-footer span:first-child{display:none}.hero-footer span:last-child{white-space:nowrap}
+  .page-shell{padding:16px 14px 54px}.intro-strip{grid-template-columns:48px minmax(0,1fr);gap:12px}.intro-strip h2{font-size:30px!important}.intro-strip p{grid-column:2;font-size:20px!important}
+  .module-section{padding:34px 0 42px;scroll-margin-top:130px}.section-heading{gap:12px}.section-title h2{font-size:32px!important}.section-title p{font-size:20px!important}
+  .flashcard-grid{grid-template-columns:1fr;gap:12px}.flash-card,.flash-inner,.flash-flip{min-height:340px}.flash-front img{height:170px}.flash-back p{font-size:20px!important}
+  .learning-card{padding:18px}.learning-card h3{font-size:26px!important}.body-copy{font-size:24px!important}
+  .panthera-gallery{grid-template-columns:1fr}
+  .genome-row{grid-template-columns:1fr;gap:6px}.bar-track{height:20px}.bar-value{text-align:left}
+  .source-chart-figure{grid-template-columns:1fr}.chart-note-grid{grid-template-columns:1fr}
+  .key-layout{grid-template-columns:1fr}.specimen-card img{height:280px;object-fit:contain}
+  .stepper{grid-template-columns:repeat(2,1fr)}.edna-visual-strip{grid-template-columns:1fr}.edna-visual img{height:220px}
+  .quiz-question-head{flex-direction:column;gap:4px}.question-source{white-space:normal;overflow-wrap:anywhere}.quiz-list{padding:14px}.match-row{grid-template-columns:1fr}.order-row{grid-template-columns:32px minmax(0,1fr) 44px 44px}
+  .quiz-topline{flex-wrap:wrap}.quiz-meter{order:3;flex-basis:100%;max-width:none}
+  .guide-glossary{padding:17px 15px}.guide-term-list{display:grid;grid-template-columns:1fr}.guide-term{padding:10px 12px}
+  .guide-gallery{padding:15px;margin:22px 0 28px}.guide-figure-grid{grid-template-columns:1fr}.guide-figure--diagram{grid-column:auto}.guide-figure img{height:250px}.guide-figure--diagram img{min-width:900px}
+  .site-footer{align-items:flex-start;flex-wrap:wrap}.site-footer p{flex-basis:100%;order:3}.site-footer a{white-space:normal;margin-left:0}
+}

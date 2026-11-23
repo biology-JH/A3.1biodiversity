@@ -1,5 +1,6 @@
-import { BINOMIAL_SPECIES, FAUNA, FLASHCARDS, GENOME_DATA, IMAGE_CREDITS, IMAGES, QUIZ } from './data.js';
+import { FAUNA, FLASHCARDS, GENOME_DATA, IMAGE_CREDITS, IMAGES, QUIZ } from './data.js';
 import { DIAGRAMS, SYLLABUS_MODULES } from './syllabus.js';
+import { STUDY_GUIDE } from './guide.js';
 
 const $ = (selector, root = document) => root.querySelector(selector);
 const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
@@ -59,8 +60,6 @@ function renderBinomialTrainer() {
     message.className = `feedback ${correct ? 'is-success' : 'is-error'}`;
     message.textContent = correct ? 'Correct. Capitalise the genus; keep the specific epithet lowercase; italicise both when typed.' : 'Not quite. The order is genus + specific epithet, with only the genus capitalised; typed names are italicised.';
   });
-  $('#panthera-gallery').innerHTML = BINOMIAL_SPECIES.map(species => `
-    <article class="panthera-card"><img src="${species.image}" alt="${species.common}" loading="lazy"><div><strong>${species.common}</strong><em>${species.name}</em><small>${species.source}</small></div></article>`).join('');
 }
 
 function renderChromatogram() {
@@ -452,6 +451,34 @@ function renderModuleProgress() {
   sections.forEach(section => observer.observe(section));
 }
 
+function escapeHtml(value) {
+  return String(value).replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
+}
+
+function renderGuideEnhancements(host, module) {
+  const guide = STUDY_GUIDE[module.id];
+  if (!guide) return;
+  if (guide.terms?.length) {
+    const glossary = document.createElement('section');
+    glossary.className = 'guide-glossary';
+    glossary.setAttribute('aria-label', `${guide.title} bilingual key terms`);
+    glossary.innerHTML = `<div class="guide-glossary-heading"><span class="eyebrow">TERMS FROM THE SUPPLIED STUDY GUIDE</span><h3>Key terms · English and 繁體中文</h3></div><ul class="guide-term-list">${guide.terms.map(([english, chinese]) => `<li class="guide-term"><strong>${escapeHtml(english)}</strong><span lang="zh-Hant">${escapeHtml(chinese)}</span></li>`).join('')}</ul>`;
+    const heading = host.querySelector('.section-heading');
+    if (heading) heading.insertAdjacentElement('afterend', glossary);
+  }
+  guide.galleries?.forEach((gallery, index) => {
+    const section = document.createElement('section');
+    section.className = 'guide-gallery';
+    section.setAttribute('aria-label', `${gallery.title} study-guide figures`);
+    section.innerHTML = `<div class="guide-gallery-heading"><span class="eyebrow">ATTACHED STUDY-GUIDE FIGURES · ${String(index + 1).padStart(2, '0')}</span><h3>${escapeHtml(gallery.title)}</h3><p>${escapeHtml(gallery.intro)}</p></div><div class="guide-figure-grid">${gallery.figures.map((item, figureIndex) => {
+      const image = `<img src="${escapeHtml(item.asset)}" alt="${escapeHtml(item.alt)}" loading="lazy" decoding="async">`;
+      const visual = item.kind === 'diagram' ? `<div class="guide-image-pan" tabindex="0" aria-label="${escapeHtml(item.alt)}; scroll horizontally to inspect the full figure">${image}</div>` : image;
+      return `<figure class="guide-figure ${item.kind === 'diagram' ? 'guide-figure--diagram' : 'guide-figure--photo'}"><span class="guide-figure-number">${String(figureIndex + 1).padStart(2, '0')}</span>${visual}<figcaption>${escapeHtml(item.caption)}</figcaption></figure>`;
+    }).join('')}</div>`;
+    host.append(section);
+  });
+}
+
 function renderSyllabus() {
   SYLLABUS_MODULES.forEach(module => {
     const host = document.getElementById(module.id);
@@ -461,6 +488,7 @@ function renderSyllabus() {
     const scienceRefs = module.id === 'module-1' ? '<a href="https://evolution.berkeley.edu/biological-species-concept/" target="_blank" rel="noopener">Berkeley · biological species concept ↗</a>' : module.id === 'module-3' ? '<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC52649/" target="_blank" rel="noopener">IJdo et al. · chromosome 2 fusion evidence ↗</a>' : module.id === 'module-4' ? '<a href="https://pubmed.ncbi.nlm.nih.gov/32445179/" target="_blank" rel="noopener">Choi et al. · C-value and genome architecture review ↗</a>' : module.id === 'module-5' ? '<a href="https://www.afcd.gov.hk/english/conservation/hkbiodiversity/speciesgroup/speciesgroup_amphibians.html" target="_blank" rel="noopener">Hong Kong AFCD · amphibian traits ↗</a>' : module.id === 'module-6' ? '<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12415808/" target="_blank" rel="noopener">Shaffer et al. · metabarcoding bias ↗</a> · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC2722355/" target="_blank" rel="noopener">land-plant rbcL + matK ↗</a> · <a href="https://cdnsciencepub.com/doi/full/10.1139/gen-2016-0046@gen-iblf.issue01" target="_blank" rel="noopener">fungal ITS barcode ↗</a>' : '';
     notes.innerHTML = `<summary><span><span class="eyebrow">EXPANDABLE LESSON NOTES · ${module.points}</span><strong>${module.title}</strong></span><span class="notes-toggle" aria-hidden="true">＋</span></summary><div class="study-notes-content">${module.notes.map(item => `<article class="note-topic"><h3>${item.heading}</h3><p>${item.copy}</p><p class="note-source">Source: <a href="assets/SLIDE_TEXT_INDEX.md" target="_blank" rel="noopener">${item.source} · supplied slide text ↗</a>${scienceRefs ? ` · ${scienceRefs}` : ''}</p></article>`).join('')}</div>`;
     host.append(notes);
+    renderGuideEnhancements(host, module);
     if (!module.diagrams.length) return;
     const gallery = document.createElement('section');
     gallery.className = 'diagram-gallery';
