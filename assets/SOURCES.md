@@ -11,3 +11,18 @@ The four supplemental bird reference photos and the tiger reference are from Wik
 - Bengal Tiger (*Panthera tigris tigris*) — John and Karen Hollingsworth / U.S. Fish and Wildlife Service, retouched by Zwoenitzer; public domain. Wikimedia Commons file page: https://commons.wikimedia.org/wiki/File:Panthera_tigris_tigris.jpg. The Commons page identifies the U.S. Fish and Wildlife Service source and original photographer; Commons metadata identifies the file as public domain.
 
 Protein-coding gene count sources and release notes: see `GENOME_COUNTS.md`.
+
+## Biology references
+
+The site’s expandable notes link to the supplied slide-text index for lesson provenance and include the following external references for key biological claims:
+
+- University of California Museum of Paleontology, Understanding Evolution. “Biological species concept.” https://evolution.berkeley.edu/biological-species-concept/ — reproductive isolation, ring species, and limitations.
+- IJdo, J. W. et al. (1991). “Origin of human chromosome 2: an ancestral telomere-telomere fusion.” https://pmc.ncbi.nlm.nih.gov/articles/PMC52649/ — internal telomeric fusion-site evidence.
+- Choi, I. Y. et al. (2020). “The C- and G-value paradox with polyploidy, repeatomes, introns, phenomes and cell economy.” https://pubmed.ncbi.nlm.nih.gov/32445179/ — genome size and genome architecture.
+- Agriculture, Fisheries and Conservation Department, Hong Kong. “Amphibians of Hong Kong.” https://www.afcd.gov.hk/english/conservation/hkbiodiversity/speciesgroup/speciesgroup_amphibians.html — local frog distribution and diagnostic traits.
+- Shaffer, M. R. et al. (2025). “Observation Bias in Metabarcoding.” https://pmc.ncbi.nlm.nih.gov/articles/PMC12415808/ — primer-template mismatch and read-proportion caveats.
+- Hong Kong Biodiversity Information Hub. “Hong Kong Cascade Frog.” https://bih.gov.hk/en/fast-facts/species-named-after-hong-kong/index-id-19.html — habitat and suction-disc traits.
+- eBird. “Oriental Magpie-Robin.” https://ebird.org/species/magrob — sex and age-related plumage differences.
+
+- Hollingsworth, P. M. et al. (2009). “A DNA barcode for land plants.” https://pmc.ncbi.nlm.nih.gov/articles/PMC2722355/ — CBOL-supported core two-locus land-plant barcode rbcL + matK and limitations of single-locus identification.
+- Xu, J. (2016). “Fungal DNA barcoding.” https://cdnsciencepub.com/doi/full/10.1139/gen-2016-0046@gen-iblf.issue01 — ITS as the primary fungal barcode and caveats for closely related species.

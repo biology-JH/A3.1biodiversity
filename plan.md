@@ -1,32 +1,39 @@
-# BioAtlas implementation plan
+# BioAtlas expanded implementation plan
 
 ## Product approach
 
-Build a static, single-page educational application for IB Biology Topic A3.1 with seven navigable modules. Use semantic HTML, responsive CSS, Tailwind utility styling, and vanilla JavaScript. Keep the app client-only: no login, server, database, or user data persistence is required. The quiz score and activity state remain in the browser session.
+Extend the existing static, single-page IB Biology A3.1 website into a comprehensive SL/HL study guide covering every syllabus point A3.1.1–A3.1.15. Preserve the seven interactive modules and their existing source-slide visuals. Add detailed, expandable lesson notes with examples, qualifications and source links instead of replacing the existing concise explanations. Keep the app client-only; quiz and activity state remain in the browser session.
 
-## Content and interactions
+## Syllabus coverage and interactions
 
-Organize all lesson content, genome chart values, quiz questions, species-key traits, and image references as small data objects consumed by module-rendering functions. Provide a sticky module navigator, responsive lesson header, live quiz score, active quiz feedback, flashcard flips, validated nomenclature exercise, chromatogram hotspots, chromosome evidence markers and mule comparison toggle, selectable/sortable genome chart, specimen-key branching, eDNA stepper, and a self-scoring quiz summary.
+1. **Species, variation and naming:** Teach continuous and discontinuous intraspecific variation, dog-breed divergence without speciation, the morphological species concept and its limits, formal binomial naming, Mayr’s biological species concept, its limits and the speciation continuum including ring species. Retain flashcards and the binomial rule trainer. Include the HL prokaryote/HGT explanation where reproductive species criteria do not transfer cleanly.
+2. **Genome unity and SNPs:** Explain conserved genes, the ≥1% population-frequency convention for a SNP, approximate human SNP spacing, coding and non-coding effects, indels, chromatogram double peaks, and mechanisms that alter genome size. Retain both clickable chromatogram hotspots.
+3. **Chromosome evidence:** Teach diploid/haploid notation, karyogram anatomy and banding, the human/chimpanzee chromosome counts, chromosome-2 fusion evidence, and the horse–donkey–mule pairing problem. Retain evidence markers and the mule toggle.
+4. **C-value and sequencing:** Preserve all six lesson genome-size values, add annotation-specific counts with release notes and citations, discuss the C-value paradox, explain sequencing-platform history from Sanger to short-read and long-read methods, and connect whole-genome sequencing to phylogenomics, outbreak investigation and precision medicine. Retain sorting controls and repeat/non-coding-DNA visuals.
+5. **Dichotomous keys:** Explain paired, mutually exclusive, objective observable traits and provide interactive frog and bird identification paths, with uncertainty for sex, age and natural variation.
+6. **Barcoding and eDNA:** Teach standard animal, plant and fungal barcode loci; extend the four-step eDNA workflow and Pearl River Estuary dolphin case; compare morphology-led identification with DNA metabarcoding and explain limitations.
+7. **Exam check:** Expand the self-marking question bank to exercise each syllabus area through multiple choice, true/false, ordering and matching, with immediate explanations and a final score summary.
 
-## Source imagery
+## Teaching-content format
 
-Extract embedded media from both uploaded PPTX archives. Preserve an asset manifest that maps each extracted visual to the deck part, slide number, and original media path. Include the slide-specific image placements under the web project's `assets/` directory and reference authentic visuals from the relevant sections. Prioritize the source chromatogram, chromosome-2 fusion graphic, human/chimpanzee karyogram, genome-size chart, frog photographs, eDNA workflow, laboratory visuals, and dolphin visual. Where the deck does not contain its four bird-key photos, use accurately identified, attributed supplement images and label them as supplemental rather than implying they were in the slides.
+Add structured syllabus-note data in `src/syllabus.js`, grouped by module and syllabus code. Render it inside each corresponding module as accessible expandable note cards. Every external scientific claim has an adjacent source link; keep the citation list in `assets/SOURCES.md` and the genome annotation details in `assets/GENOME_COUNTS.md`. Treat genome-size and gene-count snapshots as source/release-specific. Never invent counts where no annotated reference count is supported.
 
-## Design
+## Design and accessibility
 
-Use a clean scientific biodiversity aesthetic in emerald, slate, and warm white. Make content cards crisp, high-contrast, and readable on mobile; use subtle botanical/sequence motifs, compact labels, and direct interaction feedback. Preserve the original slide figures without drawing replacement lookalikes. The brand mark can reuse a small source DNA image.
+Preserve the emerald/slate/warm-white BioAtlas visual system, botanical/sequence motifs, Tailwind CDN utilities and the hand-authored responsive CSS. Set primary instructional reading text to **24 px**, keeping labels, metadata and captions intentionally smaller. Increase the display size of chromatograms, karyograms, fusion diagrams, source charts, taxonomy photos and workflow figures. Preserve aspect ratios and avoid cropping meaningful diagram labels. On narrow viewports, allow text to wrap and stack figures rather than shrinking labels below readability. Keep high contrast, keyboard-operable controls, alt text and reduced-motion handling.
 
 ## Project layout
 
-- `index.html`: one-page shell, landmarks, global header, and module mounts.
-- `src/main.js`: module rendering and all interaction handlers.
-- `src/data.js`: lesson facts, chart dataset, question set, keys, and image map.
-- `src/styles.css`: responsive design system and accessible interaction states.
-- `assets/part1/` and `assets/part2/`: slide-mapped visual extracts used by the app.
-- `public/manus-routes.json`: declared route set for the single-page site.
-- `scripts/build.sh`: dependency-free static build that assembles `dist/`.
-- `dist/`: publication output containing `index.html`, sources, and assets.
+- `index.html`: semantic one-page shell, seven module mounts and dedicated syllabus-note mounts.
+- `src/main.js`: rendering and interaction handlers, including updated quiz scoring.
+- `src/data.js`: images, existing flashcards, genome comparison, fauna keys and question bank.
+- `src/syllabus.js`: complete source-linked notes grouped by module and syllabus point.
+- `src/styles.css`: responsive design, 24-pixel teaching type, larger diagrams and accessible states.
+- `assets/part1/` and `assets/part2/`: extracted, slide-mapped visuals; `assets/asset-manifest.json` maps each placement.
+- `assets/SOURCES.md` and `assets/GENOME_COUNTS.md`: media credits and annotation-specific gene-count provenance.
+- `public/manus-routes.json`: declared single-page route.
+- `package.json`: dependency-free static build script; Webdev publishes `dist/`.
 
 ## Build and deployment
 
-Run a lightweight declared development command on the configured project port. Build a static output directory with a self-contained copy script and configure Webdev static publishing to serve `dist/`. Keep the route manifest synchronized with the one-page route. Inspect responsive visual previews and ensure the browser console/source checks have no blocking errors, then push the intended changes to the canonical main branch for a recorded checkpoint and publish the requested live site.
+Reuse the currently configured managed static build and port-3000 development server. Validate build output, route manifest, syntax, source-image paths, narrow/mobile layout and expanded notes. Update the same public project by fetching and integrating current `origin/main`, pushing the intended checkpoint, then publish that checkpoint and verify its public URL.

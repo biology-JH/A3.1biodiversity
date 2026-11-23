@@ -6,22 +6,22 @@
   <meta name="theme-color" content="#0f3d33">
   <meta name="description" content="Explore IB Biology A3.1 through interactive species concepts, genomics, chromosome evidence, identification keys and environmental DNA labs.">
   <title>BioAtlas | IB Biology A3.1</title>
-  <link rel="icon" type="image/png" href="/assets/bioatlas-dna-mark.png">
+  <link rel="icon" type="image/png" href="assets/bioatlas-dna-mark.png">
   <script>tailwind = { config: { theme: { extend: { colors: { canopy: '#0f3d33', fern: '#17856c', mist: '#eef5f1', slateink: '#26353a' } } } };</script>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="/src/styles.css">
+  <link rel="stylesheet" href="src/styles.css">
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to learning modules</a>
   <header class="site-header">
     <div class="header-inner">
       <a class="brand" href="#top" aria-label="BioAtlas home">
-        <img src="/assets/bioatlas-dna-mark.png" alt="" class="brand-mark">
+        <img src="assets/bioatlas-dna-mark.png" alt="" class="brand-mark">
         <span class="brand-copy"><strong>BioAtlas</strong><small>IB Biology · A3.1</small></span>
       </a>
       <div class="header-progress" aria-live="polite">
         <span class="eyebrow">EXAM CHECK</span>
-        <strong id="score-live">0 / 6</strong>
+        <strong id="score-live">0 / 16</strong>
         <span id="quiz-progress-label">questions correct</span>
       </div>
       <button id="theme-toggle" class="theme-toggle" type="button" aria-pressed="false" aria-label="Toggle dark colour theme"><span class="theme-icon">◐</span><span class="theme-label">Theme</span></button>
@@ -183,10 +183,10 @@
 
         <section class="module-section" id="module-7" aria-labelledby="m7-title">
           <div class="section-heading">
-            <div class="section-number">07</div><div class="section-title"><span class="eyebrow">IB PRACTICE · 6 CHECKPOINTS</span><h2 id="m7-title">Exam check</h2><p>Mix species concepts, genome data and classification methods. Explanations appear after each check.</p></div>
+            <div class="section-number">07</div><div class="section-title"><span class="eyebrow">IB PRACTICE · SELF-GRADING CHECKPOINTS</span><h2 id="m7-title">Exam check</h2><p>Mix species concepts, genome data and classification methods. Explanations appear after each check.</p></div>
           </div>
           <article class="learning-card quiz-card">
-            <div class="quiz-topline"><div><span class="eyebrow">YOUR LIVE SCORE</span><h3><span id="quiz-score-inline">0</span> / 6 correct</h3></div><div class="quiz-meter"><span id="quiz-meter-fill"></span></div><span id="quiz-answered">0 / 6 answered</span></div>
+            <div class="quiz-topline"><div><span class="eyebrow">YOUR LIVE SCORE</span><h3><span id="quiz-score-inline">0</span> / <span id="quiz-total">16</span> correct</h3></div><div class="quiz-meter"><span id="quiz-meter-fill"></span></div><span id="quiz-answered">0 / 16 answered</span></div>
             <div id="quiz-container" class="quiz-list"></div>
             <div class="quiz-end-row"><p>Questions are adapted from the multiple-choice, true/false, ordering and matching checks in both lesson decks.</p><button id="finish-quiz" class="button button-primary" type="button">See summary <span>→</span></button></div>
             <div id="quiz-summary" class="quiz-summary" hidden aria-live="polite"></div>
@@ -194,14 +194,14 @@
         </section>
 
         <footer class="site-footer">
-          <div class="footer-brand"><img src="/assets/bioatlas-dna-mark.png" alt=""><span>BioAtlas <small>IB Biology A3.1</small></span></div>
+          <div class="footer-brand"><img src="assets/bioatlas-dna-mark.png" alt=""><span>BioAtlas <small>IB Biology A3.1</small></span></div>
           <p>Study from the evidence. The slide-mapped source files remain in the project’s <code>assets/</code> folder.</p>
-          <a href="/assets/SOURCES.md">Image sources & attributions <span>↗</span></a>
+          <a href="assets/SOURCES.md">Image sources & attributions <span>↗</span></a>
         </footer>
       </div>
     </div>
   </main>
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
-  <script type="module" src="/src/main.js"></script>
+  <script type="module" src="src/main.js"></script>
 </body>
 </html>

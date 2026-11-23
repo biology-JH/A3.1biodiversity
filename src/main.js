@@ -1,4 +1,5 @@
 import { BINOMIAL_SPECIES, FAUNA, FLASHCARDS, GENOME_DATA, IMAGE_CREDITS, IMAGES, QUIZ } from './data.js';
+import { DIAGRAMS, SYLLABUS_MODULES } from './syllabus.js';
 
 const $ = (selector, root = document) => root.querySelector(selector);
 const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
@@ -156,7 +157,7 @@ function renderRepeatFigures() {
 }
 
 const birdCouplets = [
-  {question: 'Does the bird show bold black-and-white plumage with clear white wing patches and a long tail?', yes: 'magpie', no: 'continue'},
+  {question: 'Does it show clear white wing patches and a long tail? Adult males are black-and-white; adult females are greyer.', yes: 'magpie', no: 'continue'},
   {question: 'Does it have a strong black crest with a red cheek patch and red vent?', yes: 'bulbul', no: 'continue'},
   {question: 'Does its grey-brown neck show a black patch marked with white spots?', yes: 'dove', no: 'sparrow'},
 ];
@@ -198,15 +199,24 @@ function renderCouplet() {
     const node = birdCouplets[Math.min(step, birdCouplets.length - 1)];
     question = node.question;
     choices = step === 0
-      ? [{side: 'yes', text: 'Yes — those black-and-white wing patches and long tail are visible.'}, {side: 'no', text: 'No — the plumage is not predominantly black-and-white.'}]
+      ? [{side: 'yes', text: 'Yes — the white wing patches and long tail fit; plumage colour can differ by sex.'}, {side: 'no', text: 'No — that wing-patch and tail combination is not visible; continue to another clue.'}]
       : step === 1
         ? [{side: 'yes', text: 'Yes — a black crest and red cheek/vent markings are visible.'}, {side: 'no', text: 'No — it lacks that crest-and-red-mark combination.'}]
         : [{side: 'yes', text: 'Yes — the nape has a black patch with white spots.'}, {side: 'no', text: 'No — it has a chestnut crown and a black cheek spot instead.'}];
   }
-  $('#fauna-couplet').innerHTML = `<span class="couplet-step">Couplet ${step + 1} · choose one</span><h3>${question}</h3><div class="choice-stack">${choices.map((choice, index) => `<button type="button" class="trait-choice" data-trait-side="${choice.side}"><span class="choice-letter">${index === 0 ? 'A' : 'B'}</span><span>${choice.text}</span></button>`).join('')}</div>`;
+  choices.push({side: 'inconclusive', text: 'Cannot tell from this image — keep the identification inconclusive and seek another observation.'});
+  $('#fauna-couplet').innerHTML = `<span class="couplet-step">Couplet ${step + 1} · choose one</span><h3>${question}</h3><div class="choice-stack">${choices.map((choice, index) => `<button type="button" class="trait-choice" data-trait-side="${choice.side}"><span class="choice-letter">${choice.side === 'inconclusive' ? '?' : index === 0 ? 'A' : 'B'}</span><span>${choice.text}</span></button>`).join('')}</div>`;
   $$('.trait-choice').forEach(button => button.addEventListener('click', () => selectTrait(button.dataset.traitSide)));
 }
 function selectTrait(side) {
+  if (side === 'inconclusive') {
+    const feedback = $('#fauna-feedback');
+    feedback.className = 'feedback';
+    feedback.textContent = 'Inconclusive: do not force an identification. Seek a clearer image or additional diagnostic traits.';
+    $('#fauna-result').className = 'key-result';
+    $('#fauna-result').textContent = 'No identification assigned.';
+    return;
+  }
   const specimen = currentSpecimen();
   const expected = state.faunaMode === 'amphibians' ? specimen.side : getBirdExpected(specimen);
   const feedback = $('#fauna-feedback');
@@ -261,6 +271,7 @@ function setEdnaStep(index) {
   const step = ednaSteps[index];
   $$('.step-tab').forEach((button, i) => {
     const active = i === index;
+    button.tabIndex = active ? 0 : -1;
     button.classList.toggle('is-active', active);
     button.setAttribute('aria-selected', String(active));
   });
@@ -270,7 +281,17 @@ function setEdnaStep(index) {
 function renderEdnaLab() {
   $('#edna-steps').innerHTML = ednaSteps.map((step, index) => `<button type="button" class="step-tab ${index === 0 ? 'is-active' : ''}" role="tab" aria-selected="${index === 0}" data-edna-step="${index}"><span>STEP 0${index + 1}</span><strong>${step.short}</strong></button>`).join('');
   $('#edna-visual-strip').innerHTML = ednaSteps.map((step, index) => `<figure class="edna-visual ${index === 0 ? 'is-active' : ''}"><img src="${step.image}" alt="${step.alt}" loading="lazy"><figcaption>${step.title}</figcaption></figure>`).join('');
-  $$('.step-tab').forEach(button => button.addEventListener('click', () => setEdnaStep(Number(button.dataset.ednaStep))));
+  $$('.step-tab').forEach((button, index, buttons) => {
+    button.tabIndex = index === 0 ? 0 : -1;
+    button.addEventListener('click', () => setEdnaStep(Number(button.dataset.ednaStep)));
+    button.addEventListener('keydown', event => {
+      const delta = event.key === 'ArrowRight' ? 1 : event.key === 'ArrowLeft' ? -1 : event.key === 'Home' ? -index : event.key === 'End' ? buttons.length - 1 - index : 0;
+      if (!delta && event.key !== 'Home' && event.key !== 'End') return;
+      event.preventDefault();
+      const next = (index + delta + buttons.length) % buttons.length;
+      buttons[next].tabIndex = 0; buttons[index].tabIndex = -1; buttons[next].focus(); setEdnaStep(next);
+    });
+  });
   setImage($('#dolphin-image'), IMAGES.dolphin, 'Illustration of Indo-Pacific humpback dolphins from Part 2, slide 40');
   setEdnaStep(0);
 }
@@ -289,6 +310,8 @@ function answerQuestion(question, correct, host) {
 function updateScore() {
   $('#score-live').textContent = `${state.score} / ${QUIZ.length}`;
   $('#quiz-score-inline').textContent = String(state.score);
+  const total = $('#quiz-total');
+  if (total) total.textContent = String(QUIZ.length);
   $('#quiz-answered').textContent = `${state.answered} / ${QUIZ.length} answered`;
   $('#quiz-progress-label').textContent = 'questions correct';
   $('#quiz-meter-fill').style.width = `${state.answered / QUIZ.length * 100}%`;
@@ -428,6 +451,30 @@ function renderModuleProgress() {
   }, {threshold: .18});
   sections.forEach(section => observer.observe(section));
 }
+
+function renderSyllabus() {
+  SYLLABUS_MODULES.forEach(module => {
+    const host = document.getElementById(module.id);
+    if (!host) return;
+    const notes = document.createElement('details');
+    notes.className = 'study-notes';
+    const scienceRefs = module.id === 'module-1' ? '<a href="https://evolution.berkeley.edu/biological-species-concept/" target="_blank" rel="noopener">Berkeley · biological species concept ↗</a>' : module.id === 'module-3' ? '<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC52649/" target="_blank" rel="noopener">IJdo et al. · chromosome 2 fusion evidence ↗</a>' : module.id === 'module-4' ? '<a href="https://pubmed.ncbi.nlm.nih.gov/32445179/" target="_blank" rel="noopener">Choi et al. · C-value and genome architecture review ↗</a>' : module.id === 'module-5' ? '<a href="https://www.afcd.gov.hk/english/conservation/hkbiodiversity/speciesgroup/speciesgroup_amphibians.html" target="_blank" rel="noopener">Hong Kong AFCD · amphibian traits ↗</a>' : module.id === 'module-6' ? '<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12415808/" target="_blank" rel="noopener">Shaffer et al. · metabarcoding bias ↗</a> · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC2722355/" target="_blank" rel="noopener">land-plant rbcL + matK ↗</a> · <a href="https://cdnsciencepub.com/doi/full/10.1139/gen-2016-0046@gen-iblf.issue01" target="_blank" rel="noopener">fungal ITS barcode ↗</a>' : '';
+    notes.innerHTML = `<summary><span><span class="eyebrow">EXPANDABLE LESSON NOTES · ${module.points}</span><strong>${module.title}</strong></span><span class="notes-toggle" aria-hidden="true">＋</span></summary><div class="study-notes-content">${module.notes.map(item => `<article class="note-topic"><h3>${item.heading}</h3><p>${item.copy}</p><p class="note-source">Source: <a href="assets/SLIDE_TEXT_INDEX.md" target="_blank" rel="noopener">${item.source} · supplied slide text ↗</a>${scienceRefs ? ` · ${scienceRefs}` : ''}</p></article>`).join('')}</div>`;
+    host.append(notes);
+    if (!module.diagrams.length) return;
+    const gallery = document.createElement('section');
+    gallery.className = 'diagram-gallery';
+    gallery.setAttribute('aria-label', `${module.title} diagram gallery`);
+    gallery.innerHTML = `<div class="diagram-gallery-heading"><span class="eyebrow">VISUAL FIELD GUIDE</span><h3>Diagram gallery</h3><p>Original, labelled diagrams paired with the lesson slide visuals above.</p></div><div class="diagram-gallery-grid">${module.diagrams.map(key => {
+      const item = DIAGRAMS[key];
+      if (!item) return '';
+      const title = item.match(/<title>(.*?)<\/title>/)?.[1] ?? 'Biology diagram';
+      const desc = item.match(/<desc>(.*?)<\/desc>/)?.[1] ?? '';
+      return `<figure class="diagram-card"><div class="diagram-scroll" tabindex="0" aria-label="Diagram viewport. On a narrow screen, scroll horizontally to inspect the full diagram.">${item}</div><figcaption><strong>${title}</strong><span>${desc}</span></figcaption></figure>`;
+    }).join('')}</div>`;
+    host.append(gallery);
+  });
+}
 function revealToast(message) {
   const toast = $('#toast');
   toast.textContent = message;
@@ -437,6 +484,7 @@ function revealToast(message) {
 }
 
 function init() {
+  renderSyllabus();
   renderFlashcards();
   renderBinomialTrainer();
   renderChromatogram();

@@ -1,37 +1,37 @@
 export const IMAGES = {
-  dogs: '/manus-storage/img-02_a9bcb6e9.png',
-  lion: '/manus-storage/img-02_442cc92e.jpg',
-  jaguar: '/manus-storage/img-03_827e0ff9.jpg',
-  tiger: '/manus-storage/panthera-tigris-bengal_f758e19f.jpg',
-  chromatogram: '/manus-storage/img-02_4b2df534.jpg',
-  centromeres: '/manus-storage/img-02_31c0d8d7.png',
-  fusion: '/manus-storage/img-02_f9506d8d.png',
-  chromosomeNumbers: '/manus-storage/img-02_f5b792eb.png',
-  karyogram: '/manus-storage/img-02_ff837d2e.png',
-  donkey: '/manus-storage/img-02_32670674.jpg',
-  equineKaryotypes: '/manus-storage/img-02_414bf035.png',
-  genomeChart: '/manus-storage/img-02_f2617966.png',
-  helix: '/manus-storage/img-04_d91290b8.png',
-  transfer: '/manus-storage/img-02_96c9002a.png',
+  dogs: 'manus-storage/img-02_a9bcb6e9.png',
+  lion: 'manus-storage/img-02_442cc92e.jpg',
+  jaguar: 'manus-storage/img-03_827e0ff9.jpg',
+  tiger: 'manus-storage/panthera-tigris-bengal_f758e19f.jpg',
+  chromatogram: 'manus-storage/img-02_4b2df534.jpg',
+  centromeres: 'manus-storage/img-02_31c0d8d7.png',
+  fusion: 'manus-storage/img-02_f9506d8d.png',
+  chromosomeNumbers: 'manus-storage/img-02_f5b792eb.png',
+  karyogram: 'manus-storage/img-02_ff837d2e.png',
+  donkey: 'manus-storage/img-02_32670674.jpg',
+  equineKaryotypes: 'manus-storage/img-02_414bf035.png',
+  genomeChart: 'manus-storage/img-02_f2617966.png',
+  helix: 'manus-storage/img-04_d91290b8.png',
+  transfer: 'manus-storage/img-02_96c9002a.png',
   repeatImages: [
-    '/manus-storage/img-02_8eac2865.png',
-    '/manus-storage/img-03_8c5eea93.png',
-    '/manus-storage/img-04_0d65e416.png',
-    '/manus-storage/img-05_6d0f27c0.png',
+    'manus-storage/img-02_8eac2865.png',
+    'manus-storage/img-03_8c5eea93.png',
+    'manus-storage/img-04_0d65e416.png',
+    'manus-storage/img-05_6d0f27c0.png',
   ],
-  frogRomeri: '/manus-storage/img-02_2ac5f3d5.jpg',
-  frogCascade: '/manus-storage/img-03_90289f96.jpg',
-  barcode: '/manus-storage/img-02_8951a274.png',
-  water: '/manus-storage/img-02_99f40f13.jpg',
-  filtration: '/manus-storage/img-03_9e927655.jpg',
-  pcr: '/manus-storage/img-04_1e34c9f3.jpg',
-  database: '/manus-storage/img-05_78646ede.png',
-  dolphin: '/manus-storage/img-02_e446e01d.jpg',
+  frogRomeri: 'manus-storage/img-02_2ac5f3d5.jpg',
+  frogCascade: 'manus-storage/img-03_90289f96.jpg',
+  barcode: 'manus-storage/img-02_8951a274.png',
+  water: 'manus-storage/img-02_99f40f13.jpg',
+  filtration: 'manus-storage/img-03_9e927655.jpg',
+  pcr: 'manus-storage/img-04_1e34c9f3.jpg',
+  database: 'manus-storage/img-05_78646ede.png',
+  dolphin: 'manus-storage/img-02_e446e01d.jpg',
   birds: {
-    magpie: '/manus-storage/oriental-magpie-robin_26b479ab.jpg',
-    sparrow: '/manus-storage/eurasian-tree-sparrow_807ed83c.jpg',
-    dove: '/manus-storage/spotted-dove_997501d3.jpg',
-    bulbul: '/manus-storage/red-whiskered-bulbul_4880ab58.jpg',
+    magpie: 'manus-storage/oriental-magpie-robin_26b479ab.jpg',
+    sparrow: 'manus-storage/eurasian-tree-sparrow_807ed83c.jpg',
+    dove: 'manus-storage/spotted-dove_997501d3.jpg',
+    bulbul: 'manus-storage/red-whiskered-bulbul_4880ab58.jpg',
   },
 };
 
@@ -172,6 +172,79 @@ export const QUIZ = [
     ],
     explanation: 'eDNA surveys detect environmental traces, SNPs describe one-base variants, animal barcodes commonly use mitochondrial COI, and dichotomous keys use paired choices.',
   },
+
+  {
+    id: 'variation-and-morphology', type: 'choice', source: 'Part 1, slides 10–16',
+    prompt: 'Which statement best distinguishes continuous from discontinuous variation?',
+    options: ['Height is usually polygenic and environmentally modified; ABO groups are discrete classes associated with one gene locus.', 'Both traits are controlled by one gene and form a continuous range.', 'Dog breed differences prove dogs are reproductively isolated species.', 'ABO groups form a continuous environmental gradient.'],
+    answer: 0, explanation: 'Continuous traits such as height form a spectrum, while ABO blood groups are discrete. Dog breeds show that phenotypic divergence alone does not establish speciation.'
+  },
+  {
+    id: 'binomial-format', type: 'choice', source: 'Part 1, slides 17–21',
+    prompt: 'Which is correctly formatted after a species has been introduced in full?',
+    options: ['panthera Leo', 'P. leo', 'Panthera Leo', 'p. Leo'],
+    answer: 1, explanation: 'The genus begins with a capital and may be abbreviated to its capital initial; the epithet stays lower-case. Both are italicised when typed.'
+  },
+  {
+    id: 'snp-frequency', type: 'truefalse', source: 'Part 2, slides 13–14',
+    prompt: 'A double peak in one Sanger trace by itself proves that a base variant reaches the ≥1% population frequency convention for a SNP.',
+    answer: false, explanation: 'A G/A or T/C double peak can be consistent with heterozygosity in that individual. The ≥1% criterion is a population frequency and needs population data.'
+  },
+  {
+    id: 'mule-meiosis', type: 'choice', source: 'Part 2, slides 30–32',
+    prompt: 'Why is a mule (2n = 63) usually sterile?',
+    options: ['Its parents contribute identical chromosome sets.', 'Unpaired or mismatched chromosomes prevent stable homologous synapsis and balanced meiosis.', 'The mule has no chromosomes in its gametes.', 'Odd chromosome counts always prevent mitosis.'],
+    answer: 1, explanation: 'Horse and donkey gametes contribute 32 and 31 chromosomes respectively. Their hybrid’s mismatched set disrupts meiotic pairing and gamete production.'
+  },
+  {
+    id: 'sequencing-applications', type: 'match', source: 'Part 2, slides 22–23',
+    prompt: 'Match whole-genome sequencing applications to their use.',
+    pairs: [
+      {term: 'Phylogenomics', answer: 'Compare genomes to infer evolutionary relationships'},
+      {term: 'Outbreak tracing', answer: 'Track pathogen transmission'},
+      {term: 'Precision medicine', answer: 'Use genomic evidence to tailor care'}
+    ],
+    explanation: 'Genome comparisons can investigate ancestry, follow pathogen spread, and help tailor prevention or treatment. These are uses of sequencing data, not guaranteed outcomes.'
+  },
+  {
+    id: 'edna-limits', type: 'choice', source: 'Part 2, slides 39–43',
+    prompt: 'A species barcode is detected in a water sample. Which conclusion is best supported?',
+    options: ['The species was detected in or near the sampled habitat, but the sequence count alone does not establish its abundance.', 'The species is the most abundant organism in the habitat.', 'The species was physically observed at the exact sampling point.', 'Every species absent from the database was absent from the habitat.'],
+    answer: 0, explanation: 'eDNA detection can support presence in or near a sampled environment, but transport, shedding, degradation, primer bias and database coverage affect interpretation; read counts are not a direct abundance measure.'
+  }
+  ,{
+    id: 'hgt-pathways', type: 'match', source: 'A3.1.12 HL · Part 2, slides 25–29',
+    prompt: 'Match each horizontal gene-transfer route to its mechanism.',
+    pairs: [
+      {term: 'Conjugation', answer: 'DNA transfer through direct cell contact, often via a plasmid'},
+      {term: 'Transformation', answer: 'Uptake of free DNA from the environment'},
+      {term: 'Transduction', answer: 'DNA transfer mediated by a bacteriophage'}
+    ],
+    explanation: 'These three routes move DNA across prokaryotic lineages and contribute to reticulate evolutionary histories.'
+  },
+  {
+    id: 'barcode-markers', type: 'match', source: 'A3.1.15 HL · Part 2, slides 38–39',
+    prompt: 'Match standard DNA barcode loci to organism groups.',
+    pairs: [
+      {term: 'Animals', answer: 'Mitochondrial COI'},
+      {term: 'Land plants', answer: 'Chloroplast rbcL and matK'},
+      {term: 'Fungi', answer: 'Nuclear ITS'}
+    ],
+    explanation: 'Barcode loci are selected for useful amplification and discrimination; they are not universal across all life.'
+  },
+  {
+    id: 'prokaryote-barcodes', type: 'choice', source: 'A3.1.12–15 HL',
+    prompt: 'Why is a purely branching tree an incomplete model of prokaryotic ancestry?',
+    options: ['Horizontal gene transfer can move DNA across lineages.', 'Prokaryotes lack DNA.', 'Binary fission always mixes unrelated genomes.', 'All prokaryotes interbreed sexually.'],
+    answer: 0, explanation: 'Vertical descent branches, while horizontal gene transfer adds cross-links between lineages.'
+  },
+  {
+    id: 'sequencing-methods', type: 'choice', source: 'A3.1.11 · Part 2, slides 22–23, 26',
+    prompt: 'Which is an appropriate application of whole-genome sequencing?',
+    options: ['Infer evolutionary relationships by comparing many genomic regions.', 'Directly measure an organism’s body mass.', 'Guarantee a species identification even without reference sequences.', 'Prove that every sequence difference affects phenotype.'],
+    answer: 0, explanation: 'Genome-wide comparisons support phylogenomics; conclusions still depend on suitable data and interpretation.'
+  }
+
 ];
 
 export const IMAGE_CREDITS = {
@@ -200,7 +273,7 @@ export const FAUNA = {
   birds: [
     {
       id: 'magpie', common: 'Oriental Magpie-Robin', scientific: 'Copsychus saularis', image: IMAGES.birds.magpie,
-      clues: 'Male has bold black-and-white plumage, conspicuous white wing patches, and a long tail.', keyClue: 'black-and-white plumage with white wing patches',
+      clues: 'Adult males are boldly black-and-white; females are greyer. Both sexes have conspicuous white wing patches and a long tail, so use those traits together when plumage colour varies.', keyClue: 'clear white wing patches and a long tail (plumage colour differs by sex)',
     },
     {
       id: 'bulbul', common: 'Red-whiskered Bulbul', scientific: 'Pycnonotus jocosus', image: IMAGES.birds.bulbul,
