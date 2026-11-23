@@ -58,7 +58,7 @@ export const FLASHCARDS = [
     image: IMAGES.genomeChart,
     alt: 'Genome-size comparison chart extracted from the lesson slides',
     front: 'Does more DNA mean greater complexity?',
-    back: 'No. Total DNA content does not reliably predict organismal complexity or protein-coding gene count. Repeats, transposons, introns and whole-genome duplication can add DNA.',
+    back: 'C-value (1C) is the DNA amount in a haploid genome; report it as mass (pg; 1 pg = 10^-12 g) or sequence length (bp; 1 Mbp = 10^6 bp). The C-value paradox is that DNA content does not reliably predict organismal complexity or protein-coding gene count. Repeats, transposons, introns and whole-genome duplication can add DNA.',
   },
   {
     term: 'Karyogram',
@@ -66,7 +66,7 @@ export const FLASHCARDS = [
     image: IMAGES.karyogram,
     alt: 'Human and chimpanzee karyotypes arranged for comparison',
     front: 'How are chromosomes organised?',
-    back: 'A karyogram arranges chromosomes into homologous pairs, commonly using length, centromere position and reproducible banding patterns.',
+    back: 'Prepare a karyogram from a mitotic metaphase spread, when chromosomes are condensed: select a clear, non-overlapping spread, stain to reveal bands, photograph it, then pair and arrange chromosomes by length, centromere position and banding pattern.',
   },
   {
     term: 'Horizontal gene transfer',
@@ -128,7 +128,7 @@ export const QUIZ = [
       'Plant genomes contain no repetitive non-coding DNA',
     ],
     answer: 1,
-    explanation: 'Arabidopsis has a much smaller genome but more protein-coding genes in the lesson comparison. Total DNA mass is not a direct measure of gene number or complexity.',
+    explanation: 'C-value (1C) is the DNA content of a haploid genome, measured as mass (pg) or sequence length (bp/Mbp). Arabidopsis has a much smaller genome but more protein-coding genes in the lesson comparison, showing that DNA amount is not a direct measure of gene number or complexity.',
   },
   {
     id: 'fusion-testability',
@@ -136,7 +136,7 @@ export const QUIZ = [
     source: 'Part 1, slides 35–36',
     prompt: 'The hypothesis that human chromosome 2 formed by end-to-end fusion of two ancestral primate chromosomes is scientifically testable.',
     answer: true,
-    explanation: 'The fusion hypothesis makes falsifiable predictions, including internal telomere-repeat sequences and a vestigial centromere. These markers can be tested by cytogenetics and DNA sequencing.',
+    explanation: 'The fusion hypothesis is a provisional explanation, not a fact proved beyond doubt. It makes falsifiable predictions, including internal telomere-repeat sequences and a vestigial centromere; cytogenetics and sequencing can test them, and contrary results could weaken or falsify the hypothesis.',
   },
   {
     id: 'prokaryote-bsc',
@@ -183,7 +183,7 @@ export const QUIZ = [
     id: 'binomial-format', type: 'choice', source: 'Part 1, slides 17–21',
     prompt: 'Which is correctly formatted after a species has been introduced in full?',
     options: ['panthera Leo', 'P. leo', 'Panthera Leo', 'p. Leo'],
-    answer: 1, explanation: 'The genus begins with a capital and may be abbreviated to its capital initial; the epithet stays lower-case. Both are italicised when typed.'
+    answer: 1, explanation: 'The genus begins with a capital and may be abbreviated to its capital initial; the epithet stays lower-case. Both are italicised when typed. In this textbook section, viruses are excluded from organismal binomials because they are treated as non-living.'
   },
   {
     id: 'snp-frequency', type: 'truefalse', source: 'Part 2, slides 13–14',
@@ -195,6 +195,17 @@ export const QUIZ = [
     prompt: 'Why is a mule (2n = 63) usually sterile?',
     options: ['Its parents contribute identical chromosome sets.', 'Unpaired or mismatched chromosomes prevent stable homologous synapsis and balanced meiosis.', 'The mule has no chromosomes in its gametes.', 'Odd chromosome counts always prevent mitosis.'],
     answer: 1, explanation: 'Horse and donkey gametes contribute 32 and 31 chromosomes respectively. Their hybrid’s mismatched set disrupts meiotic pairing and gamete production.'
+  },
+  {
+    id: 'karyogram-preparation', type: 'order', source: 'Part 1, slides 30–31',
+    prompt: 'Put the main stages of karyogram preparation in order.',
+    items: [
+      'Select a mitotic metaphase spread with condensed, non-overlapping chromosomes',
+      'Stain the spread to reveal chromosome-band patterns',
+      'Photograph the chromosome spread',
+      'Pair and arrange homologues by length, centromere position and banding'
+    ],
+    explanation: 'Metaphase chromosomes are condensed; an uncluttered spread is stained and imaged, then homologous pairs are matched using multiple chromosome features.'
   },
   {
     id: 'sequencing-applications', type: 'match', source: 'Part 2, slides 22–23',
