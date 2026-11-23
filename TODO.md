@@ -35,4 +35,4 @@
 
 - [x] **Apply the 20px minimum and improve hierarchy** — Set the minimum text size to 20px across the blog, including metadata, captions, labels, controls, diagrams and mobile layouts; increase heading and body sizes as needed for clear visual hierarchy and readability.
 
-- [ ] **Deliver the updated site** — Build and update the existing GitHub repository through its authorized route, then verify the Vercel public alias after deployment; report deployment-access blockers transparently.
+- [x] **Deliver the updated site** — Build and update the existing GitHub repository through its authorized route, then verify the Vercel public alias after deployment; report deployment-access blockers transparently.
