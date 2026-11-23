@@ -1,0 +1,1058 @@
+[
+  {
+    "part": "part1",
+    "slide": 1,
+    "asset": "assets/part1/slide-01/img-01.jpeg",
+    "source_media": "ppt/media/Slide-1-image-1.jpeg"
+  },
+  {
+    "part": "part1",
+    "slide": 1,
+    "asset": "assets/part1/slide-01/img-02.jpg",
+    "source_media": "ppt/media/image-1-2.jpg"
+  },
+  {
+    "part": "part1",
+    "slide": 2,
+    "asset": "assets/part1/slide-02/img-01.jpeg",
+    "source_media": "ppt/media/Slide-2-image-1.jpeg"
+  },
+  {
+    "part": "part1",
+    "slide": 2,
+    "asset": "assets/part1/slide-02/img-02.png",
+    "source_media": "ppt/media/image-2-2.png"
+  },
+  {
+    "part": "part1",
+    "slide": 3,
+    "asset": "assets/part1/slide-03/img-01.jpeg",
+    "source_media": "ppt/media/Slide-3-image-1.jpeg"
+  },
+  {
+    "part": "part1",
+    "slide": 3,
+    "asset": "assets/part1/slide-03/img-02.png",
+    "source_media": "ppt/media/image-3-2.png"
+  },
+  {
+    "part": "part1",
+    "slide": 3,
+    "asset": "assets/part1/slide-03/img-03.png",
+    "source_media": "ppt/media/image-3-3.png"
+  },
+  {
+    "part": "part1",
+    "slide": 3,
+    "asset": "assets/part1/slide-03/img-04.jpg",
+    "source_media": "ppt/media/image-3-4.jpg"
+  },
+  {
+    "part": "part1",
+    "slide": 4,
+    "asset": "assets/part1/slide-04/img-01.jpeg",
+    "source_media": "ppt/media/Slide-4-image-1.jpeg"
+  },
+  {
+    "part": "part1",
+    "slide": 4,
+    "asset": "assets/part1/slide-04/img-02.png",
+    "source_media": "ppt/media/image-4-2.png"
+  },
+  {
+    "part": "part1",
+    "slide": 4,
+    "asset": "assets/part1/slide-04/img-03.jpg",
+    "source_media": "ppt/media/image-4-3.jpg"
+  },
+  {
+    "part": "part1",
+    "slide": 5,
+    "asset": "assets/part1/slide-05/img-01.jpeg",
+    "source_media": "ppt/media/Slide-5-image-1.jpeg"
+  },
+  {
+    "part": "part1",
+    "slide": 5,
+    "asset": "assets/part1/slide-05/img-02.png",
+    "source_media": "ppt/media/image-5-2.png"
+  },
+  {
+    "part": "part1",
+    "slide": 6,
+    "asset": "assets/part1/slide-06/img-01.jpeg",
+    "source_media": "ppt/media/Slide-6-image-1.jpeg"
+  },
+  {
+    "part": "part1",
+    "slide": 6,
+    "asset": "assets/part1/slide-06/img-02.jpg",
+    "source_media": "ppt/media/image-6-2.jpg"
+  },
+  {
+    "part": "part1",
+    "slide": 7,
+    "asset": "assets/part1/slide-07/img-01.jpeg",
+    "source_media": "ppt/media/Slide-7-image-1.jpeg"
+  },
+  {
+    "part": "part1",
+    "slide": 7,
+    "asset": "assets/part1/slide-07/img-02.png",
+    "source_media": "ppt/media/image-7-2.png"
+  },
+  {
+    "part": "part1",
+    "slide": 8,
+    "asset": "assets/part1/slide-08/img-01.jpeg",
+    "source_media": "ppt/media/Slide-8-image-1.jpeg"
+  },
+  {
+    "part": "part1",
+    "slide": 9,
+    "asset": "assets/part1/slide-09/img-01.jpeg",
+    "source_media": "ppt/media/Slide-9-image-1.jpeg"
+  },
+  {
+    "part": "part1",
+    "slide": 9,
+    "asset": "assets/part1/slide-09/img-02.jpg",
+    "source_media": "ppt/media/image-9-2.jpg"
+  },
+  {
+    "part": "part1",
+    "slide": 9,
+    "asset": "assets/part1/slide-09/img-03.jpg",
+    "source_media": "ppt/media/image-9-3.jpg"
+  },
+  {
+    "part": "part1",
+    "slide": 9,
+    "asset": "assets/part1/slide-09/img-04.jpg",
+    "source_media": "ppt/media/image-9-4.jpg"
+  },
+  {
+    "part": "part1",
+    "slide": 9,
+    "asset": "assets/part1/slide-09/img-05.jpg",
+    "source_media": "ppt/media/image-9-5.jpg"
+  },
+  {
+    "part": "part1",
+    "slide": 10,
+    "asset": "assets/part1/slide-10/img-01.jpeg",
+    "source_media": "ppt/media/Slide-10-image-1.jpeg"
+  },
+  {
+    "part": "part1",
+    "slide": 10,
+    "asset": "assets/part1/slide-10/img-02.png",
+    "source_media": "ppt/media/image-10-2.png"
+  },
+  {
+    "part": "part1",
+    "slide": 11,
+    "asset": "assets/part1/slide-11/img-01.jpeg",
+    "source_media": "ppt/media/Slide-11-image-1.jpeg"
+  },
+  {
+    "part": "part1",
+    "slide": 11,
+    "asset": "assets/part1/slide-11/img-02.png",
+    "source_media": "ppt/media/image-11-2.png"
+  },
+  {
+    "part": "part1",
+    "slide": 11,
+    "asset": "assets/part1/slide-11/img-03.png",
+    "source_media": "ppt/media/image-11-3.png"
+  },
+  {
+    "part": "part1",
+    "slide": 12,
+    "asset": "assets/part1/slide-12/img-01.jpeg",
+    "source_media": "ppt/media/Slide-12-image-1.jpeg"
+  },
+  {
+    "part": "part1",
+    "slide": 12,
+    "asset": "assets/part1/slide-12/img-02.png",
+    "source_media": "ppt/media/image-12-2.png"
+  },
+  {
+    "part": "part1",
+    "slide": 13,
+    "asset": "assets/part1/slide-13/img-01.jpeg",
+    "source_media": "ppt/media/Slide-13-image-1.jpeg"
+  },
+  {
+    "part": "part1",
+    "slide": 13,
+    "asset": "assets/part1/slide-13/img-02.png",
+    "source_media": "ppt/media/image-13-2.png"
+  },
+  {
+    "part": "part1",
+    "slide": 14,
+    "asset": "assets/part1/slide-14/img-01.jpeg",
+    "source_media": "ppt/media/Slide-14-image-1.jpeg"
+  },
+  {
+    "part": "part1",
+    "slide": 14,
+    "asset": "assets/part1/slide-14/img-02.jpg",
+    "source_media": "ppt/media/image-14-2.jpg"
+  },
+  {
+    "part": "part1",
+    "slide": 15,
+    "asset": "assets/part1/slide-15/img-01.jpeg",
+    "source_media": "ppt/media/Slide-15-image-1.jpeg"
+  },
+  {
+    "part": "part1",
+    "slide": 15,
+    "asset": "assets/part1/slide-15/img-02.jpg",
+    "source_media": "ppt/media/image-15-2.jpg"
+  },
+  {
+    "part": "part1",
+    "slide": 16,
+    "asset": "assets/part1/slide-16/img-01.jpeg",
+    "source_media": "ppt/media/Slide-16-image-1.jpeg"
+  },
+  {
+    "part": "part1",
+    "slide": 17,
+    "asset": "assets/part1/slide-17/img-01.jpeg",
+    "source_media": "ppt/media/Slide-17-image-1.jpeg"
+  },
+  {
+    "part": "part1",
+    "slide": 17,
+    "asset": "assets/part1/slide-17/img-02.jpg",
+    "source_media": "ppt/media/image-17-2.jpg"
+  },
+  {
+    "part": "part1",
+    "slide": 18,
+    "asset": "assets/part1/slide-18/img-01.jpeg",
+    "source_media": "ppt/media/Slide-18-image-1.jpeg"
+  },
+  {
+    "part": "part1",
+    "slide": 19,
+    "asset": "assets/part1/slide-19/img-01.jpeg",
+    "source_media": "ppt/media/Slide-19-image-1.jpeg"
+  },
+  {
+    "part": "part1",
+    "slide": 19,
+    "asset": "assets/part1/slide-19/img-02.png",
+    "source_media": "ppt/media/image-19-2.png"
+  },
+  {
+    "part": "part1",
+    "slide": 20,
+    "asset": "assets/part1/slide-20/img-01.jpeg",
+    "source_media": "ppt/media/Slide-20-image-1.jpeg"
+  },
+  {
+    "part": "part1",
+    "slide": 20,
+    "asset": "assets/part1/slide-20/img-02.png",
+    "source_media": "ppt/media/image-20-2.png"
+  },
+  {
+    "part": "part1",
+    "slide": 21,
+    "asset": "assets/part1/slide-21/img-01.jpeg",
+    "source_media": "ppt/media/Slide-21-image-1.jpeg"
+  },
+  {
+    "part": "part1",
+    "slide": 21,
+    "asset": "assets/part1/slide-21/img-02.jpg",
+    "source_media": "ppt/media/image-21-2.jpg"
+  },
+  {
+    "part": "part1",
+    "slide": 21,
+    "asset": "assets/part1/slide-21/img-03.jpg",
+    "source_media": "ppt/media/image-21-3.jpg"
+  },
+  {
+    "part": "part1",
+    "slide": 22,
+    "asset": "assets/part1/slide-22/img-01.jpeg",
+    "source_media": "ppt/media/Slide-22-image-1.jpeg"
+  },
+  {
+    "part": "part1",
+    "slide": 22,
+    "asset": "assets/part1/slide-22/img-02.jpg",
+    "source_media": "ppt/media/image-22-2.jpg"
+  },
+  {
+    "part": "part1",
+    "slide": 23,
+    "asset": "assets/part1/slide-23/img-01.jpeg",
+    "source_media": "ppt/media/Slide-23-image-1.jpeg"
+  },
+  {
+    "part": "part1",
+    "slide": 24,
+    "asset": "assets/part1/slide-24/img-01.jpeg",
+    "source_media": "ppt/media/Slide-24-image-1.jpeg"
+  },
+  {
+    "part": "part1",
+    "slide": 24,
+    "asset": "assets/part1/slide-24/img-02.png",
+    "source_media": "ppt/media/image-24-2.png"
+  },
+  {
+    "part": "part1",
+    "slide": 24,
+    "asset": "assets/part1/slide-24/img-03.png",
+    "source_media": "ppt/media/image-24-3.png"
+  },
+  {
+    "part": "part1",
+    "slide": 24,
+    "asset": "assets/part1/slide-24/img-04.png",
+    "source_media": "ppt/media/image-24-4.png"
+  },
+  {
+    "part": "part1",
+    "slide": 25,
+    "asset": "assets/part1/slide-25/img-01.jpeg",
+    "source_media": "ppt/media/Slide-25-image-1.jpeg"
+  },
+  {
+    "part": "part1",
+    "slide": 25,
+    "asset": "assets/part1/slide-25/img-02.png",
+    "source_media": "ppt/media/image-25-2.png"
+  },
+  {
+    "part": "part1",
+    "slide": 26,
+    "asset": "assets/part1/slide-26/img-01.jpeg",
+    "source_media": "ppt/media/Slide-26-image-1.jpeg"
+  },
+  {
+    "part": "part1",
+    "slide": 26,
+    "asset": "assets/part1/slide-26/img-02.jpg",
+    "source_media": "ppt/media/image-26-2.jpg"
+  },
+  {
+    "part": "part1",
+    "slide": 27,
+    "asset": "assets/part1/slide-27/img-01.jpeg",
+    "source_media": "ppt/media/Slide-27-image-1.jpeg"
+  },
+  {
+    "part": "part1",
+    "slide": 27,
+    "asset": "assets/part1/slide-27/img-02.png",
+    "source_media": "ppt/media/image-27-2.png"
+  },
+  {
+    "part": "part1",
+    "slide": 28,
+    "asset": "assets/part1/slide-28/img-01.jpeg",
+    "source_media": "ppt/media/Slide-28-image-1.jpeg"
+  },
+  {
+    "part": "part1",
+    "slide": 28,
+    "asset": "assets/part1/slide-28/img-02.jpg",
+    "source_media": "ppt/media/image-28-2.jpg"
+  },
+  {
+    "part": "part1",
+    "slide": 29,
+    "asset": "assets/part1/slide-29/img-01.jpeg",
+    "source_media": "ppt/media/Slide-29-image-1.jpeg"
+  },
+  {
+    "part": "part1",
+    "slide": 29,
+    "asset": "assets/part1/slide-29/img-02.jpg",
+    "source_media": "ppt/media/image-29-2.jpg"
+  },
+  {
+    "part": "part1",
+    "slide": 30,
+    "asset": "assets/part1/slide-30/img-01.jpeg",
+    "source_media": "ppt/media/Slide-30-image-1.jpeg"
+  },
+  {
+    "part": "part1",
+    "slide": 30,
+    "asset": "assets/part1/slide-30/img-02.jpg",
+    "source_media": "ppt/media/image-30-2.jpg"
+  },
+  {
+    "part": "part1",
+    "slide": 31,
+    "asset": "assets/part1/slide-31/img-01.jpeg",
+    "source_media": "ppt/media/Slide-31-image-1.jpeg"
+  },
+  {
+    "part": "part1",
+    "slide": 31,
+    "asset": "assets/part1/slide-31/img-02.png",
+    "source_media": "ppt/media/image-31-2.png"
+  },
+  {
+    "part": "part1",
+    "slide": 32,
+    "asset": "assets/part1/slide-32/img-01.jpeg",
+    "source_media": "ppt/media/Slide-32-image-1.jpeg"
+  },
+  {
+    "part": "part1",
+    "slide": 32,
+    "asset": "assets/part1/slide-32/img-02.png",
+    "source_media": "ppt/media/image-32-2.png"
+  },
+  {
+    "part": "part1",
+    "slide": 33,
+    "asset": "assets/part1/slide-33/img-01.jpeg",
+    "source_media": "ppt/media/Slide-33-image-1.jpeg"
+  },
+  {
+    "part": "part1",
+    "slide": 34,
+    "asset": "assets/part1/slide-34/img-01.jpeg",
+    "source_media": "ppt/media/Slide-34-image-1.jpeg"
+  },
+  {
+    "part": "part1",
+    "slide": 34,
+    "asset": "assets/part1/slide-34/img-02.jpg",
+    "source_media": "ppt/media/image-34-2.jpg"
+  },
+  {
+    "part": "part1",
+    "slide": 34,
+    "asset": "assets/part1/slide-34/img-03.png",
+    "source_media": "ppt/media/image-34-3.png"
+  },
+  {
+    "part": "part1",
+    "slide": 35,
+    "asset": "assets/part1/slide-35/img-01.jpeg",
+    "source_media": "ppt/media/Slide-35-image-1.jpeg"
+  },
+  {
+    "part": "part1",
+    "slide": 36,
+    "asset": "assets/part1/slide-36/img-01.jpeg",
+    "source_media": "ppt/media/Slide-36-image-1.jpeg"
+  },
+  {
+    "part": "part1",
+    "slide": 37,
+    "asset": "assets/part1/slide-37/img-01.jpeg",
+    "source_media": "ppt/media/Slide-37-image-1.jpeg"
+  },
+  {
+    "part": "part1",
+    "slide": 37,
+    "asset": "assets/part1/slide-37/img-02.png",
+    "source_media": "ppt/media/image-37-2.png"
+  },
+  {
+    "part": "part1",
+    "slide": 37,
+    "asset": "assets/part1/slide-37/img-03.jpg",
+    "source_media": "ppt/media/image-37-3.jpg"
+  },
+  {
+    "part": "part1",
+    "slide": 38,
+    "asset": "assets/part1/slide-38/img-01.jpeg",
+    "source_media": "ppt/media/Slide-38-image-1.jpeg"
+  },
+  {
+    "part": "part1",
+    "slide": 38,
+    "asset": "assets/part1/slide-38/img-02.png",
+    "source_media": "ppt/media/image-38-2.png"
+  },
+  {
+    "part": "part1",
+    "slide": 39,
+    "asset": "assets/part1/slide-39/img-01.jpeg",
+    "source_media": "ppt/media/Slide-39-image-1.jpeg"
+  },
+  {
+    "part": "part1",
+    "slide": 40,
+    "asset": "assets/part1/slide-40/img-01.jpeg",
+    "source_media": "ppt/media/Slide-40-image-1.jpeg"
+  },
+  {
+    "part": "part1",
+    "slide": 40,
+    "asset": "assets/part1/slide-40/img-02.png",
+    "source_media": "ppt/media/image-40-2.png"
+  },
+  {
+    "part": "part2",
+    "slide": 1,
+    "asset": "assets/part2/slide-01/img-01.jpeg",
+    "source_media": "ppt/media/Slide-1-image-1.jpeg"
+  },
+  {
+    "part": "part2",
+    "slide": 1,
+    "asset": "assets/part2/slide-01/img-02.jpg",
+    "source_media": "ppt/media/image-1-2.jpg"
+  },
+  {
+    "part": "part2",
+    "slide": 2,
+    "asset": "assets/part2/slide-02/img-01.jpeg",
+    "source_media": "ppt/media/Slide-2-image-1.jpeg"
+  },
+  {
+    "part": "part2",
+    "slide": 3,
+    "asset": "assets/part2/slide-03/img-01.jpeg",
+    "source_media": "ppt/media/Slide-3-image-1.jpeg"
+  },
+  {
+    "part": "part2",
+    "slide": 4,
+    "asset": "assets/part2/slide-04/img-01.jpeg",
+    "source_media": "ppt/media/Slide-4-image-1.jpeg"
+  },
+  {
+    "part": "part2",
+    "slide": 5,
+    "asset": "assets/part2/slide-05/img-01.jpeg",
+    "source_media": "ppt/media/Slide-5-image-1.jpeg"
+  },
+  {
+    "part": "part2",
+    "slide": 6,
+    "asset": "assets/part2/slide-06/img-01.jpeg",
+    "source_media": "ppt/media/Slide-6-image-1.jpeg"
+  },
+  {
+    "part": "part2",
+    "slide": 6,
+    "asset": "assets/part2/slide-06/img-02.png",
+    "source_media": "ppt/media/image-6-2.png"
+  },
+  {
+    "part": "part2",
+    "slide": 7,
+    "asset": "assets/part2/slide-07/img-01.jpeg",
+    "source_media": "ppt/media/Slide-7-image-1.jpeg"
+  },
+  {
+    "part": "part2",
+    "slide": 7,
+    "asset": "assets/part2/slide-07/img-02.png",
+    "source_media": "ppt/media/image-7-2.png"
+  },
+  {
+    "part": "part2",
+    "slide": 8,
+    "asset": "assets/part2/slide-08/img-01.jpeg",
+    "source_media": "ppt/media/Slide-8-image-1.jpeg"
+  },
+  {
+    "part": "part2",
+    "slide": 8,
+    "asset": "assets/part2/slide-08/img-02.png",
+    "source_media": "ppt/media/image-8-2.png"
+  },
+  {
+    "part": "part2",
+    "slide": 9,
+    "asset": "assets/part2/slide-09/img-01.jpeg",
+    "source_media": "ppt/media/Slide-9-image-1.jpeg"
+  },
+  {
+    "part": "part2",
+    "slide": 9,
+    "asset": "assets/part2/slide-09/img-02.png",
+    "source_media": "ppt/media/image-9-2.png"
+  },
+  {
+    "part": "part2",
+    "slide": 10,
+    "asset": "assets/part2/slide-10/img-01.jpeg",
+    "source_media": "ppt/media/Slide-10-image-1.jpeg"
+  },
+  {
+    "part": "part2",
+    "slide": 10,
+    "asset": "assets/part2/slide-10/img-02.png",
+    "source_media": "ppt/media/image-10-2.png"
+  },
+  {
+    "part": "part2",
+    "slide": 11,
+    "asset": "assets/part2/slide-11/img-01.jpeg",
+    "source_media": "ppt/media/Slide-11-image-1.jpeg"
+  },
+  {
+    "part": "part2",
+    "slide": 11,
+    "asset": "assets/part2/slide-11/img-02.jpg",
+    "source_media": "ppt/media/image-11-2.jpg"
+  },
+  {
+    "part": "part2",
+    "slide": 11,
+    "asset": "assets/part2/slide-11/img-03.png",
+    "source_media": "ppt/media/image-11-3.png"
+  },
+  {
+    "part": "part2",
+    "slide": 11,
+    "asset": "assets/part2/slide-11/img-04.png",
+    "source_media": "ppt/media/image-11-4.png"
+  },
+  {
+    "part": "part2",
+    "slide": 11,
+    "asset": "assets/part2/slide-11/img-05.png",
+    "source_media": "ppt/media/image-11-5.png"
+  },
+  {
+    "part": "part2",
+    "slide": 12,
+    "asset": "assets/part2/slide-12/img-01.jpeg",
+    "source_media": "ppt/media/Slide-12-image-1.jpeg"
+  },
+  {
+    "part": "part2",
+    "slide": 12,
+    "asset": "assets/part2/slide-12/img-02.jpg",
+    "source_media": "ppt/media/image-12-2.jpg"
+  },
+  {
+    "part": "part2",
+    "slide": 13,
+    "asset": "assets/part2/slide-13/img-01.jpeg",
+    "source_media": "ppt/media/Slide-13-image-1.jpeg"
+  },
+  {
+    "part": "part2",
+    "slide": 13,
+    "asset": "assets/part2/slide-13/img-02.png",
+    "source_media": "ppt/media/image-13-2.png"
+  },
+  {
+    "part": "part2",
+    "slide": 14,
+    "asset": "assets/part2/slide-14/img-01.jpeg",
+    "source_media": "ppt/media/Slide-14-image-1.jpeg"
+  },
+  {
+    "part": "part2",
+    "slide": 14,
+    "asset": "assets/part2/slide-14/img-02.jpg",
+    "source_media": "ppt/media/image-14-2.jpg"
+  },
+  {
+    "part": "part2",
+    "slide": 15,
+    "asset": "assets/part2/slide-15/img-01.jpeg",
+    "source_media": "ppt/media/Slide-15-image-1.jpeg"
+  },
+  {
+    "part": "part2",
+    "slide": 15,
+    "asset": "assets/part2/slide-15/img-02.jpg",
+    "source_media": "ppt/media/image-15-2.jpg"
+  },
+  {
+    "part": "part2",
+    "slide": 15,
+    "asset": "assets/part2/slide-15/img-03.png",
+    "source_media": "ppt/media/image-15-3.png"
+  },
+  {
+    "part": "part2",
+    "slide": 16,
+    "asset": "assets/part2/slide-16/img-01.jpeg",
+    "source_media": "ppt/media/Slide-16-image-1.jpeg"
+  },
+  {
+    "part": "part2",
+    "slide": 16,
+    "asset": "assets/part2/slide-16/img-02.png",
+    "source_media": "ppt/media/image-16-2.png"
+  },
+  {
+    "part": "part2",
+    "slide": 17,
+    "asset": "assets/part2/slide-17/img-01.jpeg",
+    "source_media": "ppt/media/Slide-17-image-1.jpeg"
+  },
+  {
+    "part": "part2",
+    "slide": 18,
+    "asset": "assets/part2/slide-18/img-01.jpeg",
+    "source_media": "ppt/media/Slide-18-image-1.jpeg"
+  },
+  {
+    "part": "part2",
+    "slide": 18,
+    "asset": "assets/part2/slide-18/img-02.png",
+    "source_media": "ppt/media/image-18-2.png"
+  },
+  {
+    "part": "part2",
+    "slide": 18,
+    "asset": "assets/part2/slide-18/img-03.png",
+    "source_media": "ppt/media/image-18-3.png"
+  },
+  {
+    "part": "part2",
+    "slide": 18,
+    "asset": "assets/part2/slide-18/img-04.png",
+    "source_media": "ppt/media/image-18-4.png"
+  },
+  {
+    "part": "part2",
+    "slide": 18,
+    "asset": "assets/part2/slide-18/img-05.png",
+    "source_media": "ppt/media/image-18-5.png"
+  },
+  {
+    "part": "part2",
+    "slide": 19,
+    "asset": "assets/part2/slide-19/img-01.jpeg",
+    "source_media": "ppt/media/Slide-19-image-1.jpeg"
+  },
+  {
+    "part": "part2",
+    "slide": 19,
+    "asset": "assets/part2/slide-19/img-02.jpg",
+    "source_media": "ppt/media/image-19-2.jpg"
+  },
+  {
+    "part": "part2",
+    "slide": 20,
+    "asset": "assets/part2/slide-20/img-01.jpeg",
+    "source_media": "ppt/media/Slide-20-image-1.jpeg"
+  },
+  {
+    "part": "part2",
+    "slide": 21,
+    "asset": "assets/part2/slide-21/img-01.jpeg",
+    "source_media": "ppt/media/Slide-21-image-1.jpeg"
+  },
+  {
+    "part": "part2",
+    "slide": 22,
+    "asset": "assets/part2/slide-22/img-01.jpeg",
+    "source_media": "ppt/media/Slide-22-image-1.jpeg"
+  },
+  {
+    "part": "part2",
+    "slide": 23,
+    "asset": "assets/part2/slide-23/img-01.jpeg",
+    "source_media": "ppt/media/Slide-23-image-1.jpeg"
+  },
+  {
+    "part": "part2",
+    "slide": 23,
+    "asset": "assets/part2/slide-23/img-02.png",
+    "source_media": "ppt/media/image-23-2.png"
+  },
+  {
+    "part": "part2",
+    "slide": 23,
+    "asset": "assets/part2/slide-23/img-03.png",
+    "source_media": "ppt/media/image-23-3.png"
+  },
+  {
+    "part": "part2",
+    "slide": 23,
+    "asset": "assets/part2/slide-23/img-04.png",
+    "source_media": "ppt/media/image-23-4.png"
+  },
+  {
+    "part": "part2",
+    "slide": 24,
+    "asset": "assets/part2/slide-24/img-01.jpeg",
+    "source_media": "ppt/media/Slide-24-image-1.jpeg"
+  },
+  {
+    "part": "part2",
+    "slide": 24,
+    "asset": "assets/part2/slide-24/img-02.jpg",
+    "source_media": "ppt/media/image-24-2.jpg"
+  },
+  {
+    "part": "part2",
+    "slide": 25,
+    "asset": "assets/part2/slide-25/img-01.jpeg",
+    "source_media": "ppt/media/Slide-25-image-1.jpeg"
+  },
+  {
+    "part": "part2",
+    "slide": 25,
+    "asset": "assets/part2/slide-25/img-02.jpg",
+    "source_media": "ppt/media/image-25-2.jpg"
+  },
+  {
+    "part": "part2",
+    "slide": 26,
+    "asset": "assets/part2/slide-26/img-01.jpeg",
+    "source_media": "ppt/media/Slide-26-image-1.jpeg"
+  },
+  {
+    "part": "part2",
+    "slide": 26,
+    "asset": "assets/part2/slide-26/img-02.png",
+    "source_media": "ppt/media/image-26-2.png"
+  },
+  {
+    "part": "part2",
+    "slide": 27,
+    "asset": "assets/part2/slide-27/img-01.jpeg",
+    "source_media": "ppt/media/Slide-27-image-1.jpeg"
+  },
+  {
+    "part": "part2",
+    "slide": 27,
+    "asset": "assets/part2/slide-27/img-02.png",
+    "source_media": "ppt/media/image-27-2.png"
+  },
+  {
+    "part": "part2",
+    "slide": 28,
+    "asset": "assets/part2/slide-28/img-01.jpeg",
+    "source_media": "ppt/media/Slide-28-image-1.jpeg"
+  },
+  {
+    "part": "part2",
+    "slide": 29,
+    "asset": "assets/part2/slide-29/img-01.jpeg",
+    "source_media": "ppt/media/Slide-29-image-1.jpeg"
+  },
+  {
+    "part": "part2",
+    "slide": 30,
+    "asset": "assets/part2/slide-30/img-01.jpeg",
+    "source_media": "ppt/media/Slide-30-image-1.jpeg"
+  },
+  {
+    "part": "part2",
+    "slide": 30,
+    "asset": "assets/part2/slide-30/img-02.png",
+    "source_media": "ppt/media/image-30-2.png"
+  },
+  {
+    "part": "part2",
+    "slide": 31,
+    "asset": "assets/part2/slide-31/img-01.jpeg",
+    "source_media": "ppt/media/Slide-31-image-1.jpeg"
+  },
+  {
+    "part": "part2",
+    "slide": 31,
+    "asset": "assets/part2/slide-31/img-02.jpg",
+    "source_media": "ppt/media/image-31-2.jpg"
+  },
+  {
+    "part": "part2",
+    "slide": 32,
+    "asset": "assets/part2/slide-32/img-01.jpeg",
+    "source_media": "ppt/media/Slide-32-image-1.jpeg"
+  },
+  {
+    "part": "part2",
+    "slide": 32,
+    "asset": "assets/part2/slide-32/img-02.png",
+    "source_media": "ppt/media/image-32-2.png"
+  },
+  {
+    "part": "part2",
+    "slide": 33,
+    "asset": "assets/part2/slide-33/img-01.jpeg",
+    "source_media": "ppt/media/Slide-33-image-1.jpeg"
+  },
+  {
+    "part": "part2",
+    "slide": 33,
+    "asset": "assets/part2/slide-33/img-02.png",
+    "source_media": "ppt/media/image-33-2.png"
+  },
+  {
+    "part": "part2",
+    "slide": 34,
+    "asset": "assets/part2/slide-34/img-01.jpeg",
+    "source_media": "ppt/media/Slide-34-image-1.jpeg"
+  },
+  {
+    "part": "part2",
+    "slide": 34,
+    "asset": "assets/part2/slide-34/img-02.jpg",
+    "source_media": "ppt/media/image-34-2.jpg"
+  },
+  {
+    "part": "part2",
+    "slide": 34,
+    "asset": "assets/part2/slide-34/img-03.jpg",
+    "source_media": "ppt/media/image-34-3.jpg"
+  },
+  {
+    "part": "part2",
+    "slide": 35,
+    "asset": "assets/part2/slide-35/img-01.jpeg",
+    "source_media": "ppt/media/Slide-35-image-1.jpeg"
+  },
+  {
+    "part": "part2",
+    "slide": 35,
+    "asset": "assets/part2/slide-35/img-02.png",
+    "source_media": "ppt/media/image-35-2.png"
+  },
+  {
+    "part": "part2",
+    "slide": 36,
+    "asset": "assets/part2/slide-36/img-01.jpeg",
+    "source_media": "ppt/media/Slide-36-image-1.jpeg"
+  },
+  {
+    "part": "part2",
+    "slide": 37,
+    "asset": "assets/part2/slide-37/img-01.jpeg",
+    "source_media": "ppt/media/Slide-37-image-1.jpeg"
+  },
+  {
+    "part": "part2",
+    "slide": 38,
+    "asset": "assets/part2/slide-38/img-01.jpeg",
+    "source_media": "ppt/media/Slide-38-image-1.jpeg"
+  },
+  {
+    "part": "part2",
+    "slide": 38,
+    "asset": "assets/part2/slide-38/img-02.png",
+    "source_media": "ppt/media/image-38-2.png"
+  },
+  {
+    "part": "part2",
+    "slide": 39,
+    "asset": "assets/part2/slide-39/img-01.jpeg",
+    "source_media": "ppt/media/Slide-39-image-1.jpeg"
+  },
+  {
+    "part": "part2",
+    "slide": 39,
+    "asset": "assets/part2/slide-39/img-02.jpg",
+    "source_media": "ppt/media/image-39-2.jpg"
+  },
+  {
+    "part": "part2",
+    "slide": 39,
+    "asset": "assets/part2/slide-39/img-03.jpg",
+    "source_media": "ppt/media/image-39-3.jpg"
+  },
+  {
+    "part": "part2",
+    "slide": 39,
+    "asset": "assets/part2/slide-39/img-04.jpg",
+    "source_media": "ppt/media/image-39-4.jpg"
+  },
+  {
+    "part": "part2",
+    "slide": 39,
+    "asset": "assets/part2/slide-39/img-05.png",
+    "source_media": "ppt/media/image-39-5.png"
+  },
+  {
+    "part": "part2",
+    "slide": 40,
+    "asset": "assets/part2/slide-40/img-01.jpeg",
+    "source_media": "ppt/media/Slide-40-image-1.jpeg"
+  },
+  {
+    "part": "part2",
+    "slide": 40,
+    "asset": "assets/part2/slide-40/img-02.jpg",
+    "source_media": "ppt/media/image-40-2.jpg"
+  },
+  {
+    "part": "part2",
+    "slide": 41,
+    "asset": "assets/part2/slide-41/img-01.jpeg",
+    "source_media": "ppt/media/Slide-41-image-1.jpeg"
+  },
+  {
+    "part": "part2",
+    "slide": 42,
+    "asset": "assets/part2/slide-42/img-01.jpeg",
+    "source_media": "ppt/media/Slide-42-image-1.jpeg"
+  },
+  {
+    "part": "part2",
+    "slide": 43,
+    "asset": "assets/part2/slide-43/img-01.jpeg",
+    "source_media": "ppt/media/Slide-43-image-1.jpeg"
+  },
+  {
+    "part": "part2",
+    "slide": 43,
+    "asset": "assets/part2/slide-43/img-02.jpg",
+    "source_media": "ppt/media/image-43-2.jpg"
+  },
+  {
+    "part": "part2",
+    "slide": 43,
+    "asset": "assets/part2/slide-43/img-03.jpg",
+    "source_media": "ppt/media/image-43-3.jpg"
+  },
+  {
+    "part": "part2",
+    "slide": 44,
+    "asset": "assets/part2/slide-44/img-01.jpeg",
+    "source_media": "ppt/media/Slide-44-image-1.jpeg"
+  },
+  {
+    "part": "part2",
+    "slide": 44,
+    "asset": "assets/part2/slide-44/img-02.png",
+    "source_media": "ppt/media/image-44-2.png"
+  },
+  {
+    "part": "part2",
+    "slide": 45,
+    "asset": "assets/part2/slide-45/img-01.jpeg",
+    "source_media": "ppt/media/Slide-45-image-1.jpeg"
+  },
+  {
+    "part": "part2",
+    "slide": 45,
+    "asset": "assets/part2/slide-45/img-02.png",
+    "source_media": "ppt/media/image-45-2.png"
+  },
+  {
+    "part": "part2",
+    "slide": 46,
+    "asset": "assets/part2/slide-46/img-01.jpeg",
+    "source_media": "ppt/media/Slide-46-image-1.jpeg"
+  },
+  {
+    "part": "part2",
+    "slide": 47,
+    "asset": "assets/part2/slide-47/img-01.jpeg",
+    "source_media": "ppt/media/Slide-47-image-1.jpeg"
+  }
+]

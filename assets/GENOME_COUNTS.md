@@ -1,0 +1,14 @@
+# Protein-coding gene-count data and sources
+
+The counts below are annotation-specific snapshots, not immutable species-wide constants. Different databases and releases can report different totals. The chart should display the release/assembly note and show unavailable counts as “not reported”, never estimate them from genome size.
+
+- *Saccharomyces cerevisiae*: **6,021** protein-coding genes in NCBI RefSeq annotation for the S288C R64 reference assembly (GCF_000146045.2; annotation SGD R64-5-1). The same record lists 6,002 in the GenBank annotation. [NCBI assembly record](https://www.ncbi.nlm.nih.gov/assembly/285498). The SGD release note identifies R64.5.1 dated 2024-05-29: [SGD annotation update](https://www.yeastgenome.org/blog/reference-genome-annotation-update-r64-5).
+- *Arabidopsis thaliana*: **27,549** protein-coding genes in the June 24, 2025 TAIR GenBank annotation on TAIR10.1. The corresponding RefSeq annotation reports 27,562. [NCBI assembly record](https://www.ncbi.nlm.nih.gov/assembly/1733481).
+- *Drosophila melanogaster*: **13,986** protein-coding genes in FlyBase Annotation Release 6.69 (R6.69), release FB2026_03, released September 17, 2026. [FlyBase release notes](https://flybase.org/docs/releasenotes.tx).
+- *Homo sapiens*: **19,890** protein-coding genes in NCBI RefSeq annotation GCF_000001405.40-RS_2025_08 on GRCh38.p14 primary assembly. This is the annotation-specific count reported by NCBI, rather than the approximate ~20,000 in the teaching slide. [NCBI annotation report](https://www.ncbi.nlm.nih.gov/genome/annotation_euk/Homo_sapiens/GCF_000001405.40-RS_2025_08.html).
+- *Paris japonica*: no supported protein-coding gene count is supplied. The organism-specific NCBI Assembly query returned zero assembly records, which does not prove that no sequence data exist elsewhere. The chart should show “not reported”. [NCBI Assembly search](https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=assembly&term=Paris%20japonica%5BOrganism%5D&retmode=json).
+- *Amoeba proteus*: no complete reference genome or reliable annotated protein-coding count is available in the cited study; it states the whole genome has not yet been fully sequenced. The transcriptomic genes it uses to estimate genome size are not an annotated total gene count. [Re-evaluating evidence for giant genomes in amoebae](https://www.scielo.br/j/gmb/a/5sf9WjcqkZGwygYZD6RbJ4K/?lang=en).
+
+## Interpretation
+
+Genome sizes are the user-provided lesson values. Gene counts shown for four organisms come from the reference annotations above. The other two remain unavailable. The comparison is designed to illustrate that genome size, annotation gene count, and organism organisation are different measurements; it does not imply that one of them defines overall biological complexity.

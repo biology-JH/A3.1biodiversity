@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0f3d33">
+  <meta name="description" content="Explore IB Biology A3.1 through interactive species concepts, genomics, chromosome evidence, identification keys and environmental DNA labs.">
+  <title>BioAtlas | IB Biology A3.1</title>
+  <link rel="icon" type="image/png" href="/assets/bioatlas-dna-mark.png">
+  <script>tailwind = { config: { theme: { extend: { colors: { canopy: '#0f3d33', fern: '#17856c', mist: '#eef5f1', slateink: '#26353a' } } } };</script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/src/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to learning modules</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#top" aria-label="BioAtlas home">
+        <img src="/assets/bioatlas-dna-mark.png" alt="" class="brand-mark">
+        <span class="brand-copy"><strong>BioAtlas</strong><small>IB Biology · A3.1</small></span>
+      </a>
+      <div class="header-progress" aria-live="polite">
+        <span class="eyebrow">EXAM CHECK</span>
+        <strong id="score-live">0 / 6</strong>
+        <span id="quiz-progress-label">questions correct</span>
+      </div>
+      <button id="theme-toggle" class="theme-toggle" type="button" aria-pressed="false" aria-label="Toggle dark colour theme"><span class="theme-icon">◐</span><span class="theme-label">Theme</span></button>
+    </div>
+    <nav class="module-nav" aria-label="Learning modules">
+      <a href="#module-1"><span>01</span> Species & names</a>
+      <a href="#module-2"><span>02</span> SNP chromatogram</a>
+      <a href="#module-3"><span>03</span> Chromosome 2</a>
+      <a href="#module-4"><span>04</span> Genome lab</a>
+      <a href="#module-5"><span>05</span> Species keys</a>
+      <a href="#module-6"><span>06</span> eDNA lab</a>
+      <a href="#module-7"><span>07</span> Exam check</a>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="hero-text">
+        <div class="eyebrow light-eyebrow"><span class="pulse-dot"></span> FIELD NOTES · GENOMICS · CLASSIFICATION</div>
+        <h1 id="hero-title">Know the evidence.<br><em>Name the life.</em></h1>
+        <p class="hero-lede">A hands-on field guide to species boundaries, genomes and biodiversity identification.</p>
+        <div class="hero-actions">
+          <a class="button button-light" href="#module-1">Start exploring <span aria-hidden="true">↘</span></a>
+          <span class="hero-meta">Built from your two A3.1 lessons · 7 interactive modules</span>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+        <div class="hero-chip chip-top"><span>2n = 46</span><small>human cells</small></div>
+        <div class="hero-chip chip-bottom"><span>ATCG</span><small>genome signals</small></div>
+        <div class="hero-core"><span class="core-label">A3.1</span><span class="core-glyph">✣</span><span class="core-caption">DIVERSITY<br>OF LIFE</span></div>
+      </div>
+      <div class="hero-footer"><span>LEARN BY TESTING THE EVIDENCE</span><span>SCROLL TO EXPLORE <b>↓</b></span></div>
+    </section>
+
+    <div class="page-shell">
+      <aside class="study-rail" aria-label="Study guide">
+        <div class="rail-card">
+          <span class="rail-kicker">A3.1 FIELD GUIDE</span>
+          <p>Seven stops from variation to environmental DNA.</p>
+          <div class="rail-progress"><span id="module-progress-fill"></span></div>
+          <small id="module-progress-label">0 of 7 modules explored</small>
+          <a href="#module-7" class="rail-link">Jump to exam check <span>↗</span></a>
+        </div>
+        <div class="rail-note"><span class="note-icon">✳</span><span>Use the image clues. Then explain what they can—and cannot—prove.</span></div>
+      </aside>
+
+      <div class="content-column">
+        <section class="intro-strip" aria-label="Core question">
+          <div class="intro-mark">A3</div>
+          <div><span class="eyebrow">THE BIG QUESTION</span><h2>How do we decide what counts as a species?</h2></div>
+          <p>Compare anatomy, reproductive boundaries and molecular evidence. Each tool reveals something different.</p>
+        </section>
+
+        <section class="module-section" id="module-1" aria-labelledby="m1-title">
+          <div class="section-heading">
+            <div class="section-number">01</div><div class="section-title"><span class="eyebrow">A3.1.1–3 · A3.1.8–9</span><h2 id="m1-title">Species, variation & names</h2><p>Flip a concept, then practise the universal two-part naming system.</p></div>
+          </div>
+          <div id="flashcards" class="flashcard-grid"></div>
+          <article class="learning-card nomenclature-card">
+            <div class="card-heading-row"><div><span class="eyebrow">BINOMIAL TRAINER</span><h3>One genus. One specific epithet.</h3></div><span class="pill">Try it</span></div>
+            <p class="body-copy">Complete the naming rule, then inspect members of <em>Panthera</em>. Typed names use italics; handwritten names are underlined.</p>
+            <div class="nomenclature-rule" id="nomenclature-form"></div>
+            <div id="nomenclature-feedback" class="feedback" aria-live="polite"></div>
+            <div id="panthera-gallery" class="panthera-gallery"></div>
+            <p class="micro-note">Slide images: lion and jaguar. The tiger image is a credited supplemental reference because it was not embedded in the supplied slides.</p>
+          </article>
+        </section>
+
+        <section class="module-section" id="module-2" aria-labelledby="m2-title">
+          <div class="section-heading">
+            <div class="section-number">02</div><div class="section-title"><span class="eyebrow">A3.1.8 · BASE-BY-BASE</span><h2 id="m2-title">Read the chromatogram</h2><p>Two overlapping peaks can reveal two alleles at the same DNA position.</p></div>
+          </div>
+          <article class="learning-card split-card chromatogram-card">
+            <div class="chrom-copy">
+              <span class="eyebrow">SANGER SEQUENCING · SOURCE: PART 2, SLIDE 1</span>
+              <h3>Find the double peaks</h3>
+              <p class="body-copy">Tap either marker. At positions 140 and 246, two fluorescence signals overlap, consistent with heterozygous base calls in the sample.</p>
+              <div id="chrom-feedback" class="evidence-callout" aria-live="polite"><span class="callout-icon">⌖</span><span>Select a hotspot on the chromatogram to inspect the base call.</span></div>
+              <div class="base-key"><span><i class="base-a"></i>A</span><span><i class="base-c"></i>C</span><span><i class="base-g"></i>G</span><span><i class="base-t"></i>T</span></div>
+            </div>
+            <figure class="chromatogram-figure">
+              <div class="image-stage chromatogram-stage">
+                <img id="chromatogram-image" alt="Sanger sequencing chromatogram with G/A and T/C double peaks">
+                <button type="button" class="hotspot hotspot-one" data-snp="140" aria-label="Inspect G slash A double peak at position 140"><span>140</span></button>
+                <button type="button" class="hotspot hotspot-two" data-snp="246" aria-label="Inspect T slash C double peak at position 246"><span>246</span></button>
+              </div>
+              <figcaption>Original chromatogram image extracted from Part 2, slide 1.</figcaption>
+            </figure>
+          </article>
+        </section>
+
+        <section class="module-section" id="module-3" aria-labelledby="m3-title">
+          <div class="section-heading">
+            <div class="section-number">03</div><div class="section-title"><span class="eyebrow">A3.1.6–7 · A3.1.13</span><h2 id="m3-title">A chromosome-fusion case file</h2><p>Humans have 46 chromosomes; other great apes have 48. Test the fusion hypothesis against the evidence.</p></div>
+          </div>
+          <div class="fusion-grid">
+            <article class="learning-card figure-card">
+              <div class="card-heading-row"><div><span class="eyebrow">KARYOGRAMS</span><h3>Count is a clue, not a complete test</h3></div><span class="pill">46 vs 48</span></div>
+              <img id="karyogram-image" class="wide-figure" alt="Human and chimpanzee karyograms aligned for comparison">
+              <p class="figure-caption">Karyograms are paired using chromosome length, centromere position and banding pattern.</p>
+            </article>
+            <article class="learning-card figure-card fusion-card">
+              <div class="card-heading-row"><div><span class="eyebrow">FUSION HYPOTHESIS</span><h3>Two ancestral chromosomes → human chromosome 2</h3></div><span class="pill">Tap markers</span></div>
+              <div class="fusion-stage image-stage">
+                <img id="fusion-image" class="wide-figure" alt="Diagram of ancestral chromosomes 2A and 2B joining into human chromosome 2">
+                <button type="button" class="fusion-pin pin-band" data-evidence="band" aria-label="Inspect G-banding homology">1</button>
+                <button type="button" class="fusion-pin pin-telomere" data-evidence="telomere" aria-label="Inspect internal telomeric repeats at 2q13">2</button>
+                <button type="button" class="fusion-pin pin-centromere" data-evidence="centromere" aria-label="Inspect vestigial centromere at 2q21">3</button>
+              </div>
+              <div id="fusion-feedback" class="evidence-callout compact-callout" aria-live="polite">Choose a marker to see how that observation tests the hypothesis.</div>
+            </article>
+          </div>
+          <div class="evidence-row" id="fusion-evidence-list"></div>
+          <article class="learning-card mule-card">
+            <div class="mule-toggle-row"><div><span class="eyebrow">HYBRID STERILITY · EXTRA COMPARISON</span><h3>Why is a mule usually sterile?</h3></div><button type="button" id="mule-toggle" class="button button-outline" aria-expanded="false">Open comparison <span>＋</span></button></div>
+            <div id="mule-content" class="mule-content" hidden></div>
+          </article>
+        </section>
+
+        <section class="module-section" id="module-4" aria-labelledby="m4-title">
+          <div class="section-heading">
+            <div class="section-number">04</div><div class="section-title"><span class="eyebrow">A3.1.9–10 · DATA LAB</span><h2 id="m4-title">How much DNA is enough?</h2><p>Sort six eukaryote examples and test whether genome size follows gene number or organism organisation.</p></div>
+          </div>
+          <article class="learning-card genome-card">
+            <div class="chart-toolbar"><div><span class="eyebrow">GENOME COMPARISON</span><h3>Genome size can vary by orders of magnitude</h3></div><label class="select-label">Sort by <select id="genome-sort"><option value="genome">Genome size (Mbp)</option><option value="genes">Protein-coding gene count</option><option value="complexity">Organism organisation</option></select></label></div>
+            <div id="genome-chart" class="genome-chart" role="list" aria-label="Interactive genome comparison chart"></div>
+            <div class="chart-note-grid"><div id="gene-note" class="chart-note"><strong>Gene-count view</strong><span>Gene counts depend on genome annotation and release. Missing values are shown as unavailable, not estimated.</span></div><div id="complexity-note" class="chart-note"><strong>Complexity view</strong><span>Organisation is a qualitative teaching grouping, not a universal numerical measure of biological complexity.</span></div></div>
+            <figure class="source-chart-figure"><img id="source-genome-chart" alt="Original genome-size comparison figure from the lesson slides"><figcaption>Slide figure: *Paris japonica* is shown with a genome far larger than the human genome.</figcaption></figure>
+          </article>
+          <div class="repeat-grid" id="repeat-grid"></div>
+        </section>
+
+        <section class="module-section" id="module-5" aria-labelledby="m5-title">
+          <div class="section-heading">
+            <div class="section-number">05</div><div class="section-title"><span class="eyebrow">A3.1.14 · FIELD IDENTIFICATION</span><h2 id="m5-title">Build a dichotomous key</h2><p>Follow paired, observable choices. Avoid vague clues such as “large” or “small.”</p></div>
+          </div>
+          <article class="learning-card key-lab">
+            <div class="key-toolbar"><div class="mode-switch" role="group" aria-label="Choose identification key mode"><button class="mode-button is-active" type="button" data-fauna-mode="amphibians" aria-pressed="true">A · Hong Kong frogs</button><button class="mode-button" type="button" data-fauna-mode="birds" aria-pressed="false">B · Common birds</button></div><button id="new-specimen" type="button" class="button button-outline">New specimen <span>↻</span></button></div>
+            <div class="key-layout">
+              <div id="fauna-specimen" class="specimen-card"></div>
+              <div class="key-path-panel"><span class="eyebrow">COUPLET PATH</span><div id="fauna-couplet" class="couplet-box"></div><div id="fauna-feedback" class="feedback" aria-live="polite"></div><div id="fauna-result" class="key-result" aria-live="polite"></div></div>
+            </div>
+            <div class="field-note"><strong>Field note</strong><span>Use photos and observations only. Do not handle or disturb wildlife. Supplemental bird images are species references, not records from Hong Kong.</span></div>
+          </article>
+        </section>
+
+        <section class="module-section" id="module-6" aria-labelledby="m6-title">
+          <div class="section-heading">
+            <div class="section-number">06</div><div class="section-title"><span class="eyebrow">A3.1.15 · PEARL RIVER ESTUARY</span><h2 id="m6-title">Follow the eDNA trail</h2><p>From a water sample to a species match—without chasing a dolphin at sea.</p></div>
+          </div>
+          <article class="learning-card edna-lab">
+            <div class="stepper" id="edna-steps" role="tablist" aria-label="Environmental DNA workflow"></div>
+            <div class="edna-active-step" id="edna-active-step" aria-live="polite"></div>
+            <div class="edna-visual-strip" id="edna-visual-strip"></div>
+            <div class="dolphin-case"><div><span class="eyebrow">FIELD APPLICATION</span><h3>Listen for traces, not splashes</h3><p>Water samples from Hong Kong's western waters can reveal DNA from the Indo-Pacific humpback dolphin (*Sousa chinensis*) and help profile the fish community in its habitat.</p></div><img id="dolphin-image" alt="Slide illustration of Indo-Pacific humpback dolphins"></div>
+          </article>
+        </section>
+
+        <section class="module-section" id="module-7" aria-labelledby="m7-title">
+          <div class="section-heading">
+            <div class="section-number">07</div><div class="section-title"><span class="eyebrow">IB PRACTICE · 6 CHECKPOINTS</span><h2 id="m7-title">Exam check</h2><p>Mix species concepts, genome data and classification methods. Explanations appear after each check.</p></div>
+          </div>
+          <article class="learning-card quiz-card">
+            <div class="quiz-topline"><div><span class="eyebrow">YOUR LIVE SCORE</span><h3><span id="quiz-score-inline">0</span> / 6 correct</h3></div><div class="quiz-meter"><span id="quiz-meter-fill"></span></div><span id="quiz-answered">0 / 6 answered</span></div>
+            <div id="quiz-container" class="quiz-list"></div>
+            <div class="quiz-end-row"><p>Questions are adapted from the multiple-choice, true/false, ordering and matching checks in both lesson decks.</p><button id="finish-quiz" class="button button-primary" type="button">See summary <span>→</span></button></div>
+            <div id="quiz-summary" class="quiz-summary" hidden aria-live="polite"></div>
+          </article>
+        </section>
+
+        <footer class="site-footer">
+          <div class="footer-brand"><img src="/assets/bioatlas-dna-mark.png" alt=""><span>BioAtlas <small>IB Biology A3.1</small></span></div>
+          <p>Study from the evidence. The slide-mapped source files remain in the project’s <code>assets/</code> folder.</p>
+          <a href="/assets/SOURCES.md">Image sources & attributions <span>↗</span></a>
+        </footer>
+      </div>
+    </div>
+  </main>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
