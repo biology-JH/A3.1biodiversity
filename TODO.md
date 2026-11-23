@@ -25,3 +25,14 @@
 - [x] **Exam-ready notes and assessment** — Place comprehensive, source-linked notes for every point A3.1.1–A3.1.15 within the seven interactive modules. Expand the self-grading quiz to test the required SL and HL definitions, examples, comparisons and mechanisms using multiple-choice, true/false, ordering and matching, with immediate explanations, live score and summary.
 
 - [x] **Readability, diagrams and deployment** — Use 24-pixel primary instructional text; keep metadata/captions visually subordinate. Enlarge the original chromatogram, karyograms, chromosome-fusion evidence, genome chart, biodiversity photographs and eDNA workflow without cropping information. Preserve responsive mobile and desktop layout, keyboard-accessible controls and dark mode. Build, checkpoint and republish the public site, then verify the live URL.
+
+
+## User-provided study-guide update
+
+- [x] **Integrate all supplied pictures** — Use every picture embedded in the attached study guide; seamlessly place each picture in its matching biology section; replace or remove unnecessary existing pictures; provide accurate alt text and captions; preserve image proportions and do not crop meaningful content.
+
+- [x] **Enrich the blog with the attached text** — Use the study guide’s content to expand the existing blog post; present the shared SL core before additional HL content; include its Traditional Chinese translations for key terms; retain relevant scientific qualifications and avoid needless duplication.
+
+- [x] **Apply the 20px minimum and improve hierarchy** — Set the minimum text size to 20px across the blog, including metadata, captions, labels, controls, diagrams and mobile layouts; increase heading and body sizes as needed for clear visual hierarchy and readability.
+
+- [ ] **Deliver the updated site** — Build and update the existing GitHub repository through its authorized route, then verify the Vercel public alias after deployment; report deployment-access blockers transparently.

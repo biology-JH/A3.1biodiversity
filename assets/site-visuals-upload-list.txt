@@ -24,7 +24,7 @@ assets/part2/slide-39/img-03.jpg
 assets/part2/slide-39/img-04.jpg
 assets/part2/slide-39/img-05.png
 assets/part2/slide-40/img-02.jpg
-assets/supplemental/oriental-magpie-robin.jpg
-assets/supplemental/eurasian-tree-sparrow.jpg
-assets/supplemental/spotted-dove.jpg
-assets/supplemental/red-whiskered-bulbul.jpg
+assets/manus-storage/oriental-magpie-robin_26b479ab.jpg
+assets/manus-storage/eurasian-tree-sparrow_807ed83c.jpg
+assets/manus-storage/spotted-dove_997501d3.jpg
+assets/manus-storage/red-whiskered-bulbul_4880ab58.jpg
