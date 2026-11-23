@@ -2,38 +2,38 @@
 
 ## Product approach
 
-Extend the existing static, single-page IB Biology A3.1 website into a comprehensive SL/HL study guide covering every syllabus point A3.1.1–A3.1.15. Preserve the seven interactive modules and their existing source-slide visuals. Add detailed, expandable lesson notes with examples, qualifications and source links instead of replacing the existing concise explanations. Keep the app client-only; quiz and activity state remain in the browser session.
+Continue the existing static, single-page IB Biology A3.1 study guide covering syllabus points A3.1.1–A3.1.15. Integrate the newly supplied 17-page Word guide’s explanatory text, Traditional Chinese term glosses and every embedded picture into the matching SL or HL module. Preserve the seven interactive modules and their existing useful lesson visuals, citations and interactions. Enrich existing lessons rather than duplicating paragraphs already covered. Prefer the supplied guide’s lion/tiger photographs for the Panthera example and remove the older redundant photo gallery/supplemental tiger reference; retain functional slide evidence and diagrams that still teach distinct material. Do not source or fabricate replacement photos.
 
-## Syllabus coverage and interactions
+## Content and visual integration
 
-1. **Species, variation and naming:** Teach continuous and discontinuous intraspecific variation, dog-breed divergence without speciation, the morphological species concept and its limits, formal binomial naming, Mayr’s biological species concept, its limits and the speciation continuum including ring species. Retain flashcards and the binomial rule trainer. Include the HL prokaryote/HGT explanation where reproductive species criteria do not transfer cleanly.
-2. **Genome unity and SNPs:** Explain conserved genes, the ≥1% population-frequency convention for a SNP, approximate human SNP spacing, coding and non-coding effects, indels, chromatogram double peaks, and mechanisms that alter genome size. Retain both clickable chromatogram hotspots.
-3. **Chromosome evidence:** Teach diploid/haploid notation, karyogram anatomy and banding, the human/chimpanzee chromosome counts, chromosome-2 fusion evidence, and the horse–donkey–mule pairing problem. Retain evidence markers and the mule toggle.
-4. **C-value and sequencing:** Preserve all six lesson genome-size values, add annotation-specific counts with release notes and citations, discuss the C-value paradox, explain sequencing-platform history from Sanger to short-read and long-read methods, and connect whole-genome sequencing to phylogenomics, outbreak investigation and precision medicine. Retain sorting controls and repeat/non-coding-DNA visuals.
-5. **Dichotomous keys:** Explain paired, mutually exclusive, objective observable traits and provide interactive frog and bird identification paths, with uncertainty for sex, age and natural variation.
-6. **Barcoding and eDNA:** Teach standard animal, plant and fungal barcode loci; extend the four-step eDNA workflow and Pearl River Estuary dolphin case; compare morphology-led identification with DNA metabarcoding and explain limitations.
-7. **Exam check:** Expand the self-marking question bank to exercise each syllabus area through multiple choice, true/false, ordering and matching, with immediate explanations and a final score summary.
+1. **Species, variation and naming:** Include the guide’s tiger, peacock, variation infographic, dog group, lion and tiger figures; give the key species-concept and variation terms Traditional Chinese glosses.
+2. **SNPs and sequencing:** Place the two nucleotide-sequence/chromatogram figures with the genome-unity explanation. Place laboratory and timeline figures in the whole-genome sequencing module.
+3. **Chromosome evidence and meiosis:** Use all karyogram, metaphase, chromosome-2 fusion, internal telomere, vestigial-centromere, summary and equid figures alongside the corresponding karyogram/fusion/mule lessons.
+4. **C-value and genomes:** Include the guide’s chart and organism photographs; retain source/release-specific gene-count explanations and distinctions between genome size, gene count and organismal complexity.
+5. **HGT and keys:** Include all prokaryote-transfer figures, phage micrograph, four frog/key visuals, plus bilingual terms for transfer pathways and dichotomous keys.
+6. **Barcoding and eDNA:** Include the dolphin, Pearl River Estuary map, barcode loci and full workflow figures; gloss eDNA and DNA barcoding.
+7. **Assessment:** Preserve existing interactive flashcards, binomial trainer, evidence markers, data sorting, identification keys, workflow stepper and self-marking quiz.
 
-## Teaching-content format
-
-Add structured syllabus-note data in `src/syllabus.js`, grouped by module and syllabus code. Render it inside each corresponding module as accessible expandable note cards. Every external scientific claim has an adjacent source link; keep the citation list in `assets/SOURCES.md` and the genome annotation details in `assets/GENOME_COUNTS.md`. Treat genome-size and gene-count snapshots as source/release-specific. Never invent counts where no annotated reference count is supported.
+Keep the supplied figures under `assets/study-guide/` with a machine-readable manifest; add a separate source-guide figure metadata module in `src/guide.js` for semantic paths, accurate alt text, captions and module placement. Render accessible, responsive galleries in the relevant modules. Preserve original proportions, show whole diagrams without cropping, and distinguish figures supplied in the guide from the lesson-slide assets already in the project.
 
 ## Design and accessibility
 
-Preserve the emerald/slate/warm-white BioAtlas visual system, botanical/sequence motifs, Tailwind CDN utilities and the hand-authored responsive CSS. Set primary instructional reading text to **24 px**, keeping labels, metadata and captions intentionally smaller. Increase the display size of chromatograms, karyograms, fusion diagrams, source charts, taxonomy photos and workflow figures. Preserve aspect ratios and avoid cropping meaningful diagram labels. On narrow viewports, allow text to wrap and stack figures rather than shrinking labels below readability. Keep high contrast, keyboard-operable controls, alt text and reduced-motion handling.
+Preserve the BioAtlas emerald/slate/warm-white visual system, botanical/sequence motifs, Tailwind CDN utilities and hand-authored responsive CSS. Enforce a **20 px minimum for every visible text element throughout the blog**, including navigation, labels, metadata, credits, captions, controls, mobile views and SVG diagrams. Keep instructional text at 24 px or larger, headings clearly larger, and metadata visually subordinate through weight, colour and spacing rather than smaller type. Give the new figure galleries a calm editorial-card treatment with generous spacing and full, uncropped image display. On narrow screens, wrap content and stack figure cards; allow horizontal scrolling only for wide diagrams where necessary. Retain high contrast, keyboard operation, alt text and reduced-motion handling.
 
 ## Project layout
 
-- `index.html`: semantic one-page shell, seven module mounts and dedicated syllabus-note mounts.
-- `src/main.js`: rendering and interaction handlers, including updated quiz scoring.
-- `src/data.js`: images, existing flashcards, genome comparison, fauna keys and question bank.
-- `src/syllabus.js`: complete source-linked notes grouped by module and syllabus point.
-- `src/styles.css`: responsive design, 24-pixel teaching type, larger diagrams and accessible states.
-- `assets/part1/` and `assets/part2/`: extracted, slide-mapped visuals; `assets/asset-manifest.json` maps each placement.
-- `assets/SOURCES.md` and `assets/GENOME_COUNTS.md`: media credits and annotation-specific gene-count provenance.
+- `index.html`: semantic one-page shell, seven module mounts and global document metadata.
+- `src/main.js`: rendering and interaction handlers, including study-note/glossary and guide-figure gallery rendering.
+- `src/data.js`: current slide visuals, flashcards, genome data, fauna keys and quiz content.
+- `src/guide.js`: the guide’s 37 image captions, alt text, module groupings and Traditional Chinese glossary entries.
+- `src/syllabus.js`: comprehensive, source-linked notes grouped by module and syllabus point.
+- `src/styles.css`: responsive BioAtlas styles with a 20 px global type floor, larger headings/body, figure cards and accessible states.
+- `assets/study-guide/`: all 37 original embedded guide images plus a semantic asset manifest.
+- `assets/part1/` and `assets/part2/`: existing slide-mapped visuals; `assets/asset-manifest.json` maps those placements.
+- `assets/SOURCES.md` and `assets/GENOME_COUNTS.md`: existing media and annotation provenance, extended to record the user-provided study-guide figures without inventing original third-party credits.
 - `public/manus-routes.json`: declared single-page route.
-- `package.json`: dependency-free static build script; Webdev publishes `dist/`.
+- `package.json`: dependency-free static build script; generated site output is `dist/`.
 
-## Build and deployment
+## Build and delivery
 
-Reuse the currently configured managed static build and port-3000 development server. Validate build output, route manifest, syntax, source-image paths, narrow/mobile layout and expanded notes. Update the same public project by fetching and integrating current `origin/main`, pushing the intended checkpoint, then publish that checkpoint and verify its public URL.
+Reuse the existing static build and the existing GitHub `main` → Vercel deployment relationship. Build the site, inspect source syntax and image references, and verify the 20 px floor in desktop/mobile rules and SVG text. Preserve the project’s current repository history and use the authorized GitHub path to update `main`; verify the public alias if deployment access is available. No new Webdev project or identifier should be created for this repository.
