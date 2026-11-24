@@ -12,15 +12,13 @@ export const STUDY_GUIDE = {
       ['Binomial nomenclature', '雙名法'],
     ],
     galleries: [{
-      title: 'Species, variation and names',
-      intro: 'Figures reproduced from the attached study guide, paired with the species and variation notes.',
+      title: 'Variation and genus-level relationships',
+      intro: 'These selected figures illustrate variation within one species and shared genus membership; appearance alone is not a species test.',
       figures: [
-        figure('tiger-forest.jpg', 'A tiger walking through dense green forest vegetation.', 'Tiger moving through a wooded habitat.'),
-        figure('peacock-display.jpg', 'A peacock displaying its iridescent train beside a peahen in grass.', 'Peacock courtship plumage illustrates visible variation within a species.'),
-        figure('variation-within-species.png', 'Infographic comparing continuous human-height variation, ABO blood groups and different domestic dog breeds.', 'Continuous and discontinuous variation, with dog-breed differences that do not by themselves demonstrate speciation.', 'diagram'),
-        figure('dog-breed-diversity.jpg', 'A group of domestic dogs with a wide range of coat colours and body forms.', 'Domestic dogs show striking phenotypic diversity within one species.'),
-        figure('lion-savanna.jpg', 'A lion walking across an open, dry grassland habitat.', 'Lion (Panthera leo), an example of the genus Panthera.'),
-        figure('tiger-profile.jpg', 'A tiger walking across a rocky surface.', 'Tiger (Panthera tigris), a second species in the genus Panthera.'),
+        figure('variation-within-species.png', 'Infographic comparing continuous human-height variation, discrete ABO blood groups and variation among domestic dog breeds.', 'Continuous and discontinuous variation occur within species; dog-breed differences do not by themselves demonstrate reproductive isolation.', 'diagram'),
+        figure('peacock-display.jpg', 'A peacock displaying its iridescent train beside a peahen in grass.', 'Peacock and peahen appearance differs through sexual dimorphism, yet both belong to one species; visible differences alone do not define species boundaries.'),
+        figure('lion-savanna.jpg', 'A lion walking across an open, dry grassland habitat.', 'The lion is <i>Panthera leo</i>. The capitalized genus name is shared with tiger and jaguar species.'),
+        figure('tiger-profile.jpg', 'A tiger walking across a rocky surface.', 'The tiger is <i>Panthera tigris</i>, a different species in the genus <i>Panthera</i>; hybrid offspring do not automatically erase species boundaries.'),
       ],
     }],
   },
@@ -32,11 +30,10 @@ export const STUDY_GUIDE = {
       ['Sanger chromatogram', '色譜圖'],
     ],
     galleries: [{
-      title: 'Reading nucleotide traces',
-      intro: 'The guide’s sequence figures complement the interactive chromatogram and its cautions about population frequency.',
+      title: 'Heterozygous base calls',
+      intro: 'One selected trace shows why overlapping peaks may indicate two alleles in a diploid sample, not a population-frequency estimate.',
       figures: [
-        figure('sanger-sequence-trace.png', 'Sanger chromatogram showing coloured nucleotide peaks and base calls along a sequence.', 'Example Sanger sequence trace: each coloured peak contributes to a base call.', 'diagram'),
-        figure('overlapping-sanger-peaks.png', 'Chromatogram with overlapping coloured peaks marked at a nucleotide position.', 'Overlapping peaks can be consistent with two alleles in one diploid sample; one trace alone does not establish population frequency.', 'diagram'),
+        figure('overlapping-sanger-peaks.png', 'Sanger chromatogram with two overlapping coloured peaks marked at one nucleotide position.', 'Overlapping peaks at one base can be consistent with a heterozygous genotype. The ≥1% SNP convention concerns population frequency and cannot be established from one chromatogram.', 'diagram'),
       ],
     }],
   },
@@ -47,30 +44,14 @@ export const STUDY_GUIDE = {
       ['Diploid', '二倍體'],
       ['Haploid', '單倍體'],
     ],
-    galleries: [
-      {
-        title: 'Karyogram preparation and chromosome 2',
-        intro: 'The guide’s chromosome figures show how pairing criteria and predicted fusion markers are evaluated.',
-        figures: [
-          figure('chromosome-2-fusion-overview.png', 'Diagram comparing two banded ancestral chromosomes with one human chromosome 2 and marking internal chromosome features.', 'Overview of the proposed ancestral chromosome fusion and the internal features tested by the hypothesis.', 'diagram'),
-          figure('karyogram-criteria.png', 'Infographic identifying chromosome arms and centromere positions and listing karyogram matching criteria.', 'Karyograms pair chromosomes by length, centromere position and banding pattern.', 'diagram'),
-          figure('metaphase-spread.png', 'Microscope image of a stained metaphase spread with condensed chromosomes.', 'A metaphase spread provides condensed chromosomes for karyogram preparation.'),
-          figure('chromosome-2-banding-homology.png', 'Banding comparison showing human chromosome 2 aligned with chimpanzee chromosomes 2A and 2B.', 'G-banding correspondence supports the predicted end-to-end relationship.', 'diagram'),
-          figure('internal-telomeric-repeats.png', 'Schematic marking inverted telomeric repeats within human chromosome 2 at 2q13.', 'Internal inverted telomeric repeats at 2q13 are a predicted fusion-site marker.', 'diagram'),
-          figure('vestigial-centromere.png', 'Human chromosome 2 diagram marking the active centromere and the inactive vestigial centromere at 2q21.', 'A vestigial centromere and alphoid satellite DNA are marked at 2q21.', 'diagram'),
-          figure('ancestral-chromosomes-2a-2b.png', 'Diagram arranging ancestral chromosomes 2A and 2B end-to-end alongside human chromosome 2.', 'Ancestral chromosomes 2A and 2B align with human chromosome 2 in the fusion model.', 'diagram'),
-          figure('chromosome-2-evidence-summary.png', 'Simplified chromosome diagram summarising banding homology, internal telomeres and a vestigial centromere.', 'Summary of the three evidence types: banding homology, internal telomeres and a vestigial centromere.', 'diagram'),
-        ],
-      },
-      {
-        title: 'Horse, donkey and mule comparison',
-        intro: 'These equid photographs accompany the chromosome-pairing explanation; the mechanism is meiotic pairing, not odd number alone.',
-        figures: [
-          figure('horse-field.jpg', 'A horse standing in a grassy field.', 'Horse, with a diploid chromosome number of 64.'),
-          figure('equid-group.jpg', 'Several equids photographed together outdoors for a horse, donkey and mule comparison.', 'Equids shown alongside the horse–donkey–mule chromosome comparison.'),
-        ],
-      },
-    ],
+    galleries: [{
+      title: 'Karyogram criteria and chromosome-2 fusion',
+      intro: 'Two distinct figures cover karyogram matching and the predicted fusion. The other banding and marker diagrams repeat evidence already available in the interactive case file.',
+      figures: [
+        figure('karyogram-criteria.png', 'Infographic identifying chromosome arms and centromere positions and listing karyogram matching criteria.', 'Pair condensed metaphase chromosomes by length, centromere position and banding pattern; label short p and long q arms.', 'diagram'),
+        figure('chromosome-2-fusion-overview.png', 'Diagram comparing two banded ancestral chromosomes with one human chromosome 2 and marking internal chromosome features.', 'The fusion hypothesis predicts that chimpanzee chromosomes 12 and 13 (older site labels 2A/2B) correspond end-to-end with human chromosome 2; internal telomeres and a vestigial centromere provide further tests.', 'diagram'),
+      ],
+    }],
   },
   'module-4': {
     title: 'Whole-genome sequencing, genome size and C-value',
@@ -79,27 +60,13 @@ export const STUDY_GUIDE = {
       ['C-value', 'C值'],
       ['C-value paradox', 'C值悖論'],
     ],
-    galleries: [
-      {
-        title: 'Sequencing in the laboratory',
-        intro: 'The attached guide places sequencing technology in the context of real laboratory work.',
-        figures: [
-          figure('sequencing-laboratory.jpg', 'Automated DNA sequencing equipment in a modern laboratory.', 'Automated sequencing equipment used to read DNA.'),
-          figure('sequencing-researcher.jpg', 'A researcher operating laboratory equipment used for DNA analysis.', 'A researcher working with DNA-analysis equipment.'),
-        ],
-      },
-      {
-        title: 'Genome-size comparisons',
-        intro: 'Compare the guide’s chart and organism images with C-value, annotation-specific gene counts and the complexity caveat.',
-        figures: [
-          figure('c-value-genome-size-chart.png', 'Horizontal chart comparing genome sizes for several eukaryotic organisms.', 'The comparison spans many orders of magnitude in DNA content.', 'diagram'),
-          figure('paris-japonica-habitat.jpg', 'Small white flowers of Paris japonica growing among forest vegetation.', 'Japanese canopy plant (Paris japonica), with a genome much larger than the human genome.'),
-          figure('arabidopsis-flowering-plant.jpg', 'Close view of small white flowers on a thale cress plant.', 'Thale cress (Arabidopsis thaliana), a model plant with a comparatively small genome.'),
-          figure('amoeba-proteus-micrograph.jpg', 'Microscope image of an Amoeba proteus cell with an irregular outline.', 'Amoeba proteus illustrates that very large genomes do not directly measure organismal complexity.'),
-          figure('drosophila-melanogaster.jpg', 'Close-up image of a fruit fly with red compound eyes and translucent wings.', 'Fruit fly (Drosophila melanogaster), one of the genome-size comparison organisms.'),
-        ],
-      },
-    ],
+    galleries: [{
+      title: 'Genome size is not a complexity scale',
+      intro: 'The interactive chart already compares genome sizes; this single reference photo highlights an unusually large plant genome without repeating the chart.',
+      figures: [
+        figure('paris-japonica-habitat.jpg', 'Small white flowers of Paris japonica growing among forest vegetation.', 'The Japanese canopy plant, <i>Paris japonica</i>, has a very large genome. Genome size does not directly measure organismal complexity or protein-coding gene number.'),
+      ],
+    }],
   },
   'module-5': {
     title: 'Field identification and prokaryotic lineages',
@@ -112,23 +79,20 @@ export const STUDY_GUIDE = {
     ],
     galleries: [
       {
-        title: 'Frog observations and the dichotomous key',
-        intro: 'Use visible, paired diagnostic traits; when a photograph hides a feature, keep the result inconclusive.',
+        title: 'Construct and test a dichotomous key',
+        intro: 'Use observable, paired diagnostic traits; when a clue is hidden or ambiguous, do not force an identification.',
         figures: [
-          figure('frog-field-observation.jpg', 'A small frog shown close-up against a person’s hand.', 'Close-up frog reference image; wildlife should be observed without handling or disturbance.'),
-          figure('romers-tree-frog-leaf.jpg', 'A small brown frog resting on a green leaf.', 'Tree-frog reference photograph for comparing visible field characters.'),
-          figure('tree-frog-closeup.jpg', 'Close view of a dark, patterned frog on a leafy surface.', 'A close view helps inspect body pattern and skin texture without assuming every diagnostic trait is visible.'),
-          figure('frog-key-traits.png', 'Illustrated comparison of frog dorsal markings and a sequence of observable identification checks.', 'Frog-key decisions should use clear, observable traits rather than vague impressions.', 'diagram'),
+          figure('frog-key-traits.png', 'Illustrated comparison of frog dorsal markings and a sequence of observable identification checks.', 'A dichotomous key uses two mutually exclusive alternatives at each couplet. Test every specimen and revise unclear clues.', 'diagram'),
+          figure('romers-tree-frog-leaf.jpg', 'A small brown frog resting on a green leaf.', 'Reference image for <i>Liuixalus romeri</i>; identify it using several observable traits such as the dorsal mark, toe pads and adult size.'),
         ],
       },
       {
         title: 'Horizontal gene transfer and prokaryote ancestry',
-        intro: 'Conjugation, transformation and transduction add cross-lineage connections to otherwise branching histories.',
+        intro: 'DNA exchange links otherwise branching lineages and can produce a reticulate evolutionary history.',
         figures: [
-          figure('hgt-pathways.png', 'Diagram comparing conjugation, transformation and transduction as DNA-transfer pathways between prokaryotes.', 'Three horizontal-transfer mechanisms: direct contact, environmental DNA uptake and bacteriophage-mediated transfer.', 'diagram'),
-          figure('prokaryote-lineages-1.png', 'Illustration of prokaryotic cells and cross-lineage genetic transfer.', 'Cell-level representation of gene exchange between prokaryotic lineages.', 'diagram'),
-          figure('prokaryote-lineages-2.png', 'Diagram of prokaryote lineages with horizontal links between otherwise branching groups.', 'Horizontal transfer makes a strictly branching ancestry model incomplete.', 'diagram'),
-          figure('bacteriophage-micrograph.jpg', 'Electron micrograph of bacteriophage particles.', 'Bacteriophages can mediate transduction by moving DNA between bacterial cells.'),
+          figure('hgt-pathways.png', 'Diagram comparing conjugation, transformation and transduction as DNA-transfer pathways between prokaryotes.', 'Conjugation uses cell contact, transformation takes up environmental DNA, and transduction is mediated by bacteriophages.', 'diagram'),
+          figure('prokaryote-lineages-2.png', 'Diagram of prokaryote lineages with horizontal links between otherwise branching groups.', 'Vertical descent branches; horizontal gene transfer adds cross-links, so a strictly branching tree is incomplete.', 'diagram'),
+          figure('bacteriophage-micrograph.jpg', 'Electron micrograph of bacteriophage particles.', 'Bacteriophages can mediate transduction by moving DNA between bacterial cells; the image illustrates the vector, not a complete transfer event.'),
         ],
       },
     ],
@@ -142,12 +106,12 @@ export const STUDY_GUIDE = {
     ],
     galleries: [{
       title: 'Hong Kong waters: from eDNA to identification',
-      intro: 'The guide connects a local dolphin case with barcode markers, field sampling and reference-library matching.',
+      intro: 'These figures connect the local dolphin example with sample location, marker choice and the identification workflow.',
       figures: [
-        figure('indo-pacific-humpback-dolphin.jpg', 'An Indo-Pacific humpback dolphin swimming in coastal water.', 'Indo-Pacific humpback dolphin (Sousa chinensis), the local eDNA case-study species.'),
-        figure('pearl-river-estuary-map.jpg', 'Map showing the Pearl River Estuary and surrounding Hong Kong western waters.', 'The Pearl River Estuary provides the geographic context for non-invasive eDNA monitoring.', 'diagram'),
-        figure('dna-barcode-loci.png', 'Infographic listing animal COI, plant rbcL and matK, and fungal ITS barcode loci.', 'Common barcode markers differ among animals, plants and fungi.', 'diagram'),
-        figure('edna-workflow.png', 'Workflow illustration showing water collection, filtration, DNA analysis and sequence comparison.', 'eDNA workflow: collect water, filter traces, extract and amplify DNA, sequence, and compare with a reference database.', 'diagram'),
+        figure('indo-pacific-humpback-dolphin.jpg', 'An Indo-Pacific humpback dolphin swimming in coastal water.', 'Environmental DNA can detect traces of the Indo-Pacific humpback dolphin, <i>Sousa chinensis</i>, without capturing or directly observing it.'),
+        figure('pearl-river-estuary-map.jpg', 'Map showing the Pearl River Estuary and surrounding Hong Kong western waters.', 'The map locates the coastal habitat where water samples are collected for non-invasive biodiversity monitoring.', 'diagram'),
+        figure('dna-barcode-loci.png', 'Infographic listing animal COI, plant rbcL and matK, and fungal ITS barcode loci.', 'Reference barcode loci vary among groups: animal mitochondrial COI, plant chloroplast <i>rbcL</i> and <i>matK</i>, and fungal nuclear ITS.', 'diagram'),
+        figure('edna-workflow.png', 'Workflow illustration showing water collection, filtration, DNA analysis and sequence comparison.', 'eDNA workflow: collect and filter a sample, extract and amplify DNA, then compare sequences with a reference database. Detection supports presence, not abundance.', 'diagram'),
       ],
     }],
   },

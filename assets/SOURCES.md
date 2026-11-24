@@ -27,3 +27,6 @@ The site’s expandable notes link to the supplied slide-text index for lesson p
 
 - Hollingsworth, P. M. et al. (2009). “A DNA barcode for land plants.” https://pmc.ncbi.nlm.nih.gov/articles/PMC2722355/ — CBOL-supported core two-locus land-plant barcode rbcL + matK and limitations of single-locus identification.
 - Xu, J. (2016). “Fungal DNA barcoding.” https://cdnsciencepub.com/doi/full/10.1139/gen-2016-0046@gen-iblf.issue01 — ITS as the primary fungal barcode and caveats for closely related species.
+
+
+The site-header panorama is the first embedded picture on page 1 of the user-provided `IBBiology_DiversityofLife(A3.1).pdf`. It is retained at its extracted 1232 × 544 resolution and displayed with its full aspect ratio; `study-guide/asset-manifest.json` records the source page and placement.

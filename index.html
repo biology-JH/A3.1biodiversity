@@ -7,7 +7,7 @@
   <meta name="description" content="Study IB Biology A3.1 with a bilingual, SL-first field guide, chromosome evidence, genome comparisons, species keys and eDNA workflows.">
   <title>BioAtlas | IB Biology A3.1 · SL + HL</title>
   <link rel="icon" type="image/png" href="assets/bioatlas-dna-mark.png">
-  <script>tailwind = { config: { theme: { extend: { colors: { canopy: '#0f3d33', fern: '#17856c', mist: '#eef5f1', slateink: '#26353a' } } } };</script>
+  <script>window.tailwind = { config: { theme: { extend: { colors: { canopy: '#0f3d33', fern: '#17856c', mist: '#eef5f1', slateink: '#26353a' } } } } };</script>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="src/styles.css">
 </head>
@@ -21,7 +21,7 @@
       </a>
       <div class="header-progress" aria-live="polite">
         <span class="eyebrow">EXAM CHECK</span>
-        <strong id="score-live">0 / 16</strong>
+        <strong id="score-live">0 / 17</strong>
         <span id="quiz-progress-label">questions correct</span>
       </div>
       <button id="theme-toggle" class="theme-toggle" type="button" aria-pressed="false" aria-label="Toggle dark colour theme"><span class="theme-icon">◐</span><span class="theme-label">Theme</span></button>
@@ -39,22 +39,16 @@
 
   <main id="main-content">
     <section class="hero" id="top" aria-labelledby="hero-title">
+      <img class="hero-cover" src="assets/study-guide/a31-diversity-cover.jpg" alt="Panoramic biodiversity illustration showing forest, river, birds, insects, a frog and fish beside a coastal marine habitat" fetchpriority="high">
       <div class="hero-text">
         <div class="eyebrow light-eyebrow"><span class="pulse-dot"></span> FIELD NOTES · GENOMICS · CLASSIFICATION</div>
         <h1 id="hero-title">Know the evidence.<br><em>Name the life.</em></h1>
-        <p class="hero-lede">A hands-on field guide to species boundaries, genomes and biodiversity identification. Begin with the shared SL core, then continue to the HL extensions; key terms include Traditional Chinese translations.</p>
+        <p class="hero-lede">Explore species boundaries, genome variation and biodiversity methods. Start with the shared SL core, then study HL; key terms include Traditional Chinese translations.</p>
         <div class="hero-actions">
           <a class="button button-light" href="#module-1">Start exploring <span aria-hidden="true">↘</span></a>
           <span class="hero-meta">Shared SL core → HL extensions · bilingual key terms · 7 interactive modules</span>
         </div>
       </div>
-      <div class="hero-visual" aria-hidden="true">
-        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
-        <div class="hero-chip chip-top"><span>2n = 46</span><small>human cells</small></div>
-        <div class="hero-chip chip-bottom"><span>ATCG</span><small>genome signals</small></div>
-        <div class="hero-core"><span class="core-label">A3.1</span><span class="core-glyph">✣</span><span class="core-caption">DIVERSITY<br>OF LIFE</span></div>
-      </div>
-      <div class="hero-footer"><span>LEARN BY TESTING THE EVIDENCE</span><span>SCROLL TO EXPLORE <b>↓</b></span></div>
     </section>
 
     <div class="page-shell">
@@ -107,7 +101,7 @@
                 <button type="button" class="hotspot hotspot-one" data-snp="140" aria-label="Inspect G slash A double peak at position 140"><span>140</span></button>
                 <button type="button" class="hotspot hotspot-two" data-snp="246" aria-label="Inspect T slash C double peak at position 246"><span>246</span></button>
               </div>
-              <figcaption>Original chromatogram image extracted from Part 2, slide 1.</figcaption>
+              <figcaption>At the marked sites, overlapping Sanger peaks are consistent with two base calls in one diploid sample; one trace does not establish population frequency.</figcaption>
             </figure>
           </article>
         </section>
@@ -130,7 +124,7 @@
                 <button type="button" class="fusion-pin pin-telomere" data-evidence="telomere" aria-label="Inspect internal telomeric repeats at 2q13">2</button>
                 <button type="button" class="fusion-pin pin-centromere" data-evidence="centromere" aria-label="Inspect vestigial centromere at 2q21">3</button>
               </div>
-              <div id="fusion-feedback" class="evidence-callout compact-callout" aria-live="polite">Choose a marker to see how that observation tests the hypothesis.</div>
+              <div id="fusion-feedback" class="evidence-callout compact-callout" aria-live="polite">The site labels 2A/2B correspond to chimpanzee chromosomes 12/13. Choose a marker to see how each observation tests the hypothesis.</div>
             </article>
           </div>
           <div class="evidence-row" id="fusion-evidence-list"></div>
@@ -148,7 +142,17 @@
             <div class="chart-toolbar"><div><span class="eyebrow">GENOME COMPARISON</span><h3>Genome size can vary by orders of magnitude</h3></div><label class="select-label">Sort by <select id="genome-sort"><option value="genome">Genome size (Mbp)</option><option value="genes">Protein-coding gene count</option><option value="complexity">Organism organisation</option></select></label></div>
             <div id="genome-chart" class="genome-chart" role="list" aria-label="Interactive genome comparison chart"></div>
             <div class="chart-note-grid"><div id="gene-note" class="chart-note"><strong>Gene-count view</strong><span>Gene counts depend on genome annotation and release. Missing values are shown as unavailable, not estimated.</span></div><div id="complexity-note" class="chart-note"><strong>Complexity view</strong><span>Organisation is a qualitative teaching grouping, not a universal numerical measure of biological complexity.</span></div></div>
-            <figure class="source-chart-figure"><img id="source-genome-chart" alt="Original genome-size comparison figure from the lesson slides"><figcaption>Slide figure: *Paris japonica* is shown with a genome far larger than the human genome.</figcaption></figure>
+            <aside class="database-task" aria-labelledby="database-task-title">
+              <span class="eyebrow">A3.1.10 · DATABASE SKILL</span>
+              <h4 id="database-task-title">Compare genome-size records</h4>
+              <p>Look up one plant and one animal in the <a href="https://cvalues.science.kew.org/" target="_blank" rel="noopener">Kew C-values database</a> or the <a href="https://www.genomesize.com/" target="_blank" rel="noopener">Animal Genome Size Database</a>. Record each organism, 1C value, unit and database record/date.</p>
+              <ol>
+                <li>Compare their DNA amounts with the interactive chart and state which genome is larger.</li>
+                <li>Use a unicellular and multicellular example. Does DNA amount reliably rank organismal complexity?</li>
+                <li>Explain why repeats, transposons or polyploidy can change C-value without a matching change in gene number.</li>
+              </ol>
+              <p class="database-task-note">Check that both records refer to a haploid nuclear genome; note the source and release because measurements can differ.</p>
+            </aside>
           </article>
           <div class="repeat-grid" id="repeat-grid"></div>
         </section>
@@ -175,7 +179,7 @@
             <div class="stepper" id="edna-steps" role="tablist" aria-label="Environmental DNA workflow"></div>
             <div class="edna-active-step" id="edna-active-step" aria-live="polite"></div>
             <div class="edna-visual-strip" id="edna-visual-strip"></div>
-            <div class="dolphin-case"><div><span class="eyebrow">FIELD APPLICATION</span><h3>Listen for traces, not splashes</h3><p>Water samples from Hong Kong's western waters can reveal DNA from the Indo-Pacific humpback dolphin (*Sousa chinensis*) and help profile the fish community in its habitat.</p></div><img id="dolphin-image" alt="Slide illustration of Indo-Pacific humpback dolphins"></div>
+              <div class="dolphin-case"><div><span class="eyebrow">FIELD APPLICATION</span><h3>Listen for traces, not splashes</h3><p>Water samples from Hong Kong's western waters can reveal DNA from the Indo-Pacific humpback dolphin (<i>Sousa chinensis</i>) and help profile the fish community in its habitat.</p></div><img id="dolphin-image" alt="Slide illustration of Indo-Pacific humpback dolphins"></div>
           </article>
         </section>
 
@@ -184,7 +188,7 @@
             <div class="section-number">07</div><div class="section-title"><span class="eyebrow">IB PRACTICE · SELF-GRADING CHECKPOINTS</span><h2 id="m7-title">Exam check</h2><p>Mix species concepts, genome data and classification methods. Explanations appear after each check.</p></div>
           </div>
           <article class="learning-card quiz-card">
-            <div class="quiz-topline"><div><span class="eyebrow">YOUR LIVE SCORE</span><h3><span id="quiz-score-inline">0</span> / <span id="quiz-total">16</span> correct</h3></div><div class="quiz-meter"><span id="quiz-meter-fill"></span></div><span id="quiz-answered">0 / 16 answered</span></div>
+            <div class="quiz-topline"><div><span class="eyebrow">YOUR LIVE SCORE</span><h3><span id="quiz-score-inline">0</span> / <span id="quiz-total">17</span> correct</h3></div><div class="quiz-meter"><span id="quiz-meter-fill"></span></div><span id="quiz-answered">0 / 17 answered</span></div>
             <div id="quiz-container" class="quiz-list"></div>
             <div class="quiz-end-row"><p>Questions are adapted from the multiple-choice, true/false, ordering and matching checks in both lesson decks.</p><button id="finish-quiz" class="button button-primary" type="button">See summary <span>→</span></button></div>
             <div id="quiz-summary" class="quiz-summary" hidden aria-live="polite"></div>

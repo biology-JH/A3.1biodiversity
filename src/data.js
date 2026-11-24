@@ -39,7 +39,7 @@ export const FLASHCARDS = [
     image: IMAGES.dogs,
     alt: 'Domestic dogs showing a wide range of body sizes and forms',
     front: 'What makes populations one species?',
-    back: 'A species is a group of actually or potentially interbreeding natural populations that produce viable, fertile offspring and are reproductively isolated from other groups. It fits fossils and obligate asexual organisms poorly.',
+    back: 'Interbreeding natural populations produce viable, fertile offspring and are reproductively isolated from other groups. The BSC fits fossils and obligate asexual organisms poorly.',
   },
   {
     term: 'Single-nucleotide polymorphism',
@@ -47,7 +47,7 @@ export const FLASHCARDS = [
     image: IMAGES.chromatogram,
     alt: 'Sanger sequencing chromatogram with overlapping peaks at two positions',
     front: 'What is a SNP?',
-    back: 'A single-nucleotide polymorphism is a difference at one DNA base among individuals. A double peak in a chromatogram can indicate two bases at the same position in a heterozygous sample.',
+    back: 'A SNP is a one-base variant present in a population. Two Sanger peaks at one site can indicate two alleles in one diploid sample; one trace cannot establish population frequency.',
   },
   {
     term: 'C-value paradox',
@@ -55,7 +55,7 @@ export const FLASHCARDS = [
     image: IMAGES.genomeChart,
     alt: 'Genome-size comparison chart extracted from the lesson slides',
     front: 'Does more DNA mean greater complexity?',
-    back: 'C-value (1C) is the DNA amount in a haploid genome; report it as mass (pg; 1 pg = 10^-12 g) or sequence length (bp; 1 Mbp = 10^6 bp). The C-value paradox is that DNA content does not reliably predict organismal complexity or protein-coding gene count. Repeats, transposons, introns and whole-genome duplication can add DNA.',
+    back: '1C is DNA in one haploid genome. The C-value paradox: DNA amount does not predict gene number or complexity; repeats, transposons, introns and polyploidy can add DNA.',
   },
   {
     term: 'Karyogram',
@@ -63,7 +63,7 @@ export const FLASHCARDS = [
     image: IMAGES.karyogram,
     alt: 'Human and chimpanzee karyotypes arranged for comparison',
     front: 'How are chromosomes organised?',
-    back: 'Prepare a karyogram from a mitotic metaphase spread, when chromosomes are condensed: select a clear, non-overlapping spread, stain to reveal bands, photograph it, then pair and arrange chromosomes by length, centromere position and banding pattern.',
+    back: 'Select a clear mitotic metaphase spread; stain to reveal bands, photograph, then pair chromosomes by length, centromere position and banding pattern.',
   },
   {
     term: 'Horizontal gene transfer',
@@ -71,7 +71,7 @@ export const FLASHCARDS = [
     image: IMAGES.transfer,
     alt: 'Bacteria exchanging genetic material through direct cell contact',
     front: 'How can bacteria gain genes from other lineages?',
-    back: 'Conjugation transfers DNA by direct contact, transformation takes up environmental DNA, and transduction moves DNA by bacteriophages. These routes blur simple branching ancestry.',
+    back: 'Conjugation uses cell contact; transformation takes up environmental DNA; transduction uses bacteriophages. These horizontal transfers link otherwise branching lineages.',
   },
   {
     term: 'Environmental DNA',
@@ -79,7 +79,7 @@ export const FLASHCARDS = [
     image: IMAGES.water,
     alt: 'Field collection of an environmental water sample',
     front: 'What can habitat water reveal?',
-    back: 'Environmental DNA is genetic material shed into a habitat by organisms. Researchers collect and analyse samples to detect species without capturing or directly observing them.',
+    back: 'Environmental DNA is genetic material shed into a habitat. Sampling can detect species without capturing or directly observing them; detection alone does not measure abundance.',
   },
 ];
 
@@ -174,7 +174,7 @@ export const QUIZ = [
     id: 'binomial-format', type: 'choice', source: 'Part 1, slides 17–21',
     prompt: 'Which is correctly formatted after a species has been introduced in full?',
     options: ['panthera Leo', 'P. leo', 'Panthera Leo', 'p. Leo'],
-    answer: 1, explanation: 'The genus begins with a capital and may be abbreviated to its capital initial; the epithet stays lower-case. Both are italicised when typed. In this textbook section, viruses are excluded from organismal binomials because they are treated as non-living.'
+    answer: 1, explanation: 'The genus begins with a capital and may be abbreviated to its capital initial; the epithet stays lowercase. Italicise both words when typed.'
   },
   {
     id: 'snp-frequency', type: 'truefalse', source: 'Part 2, slides 13–14',

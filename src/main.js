@@ -21,6 +21,40 @@ function setImage(element, src, alt = '') {
   element.alt = alt;
 }
 
+const scientificNames = [
+  'Panthera leo', 'Panthera tigris', 'Panthera onca', 'Homo sapiens', 'Pan troglodytes',
+  'Saccharomyces cerevisiae', 'Arabidopsis thaliana', 'Drosophila melanogaster',
+  'Paris japonica', 'Amoeba proteus', 'Liuixalus romeri', 'Amolops hongkongensis',
+  'Sousa chinensis', 'Canis lupus familiaris', 'Equus caballus', 'Equus asinus',
+  'Copsychus saularis', 'Pycnonotus jocosus',
+  'Spilopelia chinensis', 'Passer montanus', 'rbcL', 'matK',
+];
+function formatScientificText(value) {
+  let html = escapeHtml(value);
+  for (const name of scientificNames) {
+    const escaped = name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    html = html.replace(new RegExp(`\\b${escaped}\\b`, 'g'), `<i>${name}</i>`);
+  }
+  return html;
+}
+function formatScientificMarkup(value) {
+  let html = String(value);
+  for (const name of scientificNames) {
+    const escaped = name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    html = html.replace(new RegExp(`(?<!<i>)\\b${escaped}\\b(?!<\\/i>)`, 'g'), `<i>${name}</i>`);
+  }
+  return html;
+}
+function fitFlashcards() {
+  $$('.flash-card').forEach(card => {
+    card.style.height = 'auto';
+    const faces = $$('.flash-face', card);
+    const minHeight = Math.ceil(card.getBoundingClientRect().height);
+    const contentHeight = Math.max(0, ...faces.map(face => face.scrollHeight));
+    card.style.height = `${Math.max(minHeight, contentHeight) + 2}px`;
+  });
+}
+
 function renderFlashcards() {
   const host = $('#flashcards');
   host.innerHTML = FLASHCARDS.map((card, index) => `
@@ -42,7 +76,10 @@ function renderFlashcards() {
       button.setAttribute('aria-pressed', String(flipped));
     });
   });
+  requestAnimationFrame(fitFlashcards);
+  document.fonts?.ready.then(fitFlashcards);
 }
+window.addEventListener('resize', () => requestAnimationFrame(fitFlashcards));
 
 function renderBinomialTrainer() {
   const form = $('#nomenclature-form');
@@ -73,7 +110,7 @@ function renderChromatogram() {
 }
 
 const fusionEvidence = {
-  band: {title: '1 · G-banding homology', text: 'The banding order along human chromosome 2 matches chimpanzee chromosomes 2A and 2B arranged end-to-end. This is the structural pattern expected after fusion.'},
+  band: {title: '1 · G-banding homology', text: 'The banding order along human chromosome 2 matches chimpanzee chromosomes 12 and 13 (the older site labels 2A and 2B) arranged end-to-end. This is the structural pattern expected after fusion.'},
   telomere: {title: '2 · Internal telomeric repeats · 2q13', text: 'Inverted TTAGGG telomere-repeat arrays lie inside chromosome 2 at 2q13. Telomere sequences at an internal site are predicted by an ancestral end-to-end fusion.'},
   centromere: {title: '3 · Vestigial centromere · 2q21', text: 'A second, inactive centromere remnant with alphoid satellite DNA lies at 2q21. One chromosome retains the active centromere; the other site is vestigial.'},
 };
@@ -85,7 +122,7 @@ function setFusionEvidence(key) {
 }
 function renderChromosomeExplorer() {
   setImage($('#karyogram-image'), IMAGES.karyogram, 'Human and chimpanzee karyograms showing the chromosome-number difference');
-  setImage($('#fusion-image'), IMAGES.fusion, 'Slide diagram: chimpanzee chromosomes 2A and 2B correspond to human chromosome 2');
+  setImage($('#fusion-image'), IMAGES.fusion, 'Slide diagram: chimpanzee chromosomes 12 and 13, labelled 2A and 2B on the site, correspond to human chromosome 2');
   $$('.fusion-pin').forEach(button => button.addEventListener('click', () => setFusionEvidence(button.dataset.evidence)));
   const evidenceHost = $('#fusion-evidence-list');
   evidenceHost.innerHTML = Object.entries(fusionEvidence).map(([key, item]) => `<button class="evidence-card" type="button" data-evidence-card="${key}"><strong>${item.title}</strong><p>${item.text}</p></button>`).join('');
@@ -149,7 +186,6 @@ function renderGenomeChart() {
   $('#complexity-note').innerHTML = '<strong>Complexity view</strong><span>Organisation is a qualitative grouping—unicellular eukaryotes, multicellular plants, and multicellular animals—not a universal measure of biological complexity.</span>';
 }
 function renderRepeatFigures() {
-  $('#source-genome-chart').src = IMAGES.genomeChart;
   $('#repeat-grid').innerHTML = repeatLabels.map(item => `<article class="repeat-card"><img src="${item.source}" alt="Slide illustration for ${item.title}" loading="lazy"><strong>${item.title}</strong><span>${item.detail}</span></article>`).join('');
   $('#genome-sort').addEventListener('change', renderGenomeChart);
   renderGenomeChart();
@@ -324,7 +360,7 @@ function renderChoiceQuestion(question, host) {
     const button = document.createElement('button');
     button.type = 'button';
     button.className = 'answer-option';
-    button.textContent = option;
+    button.innerHTML = formatScientificText(option);
     button.addEventListener('click', () => {
       if (Object.hasOwn(state.answers, question.id)) return;
       const correct = index === correctIndex;
@@ -405,7 +441,7 @@ function renderQuiz() {
   QUIZ.forEach((question, index) => {
     const article = document.createElement('article');
     article.className = 'quiz-question';
-    article.innerHTML = `<div class="quiz-question-head"><div><span class="eyebrow">CHECKPOINT 0${index + 1} · ${question.type === 'choice' ? 'MULTIPLE CHOICE' : question.type === 'truefalse' ? 'TRUE / FALSE' : question.type === 'order' ? 'ORDERING' : 'MATCHING'}</span><h4>${question.prompt}</h4></div><span class="question-source">${question.source}</span></div>`;
+    article.innerHTML = `<div class="quiz-question-head"><div><span class="eyebrow">CHECKPOINT 0${index + 1} · ${question.type === 'choice' ? 'MULTIPLE CHOICE' : question.type === 'truefalse' ? 'TRUE / FALSE' : question.type === 'order' ? 'ORDERING' : 'MATCHING'}</span><h4>${formatScientificText(question.prompt)}</h4></div><span class="question-source">${question.source}</span></div>`;
     if (question.type === 'choice' || question.type === 'truefalse') renderChoiceQuestion(question, article);
     if (question.type === 'order') renderOrderQuestion(question, article);
     if (question.type === 'match') renderMatchQuestion(question, article);
@@ -473,7 +509,8 @@ function renderGuideEnhancements(host, module) {
     section.innerHTML = `<div class="guide-gallery-heading"><span class="eyebrow">ATTACHED STUDY-GUIDE FIGURES · ${String(index + 1).padStart(2, '0')}</span><h3>${escapeHtml(gallery.title)}</h3><p>${escapeHtml(gallery.intro)}</p></div><div class="guide-figure-grid">${gallery.figures.map((item, figureIndex) => {
       const image = `<img src="${escapeHtml(item.asset)}" alt="${escapeHtml(item.alt)}" loading="lazy" decoding="async">`;
       const visual = item.kind === 'diagram' ? `<div class="guide-image-pan" tabindex="0" aria-label="${escapeHtml(item.alt)}; scroll horizontally to inspect the full figure">${image}</div>` : image;
-      return `<figure class="guide-figure ${item.kind === 'diagram' ? 'guide-figure--diagram' : 'guide-figure--photo'}"><span class="guide-figure-number">${String(figureIndex + 1).padStart(2, '0')}</span>${visual}<figcaption>${escapeHtml(item.caption)}</figcaption></figure>`;
+      const caption = escapeHtml(item.caption).replace(/&lt;i&gt;(.*?)&lt;\/i&gt;/g, '<i>$1</i>');
+      return `<figure class="guide-figure ${item.kind === 'diagram' ? 'guide-figure--diagram' : 'guide-figure--photo'}"><span class="guide-figure-number">${String(figureIndex + 1).padStart(2, '0')}</span>${visual}<figcaption>${caption}</figcaption></figure>`;
     }).join('')}</div>`;
     host.append(section);
   });
@@ -485,8 +522,8 @@ function renderSyllabus() {
     if (!host) return;
     const notes = document.createElement('details');
     notes.className = 'study-notes';
-    const scienceRefs = module.id === 'module-1' ? '<a href="https://evolution.berkeley.edu/biological-species-concept/" target="_blank" rel="noopener">Berkeley · biological species concept ↗</a>' : module.id === 'module-3' ? '<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC52649/" target="_blank" rel="noopener">IJdo et al. · chromosome 2 fusion evidence ↗</a>' : module.id === 'module-4' ? '<a href="https://pubmed.ncbi.nlm.nih.gov/32445179/" target="_blank" rel="noopener">Choi et al. · C-value and genome architecture review ↗</a>' : module.id === 'module-5' ? '<a href="https://www.afcd.gov.hk/english/conservation/hkbiodiversity/speciesgroup/speciesgroup_amphibians.html" target="_blank" rel="noopener">Hong Kong AFCD · amphibian traits ↗</a>' : module.id === 'module-6' ? '<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12415808/" target="_blank" rel="noopener">Shaffer et al. · metabarcoding bias ↗</a> · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC2722355/" target="_blank" rel="noopener">land-plant rbcL + matK ↗</a> · <a href="https://cdnsciencepub.com/doi/full/10.1139/gen-2016-0046@gen-iblf.issue01" target="_blank" rel="noopener">fungal ITS barcode ↗</a>' : '';
-    notes.innerHTML = `<summary><span><span class="eyebrow">EXPANDABLE LESSON NOTES · ${module.points}</span><strong>${module.title}</strong></span><span class="notes-toggle" aria-hidden="true">＋</span></summary><div class="study-notes-content">${module.notes.map(item => `<article class="note-topic"><h3>${item.heading}</h3><p>${item.copy}</p><p class="note-source">Source: <a href="assets/SLIDE_TEXT_INDEX.md" target="_blank" rel="noopener">${item.source} · supplied slide text ↗</a>${scienceRefs ? ` · ${scienceRefs}` : ''}</p></article>`).join('')}</div>`;
+    const scienceRefs = module.id === 'module-1' ? '<a href="https://evolution.berkeley.edu/biological-species-concept/" target="_blank" rel="noopener">Berkeley · biological species concept ↗</a>' : module.id === 'module-3' ? '<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC52649/" target="_blank" rel="noopener">IJdo et al. · chromosome 2 fusion evidence ↗</a>' : module.id === 'module-4' ? '<a href="https://cvalues.science.kew.org/" target="_blank" rel="noopener">Kew Plant DNA C-values Database ↗</a> · <a href="https://www.genomesize.com/" target="_blank" rel="noopener">Animal Genome Size Database ↗</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/32445179/" target="_blank" rel="noopener">C-value and genome architecture review ↗</a>' : module.id === 'module-5' ? '<a href="https://www.afcd.gov.hk/english/conservation/hkbiodiversity/speciesgroup/speciesgroup_amphibians.html" target="_blank" rel="noopener">Hong Kong AFCD · amphibian traits ↗</a>' : module.id === 'module-6' ? '<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12415808/" target="_blank" rel="noopener">Shaffer et al. · metabarcoding bias ↗</a> · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC2722355/" target="_blank" rel="noopener">land-plant rbcL + matK ↗</a> · <a href="https://cdnsciencepub.com/doi/full/10.1139/gen-2016-0046@gen-iblf.issue01" target="_blank" rel="noopener">fungal ITS barcode ↗</a>' : '';
+    notes.innerHTML = `<summary><span><span class="eyebrow">EXPANDABLE LESSON NOTES · ${module.points}</span><strong>${module.title}</strong></span><span class="notes-toggle" aria-hidden="true">＋</span></summary><div class="study-notes-content">${module.notes.map(item => `<article class="note-topic"><h3>${item.heading}</h3><ul class="note-points">${item.copy.map(point => `<li>${formatScientificMarkup(point)}</li>`).join('')}</ul><p class="note-source">Source: <a href="assets/SLIDE_TEXT_INDEX.md" target="_blank" rel="noopener">${item.source} · supplied slide text ↗</a>${scienceRefs ? ` · ${scienceRefs}` : ''}</p></article>`).join('')}</div>`;
     host.append(notes);
     renderGuideEnhancements(host, module);
     if (!module.diagrams.length) return;

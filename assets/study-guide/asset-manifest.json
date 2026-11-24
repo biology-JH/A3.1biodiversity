@@ -1,6 +1,15 @@
 {
   "source_document": "IB-Biology-Diversity-of-Life-(A3.1)(1).docx",
   "unique_placements": 37,
+  "additional_assets": [
+    {
+      "asset": "assets/study-guide/a31-diversity-cover.jpg",
+      "source_document": "IBBiology_DiversityofLife(A3.1).pdf",
+      "source_page": 1,
+      "embedded_image_index": 0,
+      "placement": "site-header"
+    }
+  ],
   "assets": [
     {
       "order": 1,
