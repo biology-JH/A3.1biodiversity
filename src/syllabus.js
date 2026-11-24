@@ -79,21 +79,21 @@ export const SYLLABUS_MODULES = [
       'A binomial avoids confusion among local names and can be used consistently across languages.'
     ], 'Part 1 · printed p. 105; Part 2 · slide 7'),
     note('A3.1.4 · Biological species concept (BSC)',[
-      'A species is a group of populations that can interbreed and produce fertile offspring. Reproductive isolation prevents gene flow between species.',
-      'The BSC is difficult to apply to fossils and organisms that reproduce only asexually. Some recognized species can hybridize, so hybrid offspring do not automatically erase species boundaries.',
-      'Alternative species definitions exist; the BSC is useful but not universal.'
+      'A species is a group of natural populations that actually or potentially interbreed and produce viable, fertile offspring. Reproductive isolation limits gene flow with other groups.',
+      'Interbreeding cannot be tested in fossils, and the concept does not fit obligately asexual organisms. Some distinct species hybridize; occasional hybrids do not by themselves erase species boundaries.',
+      'Use other species concepts when interbreeding cannot be assessed; no single concept fits every organism.'
     ], 'Part 1 · printed p. 105; Part 2 · slides 3–4, 8')
   ], diagrams:['variation','morphology','binomial','speciation']},
   {id:'module-2', title:'Genome unity, SNPs & sequence reading', points:'A3.1.8–9', notes:[
     note('A3.1.8 · Genome unity and diversity',[
       'A genome is the complete genetic information of an organism. Members of one species share most genes and their arrangement, but alleles can differ in DNA sequence.',
-      'A single-nucleotide polymorphism (SNP) is a one-base variant found in at least 1% of a population by a common convention. A rarer variant is usually called a mutation.',
+      'By a common convention, a SNP is a one-nucleotide difference present in at least 1% of a population. This cutoff describes population frequency, not a different kind of DNA change.',
       'Homozygous: the two alleles at a locus are the same. Heterozygous: they differ. A diploid child can inherit the same or different base variants from the two parents.',
       'An insertion or deletion (indel) adds or removes one or more nucleotides. A coding indel not divisible by three can shift the reading frame.'
     ], 'Part 1 · printed p. 107; Part 2 · slides 13–15'),
     note('Reading Sanger chromatograms',[
-      'Fluorescent peaks represent base calls. Two overlapping peaks at one position can indicate two alleles in one diploid sample, consistent with heterozygosity.',
-      'A single chromatogram cannot establish population frequency. Check trace quality and mixed-template possibilities before interpreting a double peak as a genotype.'
+      'Each clear fluorescent peak usually marks one base. Two differently coloured peaks at one site can indicate two alleles (for example, A/G) in a heterozygous diploid sample.',
+      'A double peak is not proof: poor trace quality, sequencing noise, contamination or mixed DNA can look similar. Check the trace and repeat if needed; one chromatogram cannot establish population frequency.'
     ], 'Part 1 · printed pp. 107–108; Part 2 · slides 13–14')
   ], diagrams:['snp']},
   {id:'module-3', title:'Chromosome numbers, karyograms & meiosis', points:'A3.1.6–7 · A3.1.13', notes:[
@@ -104,9 +104,10 @@ export const SYLLABUS_MODULES = [
       'The centromere separates the short p arm from the long q arm. Position can be metacentric, submetacentric or acrocentric.'
     ], 'Part 1 · printed p. 106; Part 2 · slides 9–10'),
     note('A3.1.7 · Human chromosome 2 fusion hypothesis',[
-      'Humans have 46 chromosomes and chimpanzees 48. The hypothesis is that two ancestral chromosomes fused end-to-end in the lineage leading to humans, producing chromosome 2 after the lineages diverged.',
-      'Chimpanzee chromosomes 12 and 13 correspond to the two regions of human chromosome 2. Predicted evidence includes matching G-band order, internal telomeric repeats at 2q13 and an inactive centromere remnant at 2q21.',
-      'The chromosome count suggests a change but does not explain it by itself. Matching bands and the predicted internal markers provide independent tests of the fusion hypothesis.'
+      'Hypothesis: two ancestral ape chromosomes fused end-to-end in the human lineage after the lineages diverged. Chimpanzee chromosomes 12 and 13 remain separate; their corresponding regions occur in order on human chromosome 2.',
+      'Matching G-band order supports this predicted arrangement: regions from two chromosomes appear along one human chromosome.',
+      'Telomeres normally cap chromosome ends. Inverted TTAGGG repeats inside human 2q13 fit the prediction that two ancestral ends met at an internal fusion site.',
+      'Each ancestral chromosome had a centromere. Human chromosome 2 has one active centromere and an inactive remnant at 2q21, consistent with fusion. Together, banding and both internal markers support the hypothesis; chromosome count alone does not prove it.'
     ], 'Part 1 · printed pp. 106–107; Part 2 · slide 10'),
     note('A3.1.13 HL · Chromosome pairing and hybrid fertility',[
       'If parental chromosome numbers or structures differ, hybrid chromosomes may lack homologous partners. Pairing and segregation in meiosis can fail, making viable gametes less likely.',
@@ -115,16 +116,16 @@ export const SYLLABUS_MODULES = [
   ], diagrams:['chromosomes','fusion','mule']},
   {id:'module-4', title:'Genome size, C-value paradox & sequencing', points:'A3.1.9–11', notes:[
     note('A3.1.9 · Genome-size variation',[
-      'Genome size is the total DNA amount. It varies greatly among eukaryotes and is not directly proportional to organismal complexity or protein-coding gene number.',
-      'C-value (1C) is DNA content in one haploid genome. It can be reported as mass (1 pg = 10⁻¹² g) or sequence length (1 Mbp = 10⁶ bp). The C-value paradox describes the weak relationship between DNA amount and complexity.',
-      'Genome expansion can involve non-coding DNA, repeats, transposons, introns or whole-genome duplication. Gene counts depend on the assembly and annotation release.'
+      'C-value (1C) is the DNA amount in one haploid genome, measured as mass (1 pg = 10⁻¹² g) or sequence length (1 Mbp = 10⁶ bp). It measures DNA, not gene number.',
+      'The C-value paradox is that genome size does not reliably predict organismal complexity or protein-coding gene number. Repeats, transposons, introns and polyploidy can increase DNA without proportionally increasing distinct protein-coding genes.',
+      'Study-guide comparison (approximate): thale cress has 135 Mbp and about 27,000 protein-coding genes; humans have 3,200 Mbp and about 20,000. A smaller genome can have more annotated genes; estimates depend on annotation.'
     ], 'Part 1 · printed pp. 107–108; Part 2 · slides 15–21'),
     note('A3.1.10 · Application skill: compare genome sizes in databases',[
       'Find genome-size data for at least two taxonomic groups in the Kew C-values database or the Animal Genome Size Database. Record the organism, value, unit, source and database release/date.',
       'Compare genome size with organismal complexity. Explain why a larger DNA amount does not necessarily mean more genes or greater complexity; check whether each value refers to a haploid nuclear genome.'
     ], 'Part 1 · printed p. 108; database links below'),
     note('A3.1.11 · Whole-genome sequencing',[
-      'Whole-genome sequencing determines DNA base sequences across a genome. Methods have become generally faster and less costly, including short-read and long-read approaches.',
+      'Whole-genome sequencing reads DNA across a genome. The field has progressed from Sanger to short- and long-read methods, which are generally faster and less costly.',
       'Genome comparisons support research on evolutionary relationships and outbreak tracing. Precision or personalized medicine may use an individual’s variants, but sequence data require careful interpretation.'
     ], 'Part 1 · printed p. 108; Part 2 · slides 22–23, 26')
   ], diagrams:['genome','sequencing']},
@@ -147,7 +148,7 @@ export const SYLLABUS_MODULES = [
     note('A3.1.15 HL · Identify species from environmental DNA',[
       'A DNA barcode is a short, informative sequence matched to a reference database. Common loci: animal mitochondrial COI; land-plant chloroplast rbcL and matK; fungal nuclear ITS.',
       'Environmental DNA (eDNA) is DNA shed into water, soil or air. Workflow: sample habitat → filter traces → extract and amplify a barcode → sequence → compare with reference sequences.',
-      'A match can identify species present in or near the sampled habitat. Contamination, DNA degradation, primer bias and incomplete databases can affect results. Detection or read count alone does not measure abundance.'
+      'A reliable reference-library match supports presence in or near the sampled habitat. Contamination, DNA degradation, primer bias and incomplete databases can affect identification; detection or read count alone does not measure abundance.'
     ], 'Part 1 · printed p. 109; Part 2 · slides 38–43'),
     note('Field example · Pearl River Estuary',[
       'Water samples can reveal traces of the Indo-Pacific humpback dolphin (<i>Sousa chinensis</i>) and other organisms without directly observing them.',
