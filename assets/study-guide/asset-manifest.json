@@ -1,6 +1,6 @@
 {
-  "source_document": "IB-Biology-Diversity-of-Life-(A3.1)(1).docx",
-  "unique_placements": 37,
+  "source_document": "IB-Biology-Diversity-of-Life-(A3.1).docx",
+  "unique_placements": 41,
   "additional_assets": [
     {
       "asset": "assets/study-guide/a31-diversity-cover.jpg",
@@ -28,7 +28,7 @@
     {
       "order": 3,
       "asset": "assets/study-guide/variation-within-species.png",
-      "source_file": "5e836b0605f17c0cabc8cac9ff3d42963a867023.png",
+      "source_file": "77fd8b67ccc8b986e93e62f9e43b46510e75b03b.png",
       "module": "module-1",
       "source": "Attached IB Biology A3.1 study guide"
     },
@@ -269,6 +269,34 @@
       "source_file": "95a4538529bfbd6adab2015e57220a2c30230643.png",
       "module": "module-6",
       "source": "Attached IB Biology A3.1 study guide"
+    },
+    {
+      "order": 38,
+      "asset": "assets/study-guide/variation-within-species-examples.png",
+      "source_file": "125b182031f7f9c83df29b87d7d15166034a6bdb.png",
+      "module": "module-1",
+      "source": "Attached IB-Biology-Diversity-of-Life-(A3.1).docx"
+    },
+    {
+      "order": 39,
+      "asset": "assets/study-guide/shared-primate-ancestor-chromosomes.png",
+      "source_file": "81d536a91200ae697405580c29724decfa3edcad.png",
+      "module": "module-3",
+      "source": "Attached IB-Biology-Diversity-of-Life-(A3.1).docx"
+    },
+    {
+      "order": 40,
+      "asset": "assets/study-guide/sequencing-speed-cost-applications.png",
+      "source_file": "5d21b7f50fc952da0692e4a4482ce7fa06a1e6df.png",
+      "module": "module-4",
+      "source": "Attached IB-Biology-Diversity-of-Life-(A3.1).docx"
+    },
+    {
+      "order": 41,
+      "asset": "assets/study-guide/frog-observable-traits-key.png",
+      "source_file": "bfbfc43e5b59193d25a40fcfeb4153c2028a3602.png",
+      "module": "module-5",
+      "source": "Attached IB-Biology-Diversity-of-Life-(A3.1).docx"
     }
   ]
 }

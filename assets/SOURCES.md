@@ -9,7 +9,7 @@ The four supplemental bird reference photos are from Wikimedia Commons; the bird
 - Spotted Dove — Shantanu Kuveskar, CC BY-SA 4.0. https://commons.wikimedia.org/wiki/File:Spotted_Dove_(Streptopelia_chinensis)_Photograph_by_Shantanu_Kuveskar.jpg
 - Red-whiskered Bulbul — Davidvraju, CC BY 4.0. https://commons.wikimedia.org/wiki/File:Red_whiskered_bulbul_-_1.jpg
 
-The 37 images in `study-guide/` were embedded in the user-provided Word study guide. `study-guide/asset-manifest.json` maps each extracted figure to its original embedded filename, document order and learning module. The Word file did not include per-image author or license information, so this project records the user-provided document as the source without asserting third-party authorship or a reuse license.
+The original 37 study-guide images were extracted from the earlier user-provided Word guide. The variation, chromosome-fusion, sequencing and frog-key figures requested in the latest update come from `IB-Biology-Diversity-of-Life-(A3.1).docx`; their original embedded filenames and learning modules are recorded in `study-guide/asset-manifest.json`. The Word files did not include per-image author or license information, so this project records the user-provided documents as the source without asserting third-party authorship or a reuse license.
 
 Protein-coding gene count sources and release notes: see `GENOME_COUNTS.md`.
 

@@ -1,5 +1,5 @@
 import { FAUNA, FLASHCARDS, GENOME_DATA, IMAGE_CREDITS, IMAGES, QUIZ } from './data.js';
-import { DIAGRAMS, SYLLABUS_MODULES } from './syllabus.js';
+import { DIAGRAMS, DIAGRAM_IMAGES, SYLLABUS_MODULES } from './syllabus.js';
 import { STUDY_GUIDE } from './guide.js';
 
 const $ = (selector, root = document) => root.querySelector(selector);
@@ -535,7 +535,11 @@ function renderSyllabus() {
       if (!item) return '';
       const title = item.match(/<title>(.*?)<\/title>/)?.[1] ?? 'Biology diagram';
       const desc = item.match(/<desc>(.*?)<\/desc>/)?.[1] ?? '';
-      return `<figure class="diagram-card"><div class="diagram-scroll" tabindex="0" aria-label="Diagram viewport. On a narrow screen, scroll horizontally to inspect the full diagram.">${item}</div><figcaption><strong>${title}</strong><span>${desc}</span></figcaption></figure>`;
+      const supplied = DIAGRAM_IMAGES[key];
+      const visual = supplied
+        ? `<img class="diagram-image" src="${escapeHtml(supplied.src)}" alt="${escapeHtml(supplied.alt)}" loading="lazy" decoding="async">`
+        : `<div class="diagram-scroll" tabindex="0" aria-label="Diagram viewport. On a narrow screen, inspect the full diagram.">${item}</div>`;
+      return `<figure class="diagram-card">${visual}<figcaption><strong>${title}</strong><span>${desc}</span></figcaption></figure>`;
     }).join('')}</div>`;
     host.append(gallery);
   });

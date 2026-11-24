@@ -12,13 +12,10 @@ export const STUDY_GUIDE = {
       ['Binomial nomenclature', '雙名法'],
     ],
     galleries: [{
-      title: 'Variation and genus-level relationships',
-      intro: 'These selected figures illustrate variation within one species and shared genus membership; appearance alone is not a species test.',
+      title: 'Variation within one species',
+      intro: 'One supplied figure contrasts continuous human-height variation with discontinuous ABO blood groups. Keep this distinction separate from differences between species.',
       figures: [
-        figure('variation-within-species.png', 'Infographic comparing continuous human-height variation, discrete ABO blood groups and variation among domestic dog breeds.', 'Continuous and discontinuous variation occur within species; dog-breed differences do not by themselves demonstrate reproductive isolation.', 'diagram'),
-        figure('peacock-display.jpg', 'A peacock displaying its iridescent train beside a peahen in grass.', 'Peacock and peahen appearance differs through sexual dimorphism, yet both belong to one species; visible differences alone do not define species boundaries.'),
-        figure('lion-savanna.jpg', 'A lion walking across an open, dry grassland habitat.', 'The lion is <i>Panthera leo</i>. The capitalized genus name is shared with tiger and jaguar species.'),
-        figure('tiger-profile.jpg', 'A tiger walking across a rocky surface.', 'The tiger is <i>Panthera tigris</i>, a different species in the genus <i>Panthera</i>; hybrid offspring do not automatically erase species boundaries.'),
+        figure('variation-within-species.png', 'Study-guide infographic comparing continuous human-height variation with discontinuous ABO blood groups.', 'Height forms a continuous range influenced by many genes and environment; ABO groups fall into distinct classes. Both are examples of variation within a species.', 'diagram'),
       ],
     }],
   },
