@@ -150,7 +150,7 @@ export const SYLLABUS_MODULES = [
       '<i>Liuixalus romeri</i> has a dark X-shaped dorsal mark, small adult size and toe pads. <i>Amolops hongkongensis</i> has granular olive skin; use several traits, not one impression.',
       'If a feature is hidden or cannot be judged, record the identification as inconclusive rather than forcing a branch. Observe wildlife without handling it.'
     ])
-  ], diagrams:['hgt','key']},
+  ], diagrams:['hgt']},
   {id:'module-6', title:'DNA barcoding & environmental DNA', points:'HL ONLY · A3.1.15', notes:[
     note('A3.1.15 HL · Identify species from environmental DNA',[
       'A DNA barcode is a short, informative sequence matched to a reference database. Common loci: animal mitochondrial COI; land-plant chloroplast rbcL and matK; fungal nuclear ITS.',
