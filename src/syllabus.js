@@ -68,7 +68,7 @@ export const DIAGRAM_IMAGES = {
 const note = (heading, points) => ({heading, copy: points});
 
 export const SYLLABUS_MODULES = [
-  {id:'module-1', title:'Variation, species concepts & scientific names', points:'A3.1.1–5 · A3.1.8', notes:[
+  {id:'module-1', title:'Variation, species concepts & scientific names', points:'SL + HL · A3.1.1–5, A3.1.8', notes:[
     note('A3.1.1 · Variation within and between species',[
       'Variation is the difference in traits among individuals. Individuals of one species share many features but are not identical; variation provides evidence for describing and comparing organisms.',
       'Differences are generally greater between species than within one species. Close relatives such as humans and chimpanzees share more features than distantly related organisms.',
@@ -91,7 +91,7 @@ export const SYLLABUS_MODULES = [
       'Use other species concepts when interbreeding cannot be assessed; no single concept fits every organism.'
     ])
   ], diagrams:['variation','morphology','binomial','speciation']},
-  {id:'module-2', title:'Genome unity, SNPs & sequence reading', points:'A3.1.8–9', notes:[
+  {id:'module-2', title:'Genome unity, SNPs & sequence reading', points:'SL + HL · A3.1.8–9', notes:[
     note('A3.1.8 · Genome unity and diversity',[
       'A genome is the complete genetic information of an organism. Members of one species share most genes and their arrangement, but alleles can differ in DNA sequence.',
       'By a common convention, a SNP is a one-nucleotide difference present in at least 1% of a population. This cutoff describes population frequency, not a different kind of DNA change.',
@@ -103,7 +103,7 @@ export const SYLLABUS_MODULES = [
       'A double peak is not proof: poor trace quality, sequencing noise, contamination or mixed DNA can look similar. Check the trace and repeat if needed; one chromatogram cannot establish population frequency.'
     ])
   ], diagrams:['snp']},
-  {id:'module-3', title:'Chromosome numbers, karyograms & meiosis', points:'A3.1.6–7 · A3.1.13', notes:[
+  {id:'module-3', title:'Chromosome numbers, karyograms & meiosis', points:'SL + HL · A3.1.6–7 · HL ONLY · A3.1.13', notes:[
     note('A3.1.6 · Chromosome number and karyograms',[
       'Chromosome numbers vary among species. Humans have 2n = 46; chimpanzees have 2n = 48. A chromosome count is useful evidence, not a complete species definition.',
       'Karyotype means chromosome number and type. A karyogram is an ordered image of chromosomes arranged as homologous pairs, usually by decreasing length.',
@@ -121,7 +121,7 @@ export const SYLLABUS_MODULES = [
       'Example: horse 2n = 64 produces n = 32 gametes; donkey 2n = 62 produces n = 31. Their mule has 2n = 63 and is usually sterile because meiosis is disrupted—not merely because the total is odd.'
     ])
   ], diagrams:['mule']},
-  {id:'module-4', title:'Genome size, C-value paradox & sequencing', points:'A3.1.9–11', notes:[
+  {id:'module-4', title:'Genome size, C-value paradox & sequencing', points:'SL + HL · A3.1.9–11', notes:[
     note('A3.1.9 · Genome-size variation',[
       'C-value (1C) is the DNA amount in one haploid genome, measured as mass (1 pg = 10⁻¹² g) or sequence length (1 Mbp = 10⁶ bp). It measures DNA, not gene number.',
       'The C-value paradox is that genome size does not reliably predict organismal complexity or protein-coding gene number. Repeats, transposons, introns and polyploidy can increase DNA without proportionally increasing distinct protein-coding genes.',
@@ -136,7 +136,7 @@ export const SYLLABUS_MODULES = [
       'Genome comparisons support research on evolutionary relationships and outbreak tracing. Precision or personalized medicine may use an individual’s variants, but sequence data require careful interpretation.'
     ])
   ], diagrams:['genome','sequencing']},
-  {id:'module-5', title:'Prokaryotic lineages & species identification keys', points:'A3.1.12 · A3.1.14 HL', notes:[
+  {id:'module-5', title:'Prokaryotic lineages & species identification keys', points:'HL ONLY · A3.1.12, A3.1.14', notes:[
     note('A3.1.12 HL · Asexual reproduction and horizontal gene transfer',[
       'The BSC relies on interbreeding, so it fits poorly for organisms that reproduce only asexually and for bacteria with horizontal gene transfer (HGT).',
       'Asexual reproduction can produce clonal descendants; mutations accumulate between clones. HGT moves genes between lineages, so prokaryotic ancestry is not always a simple branching tree.',
@@ -151,7 +151,7 @@ export const SYLLABUS_MODULES = [
       'If a feature is hidden or cannot be judged, record the identification as inconclusive rather than forcing a branch. Observe wildlife without handling it.'
     ])
   ], diagrams:['hgt','key']},
-  {id:'module-6', title:'DNA barcoding & environmental DNA', points:'A3.1.15 HL', notes:[
+  {id:'module-6', title:'DNA barcoding & environmental DNA', points:'HL ONLY · A3.1.15', notes:[
     note('A3.1.15 HL · Identify species from environmental DNA',[
       'A DNA barcode is a short, informative sequence matched to a reference database. Common loci: animal mitochondrial COI; land-plant chloroplast rbcL and matK; fungal nuclear ITS.',
       'Environmental DNA (eDNA) is DNA shed into water, soil or air. Workflow: sample habitat → filter traces → extract and amplify a barcode → sequence → compare with reference sequences.',
@@ -162,12 +162,12 @@ export const SYLLABUS_MODULES = [
       'DNA barcodes have also been used to detect Gouldian finches at Australian waterholes. In both examples, eDNA helps investigate habitat biodiversity.'
     ])
   ], diagrams:['barcode']},
-  {id:'module-7', title:'Exam check & syllabus map', points:'A3.1.1–15 · SL & HL', notes:[
+  {id:'module-7', title:'Exam check & syllabus map', points:'SL + HL · A3.1.1–11 · HL ONLY · A3.1.12–15', notes:[
     note('Syllabus coverage map',[
-      'A3.1.1–5: variation, morphology, binomial names, the biological species concept and speciation.',
-      'A3.1.6–9: chromosome number, karyograms, fusion evidence, genomes, SNPs and within-/between-species variation.',
-      'A3.1.10–11: compare genome size using databases; explain sequencing speed/cost trends, evolutionary research and potential personalized medicine.',
-      'A3.1.12–15 HL: BSC limits for asexual/HGT organisms, chromosome effects on hybrid fertility, construct a dichotomous key, identify species using eDNA barcodes.'
+      'SL + HL · A3.1.1–5: variation, morphology, binomial names, the biological species concept and speciation.',
+      'SL + HL · A3.1.6–9: chromosome number, karyograms, fusion evidence, genomes, SNPs and within-/between-species variation.',
+      'SL + HL · A3.1.10–11: compare genome size using databases; explain sequencing speed/cost trends, evolutionary research and potential personalized medicine.',
+      'HL ONLY · A3.1.12–15: BSC limits for asexual/HGT organisms, chromosome effects on hybrid fertility, construct a dichotomous key, identify species using eDNA barcodes.'
     ]),
     note('Revision checks',[
       'Distinguish phenotype from species identity, chromosome count from a full species diagnosis, and genome size from gene number or complexity.',
