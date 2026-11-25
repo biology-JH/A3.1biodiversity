@@ -309,3 +309,9 @@ body.dark-mode .starter-option,body.dark-mode .checkpoint-option,body.dark-mode 
   .edna-visual img{height:240px}
   .starter-option{min-height:64px}
 }
+
+
+/* Enlarge images within the existing fixed frame on only the first three flip cards; text layout stays unchanged. */
+.flashcard-grid > .flash-card:nth-child(-n + 3) .flash-front img{object-fit:cover!important;object-position:center}
+.flashcard-grid > .flash-card:nth-child(2) .flash-front img{object-position:center 20%}
+.flashcard-grid > .flash-card:nth-child(3) .flash-front img{object-position:left center}
