@@ -13,9 +13,9 @@ export const STUDY_GUIDE = {
     ],
     galleries: [{
       title: 'Variation within one species',
-      intro: 'One supplied figure contrasts continuous human-height variation with discontinuous ABO blood groups. Keep this distinction separate from differences between species.',
+      intro: 'This figure contrasts continuous human-height variation with discontinuous ABO blood groups. Keep this distinction separate from differences between species.',
       figures: [
-        figure('variation-within-species.png', 'Study-guide infographic comparing continuous human-height variation with discontinuous ABO blood groups.', 'Height forms a continuous range influenced by many genes and environment; ABO groups fall into distinct classes. Both are examples of variation within a species.', 'diagram'),
+        figure('variation-within-species.png', 'Infographic comparing continuous human-height variation with discontinuous ABO blood groups.', 'Height forms a continuous range influenced by many genes and the environment; ABO groups fall into distinct classes. Both are examples of variation within a species.', 'diagram'),
       ],
     }],
   },
@@ -30,7 +30,7 @@ export const STUDY_GUIDE = {
       title: 'Heterozygous base calls',
       intro: 'One selected trace shows why overlapping peaks may indicate two alleles in a diploid sample, not a population-frequency estimate.',
       figures: [
-        figure('overlapping-sanger-peaks.png', 'Sanger chromatogram with two overlapping coloured peaks marked at one nucleotide position.', 'Overlapping peaks at one base can be consistent with a heterozygous genotype. The ≥1% SNP convention concerns population frequency and cannot be established from one chromatogram.', 'diagram'),
+        figure('overlapping-sanger-peaks.png', 'Sanger chromatogram with two overlapping coloured peaks at one nucleotide position.', 'Overlapping peaks at one base can be consistent with a heterozygous genotype. The ≥1% SNP convention concerns population frequency and cannot be established from one chromatogram.', 'diagram'),
       ],
     }],
   },
@@ -42,11 +42,10 @@ export const STUDY_GUIDE = {
       ['Haploid', '單倍體'],
     ],
     galleries: [{
-      title: 'Karyogram criteria and chromosome-2 fusion',
-      intro: 'Two distinct figures cover karyogram matching and the predicted fusion. The other banding and marker diagrams repeat evidence already available in the interactive case file.',
+      title: 'Karyogram criteria',
+      intro: 'Pair chromosomes using several observable features, not length alone.',
       figures: [
         figure('karyogram-criteria.png', 'Infographic identifying chromosome arms and centromere positions and listing karyogram matching criteria.', 'Pair condensed metaphase chromosomes by length, centromere position and banding pattern; label short p and long q arms.', 'diagram'),
-        figure('chromosome-2-fusion-overview.png', 'Diagram comparing two banded ancestral chromosomes with one human chromosome 2 and marking internal chromosome features.', 'The fusion hypothesis predicts that chimpanzee chromosomes 12 and 13 (older site labels 2A/2B) correspond end-to-end with human chromosome 2; internal telomeres and a vestigial centromere provide further tests.', 'diagram'),
       ],
     }],
   },
@@ -81,15 +80,6 @@ export const STUDY_GUIDE = {
         figures: [
           figure('frog-key-traits.png', 'Illustrated comparison of frog dorsal markings and a sequence of observable identification checks.', 'A dichotomous key uses two mutually exclusive alternatives at each couplet. Test every specimen and revise unclear clues.', 'diagram'),
           figure('romers-tree-frog-leaf.jpg', 'A small brown frog resting on a green leaf.', 'Reference image for <i>Liuixalus romeri</i>; identify it using several observable traits such as the dorsal mark, toe pads and adult size.'),
-        ],
-      },
-      {
-        title: 'Horizontal gene transfer and prokaryote ancestry',
-        intro: 'DNA exchange links otherwise branching lineages and can produce a reticulate evolutionary history.',
-        figures: [
-          figure('hgt-pathways.png', 'Diagram comparing conjugation, transformation and transduction as DNA-transfer pathways between prokaryotes.', 'Conjugation uses cell contact, transformation takes up environmental DNA, and transduction is mediated by bacteriophages.', 'diagram'),
-          figure('prokaryote-lineages-2.png', 'Diagram of prokaryote lineages with horizontal links between otherwise branching groups.', 'Vertical descent branches; horizontal gene transfer adds cross-links, so a strictly branching tree is incomplete.', 'diagram'),
-          figure('bacteriophage-micrograph.jpg', 'Electron micrograph of bacteriophage particles.', 'Bacteriophages can mediate transduction by moving DNA between bacterial cells; the image illustrates the vector, not a complete transfer event.'),
         ],
       },
     ],

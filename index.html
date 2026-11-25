@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0f3d33">
-  <meta name="description" content="Study IB Biology A3.1 with a bilingual, SL-first field guide, chromosome evidence, genome comparisons, species keys and eDNA workflows.">
-  <title>BioAtlas | IB Biology A3.1 · SL + HL</title>
+  <meta name="description" content="Explore species boundaries, genome variation, chromosome evidence, classification methods and environmental DNA workflows.">
+  <title>BioAtlas | Biodiversity, Species &amp; Genomes</title>
   <link rel="icon" type="image/png" href="assets/bioatlas-dna-mark.png">
   <script>window.tailwind = { config: { theme: { extend: { colors: { canopy: '#0f3d33', fern: '#17856c', mist: '#eef5f1', slateink: '#26353a' } } } } };</script>
   <script src="https://cdn.tailwindcss.com"></script>
@@ -17,7 +17,7 @@
     <div class="header-inner">
       <a class="brand" href="#top" aria-label="BioAtlas home">
         <img src="assets/bioatlas-dna-mark.png" alt="" class="brand-mark">
-        <span class="brand-copy"><strong>BioAtlas</strong><small>IB Biology · A3.1</small></span>
+        <span class="brand-copy"><strong>BioAtlas</strong><small>SPECIES · GENOMES</small></span>
       </a>
       <div class="header-progress" aria-live="polite">
         <span class="eyebrow">EXAM CHECK</span>
@@ -54,7 +54,7 @@
     <div class="page-shell">
       <aside class="study-rail" aria-label="Study guide">
         <div class="rail-card">
-          <span class="rail-kicker">A3.1 FIELD GUIDE</span>
+          <span class="rail-kicker">FIELD GUIDE</span>
           <p>Seven stops from variation to environmental DNA.</p>
           <div class="rail-progress"><span id="module-progress-fill"></span></div>
           <small id="module-progress-label">0 of 7 modules explored</small>
@@ -68,6 +68,28 @@
           <div class="intro-mark">A3</div>
           <div><span class="eyebrow">THE BIG QUESTION</span><h2>How do we decide what counts as a species?</h2></div>
           <p>Start with the shared SL core, then extend into HL methods. Compare anatomy, reproductive boundaries and molecular evidence.</p>
+        </section>
+
+        <section class="learning-objectives" aria-labelledby="learning-objectives-title">
+          <span class="eyebrow">WHAT · WHY · HOW</span>
+          <h2 id="learning-objectives-title">Learning objectives</h2>
+          <div class="objective-grid">
+            <article><strong>What</strong><p>Describe variation, species concepts, genome evidence, chromosome patterns and biodiversity-identification methods.</p></article>
+            <article><strong>Why</strong><p>Use multiple lines of evidence to explain relationships and boundaries without treating one observation as proof.</p></article>
+            <article><strong>How</strong><p>Interpret figures and sequence data, compare genome records, construct a key and explain the limits of each method.</p></article>
+          </div>
+        </section>
+
+        <section class="warm-up" aria-labelledby="warm-up-title">
+          <span class="eyebrow">STARTER · QUICK DIAGNOSTIC</span>
+          <h2 id="warm-up-title">Before Session 1</h2>
+          <p>Two populations look similar, but one visible trait differs. What is the best next step before deciding whether they are separate species?</p>
+          <div class="starter-options" role="group" aria-label="Choose the best next step">
+            <button type="button" class="starter-option" data-starter-answer="false">Treat the visible difference as proof of two species.</button>
+            <button type="button" class="starter-option" data-starter-answer="true">Compare more evidence, such as reproductive compatibility or genome patterns.</button>
+            <button type="button" class="starter-option" data-starter-answer="false">Assume they are different species if they live in different habitats.</button>
+          </div>
+          <p id="starter-feedback" class="starter-feedback" aria-live="polite">Choose an answer to reveal a short explanation.</p>
         </section>
 
         <section class="module-section" id="module-1" aria-labelledby="m1-title">
@@ -89,7 +111,7 @@
           </div>
           <article class="learning-card split-card chromatogram-card">
             <div class="chrom-copy">
-              <span class="eyebrow">SANGER SEQUENCING · SOURCE: PART 2, SLIDE 1</span>
+              <span class="eyebrow">SANGER SEQUENCING · GENETIC VARIATION</span>
               <h3>Find the double peaks</h3>
               <p class="body-copy">Tap either marker. At positions 140 and 246, two fluorescence signals overlap, consistent with heterozygous base calls in the sample.</p>
               <div id="chrom-feedback" class="evidence-callout" aria-live="polite"><span class="callout-icon">⌖</span><span>Select a hotspot on the chromatogram to inspect the base call.</span></div>
@@ -167,7 +189,7 @@
               <div id="fauna-specimen" class="specimen-card"></div>
               <div class="key-path-panel"><span class="eyebrow">COUPLET PATH</span><div id="fauna-couplet" class="couplet-box"></div><div id="fauna-feedback" class="feedback" aria-live="polite"></div><div id="fauna-result" class="key-result" aria-live="polite"></div></div>
             </div>
-            <div class="field-note"><strong>Field note</strong><span>Use photos and observations only. Do not handle or disturb wildlife. Supplemental bird images are species references, not records from Hong Kong.</span></div>
+            <div class="field-note"><strong>Field note</strong><span>Use photographs and observations only. Do not handle or disturb wildlife.</span></div>
           </article>
         </section>
 
@@ -179,7 +201,7 @@
             <div class="stepper" id="edna-steps" role="tablist" aria-label="Environmental DNA workflow"></div>
             <div class="edna-active-step" id="edna-active-step" aria-live="polite"></div>
             <div class="edna-visual-strip" id="edna-visual-strip"></div>
-              <div class="dolphin-case"><div><span class="eyebrow">FIELD APPLICATION</span><h3>Listen for traces, not splashes</h3><p>Water samples from Hong Kong's western waters can reveal DNA from the Indo-Pacific humpback dolphin (<i>Sousa chinensis</i>) and help profile the fish community in its habitat.</p></div><img id="dolphin-image" alt="Slide illustration of Indo-Pacific humpback dolphins"></div>
+              <div class="dolphin-case"><div><span class="eyebrow">FIELD APPLICATION</span><h3>Listen for traces, not splashes</h3><p>Water samples from Hong Kong's western waters can reveal DNA from the Indo-Pacific humpback dolphin (<i>Sousa chinensis</i>) and help profile the fish community in its habitat.</p></div><img id="dolphin-image" alt="Indo-Pacific humpback dolphins swimming in coastal water"></div>
           </article>
         </section>
 
@@ -190,15 +212,24 @@
           <article class="learning-card quiz-card">
             <div class="quiz-topline"><div><span class="eyebrow">YOUR LIVE SCORE</span><h3><span id="quiz-score-inline">0</span> / <span id="quiz-total">17</span> correct</h3></div><div class="quiz-meter"><span id="quiz-meter-fill"></span></div><span id="quiz-answered">0 / 17 answered</span></div>
             <div id="quiz-container" class="quiz-list"></div>
-            <div class="quiz-end-row"><p>Questions are adapted from the multiple-choice, true/false, ordering and matching checks in both lesson decks.</p><button id="finish-quiz" class="button button-primary" type="button">See summary <span>→</span></button></div>
+            <div class="quiz-end-row"><p>Use the explanations to reinforce the key ideas and identify topics to revisit.</p><button id="finish-quiz" class="button button-primary" type="button">See summary <span>→</span></button></div>
             <div id="quiz-summary" class="quiz-summary" hidden aria-live="polite"></div>
           </article>
         </section>
 
+        <section class="lesson-plenary" id="lesson-plenary" aria-labelledby="plenary-title">
+          <span class="eyebrow">EXIT TICKET · WHOLE-LESSON SYNTHESIS</span>
+          <h2 id="plenary-title">Make the evidence work together</h2>
+          <p>Choose one species question from the lesson. State what evidence you would use, what it could show, and one limitation. Link your response to the What, Why and How objectives above.</p>
+          <label for="plenary-response">Your reflection</label>
+          <textarea id="plenary-response" rows="4" placeholder="I would use … because …; this evidence supports …, but it cannot …"></textarea>
+          <button type="button" id="show-plenary-guide" class="button button-outline" aria-expanded="false" aria-controls="plenary-model">Show reflection guide</button>
+          <div id="plenary-model" class="plenary-model" hidden><strong>Self-check:</strong> Identify a relevant method or observation; connect it to a defensible inference; then state a limitation. For example, chromosome banding plus internal telomeric repeats and a vestigial centromere support the chromosome-2 fusion hypothesis, while chromosome count alone would not establish it.</div>
+        </section>
+
         <footer class="site-footer">
-          <div class="footer-brand"><img src="assets/bioatlas-dna-mark.png" alt=""><span>BioAtlas <small>IB Biology A3.1</small></span></div>
-          <p>Study from the evidence. Figures from the attached study guide are paired with the original lesson visuals and notes.</p>
-          <a href="assets/SOURCES.md">Image sources & attributions <span>↗</span></a>
+          <div class="footer-brand"><img src="assets/bioatlas-dna-mark.png" alt=""><span>BioAtlas <small>FIELD LEARNING</small></span></div>
+          <p>A practical field guide to biodiversity, genomes and classification.</p>
         </footer>
       </div>
     </div>

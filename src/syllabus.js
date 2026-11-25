@@ -23,8 +23,8 @@ export const DIAGRAMS = {
     `${['Gene flow','Barrier','Divergence','Isolation'].map((a,i)=>{const x=30+i*220;return `${box(x,72,180,92,i===3?'#f7e7df':'#e8f1ec')}${text(x+16,112,a,22,700)}${text(x+16,145,['shared alleles','flow reduced','differences build','separate species'][i],16)}`}).join('')}${[210,430,650].map(x=>line(x,118,x+25,118)).join('')}${text(45,235,'RING SPECIES · populations around a geographic barrier',21,700,'#17856c')}<path d="M210 330 C260 270 370 265 440 320 C510 375 620 360 675 300" fill="none" stroke="#78c75b" stroke-width="17" stroke-linecap="round"/><path d="M210 330 C150 380 95 365 80 325" fill="none" stroke="#17856c" stroke-width="17" stroke-linecap="round"/><path d="M675 300 C735 250 790 265 810 310" fill="none" stroke="#17856c" stroke-width="17" stroke-linecap="round"/><circle cx="450" cy="330" r="90" fill="none" stroke="#cbdcd0" stroke-width="2" stroke-dasharray="7 9"/>${text(345,430,'Terminal populations may not interbreed',19,700)}`),
   fusion: svg('Shared primate ancestor: chromosome-2 fusion evidence', 'Banding correspondences link chimpanzee chromosomes 12 and 13 with human chromosome 2. Internal telomeric repeats and an inactive centromere remnant support an end-to-end fusion in the human lineage.',
     `${text(40,55,'SHARED PRIMATE ANCESTOR',20,700,'#17856c')}${box(65,90,300,95)}${text(95,132,'chr 12',28,700)}${text(230,132,'chr 13',28,700)}${line(370,137,465,137)}${box(495,90,340,95,'#e7f1dc','#b3ca8f')}${text(535,132,'HUMAN chr 2',26,700)}${text(50,238,'Banding patterns align end-to-end',21,700)}<path d="M90 295H810" stroke="#78a66a" stroke-width="22" stroke-linecap="round"/><rect x="427" y="278" width="11" height="34" rx="5" fill="#bb5346"/><ellipse cx="610" cy="295" rx="20" ry="13" fill="#34444e"/><text x="394" y="350" font-size="19" fill="#24483d">2q13 · inverted TTAGGG repeats</text><text x="580" y="390" font-size="19" fill="#24483d">2q21 · vestigial centromere</text>${text(60,415,'Predicted markers support a testable, falsifiable hypothesis.',18,700)}`),
-  snp: svg('SNP, indel and heterozygous Sanger peaks', 'A SNP is a common single-base variant; an indel inserts or deletes bases. Two Sanger peaks at one site can indicate heterozygosity in one diploid sample.',
-    `${text(38,55,'SHARED GENOME · VARIABLE SITES',20,700,'#17856c')}${box(30,80,400,145)}${text(55,120,'Reference',19,700)}${text(55,166,'A C G T A C G T A C',24,700)}${text(55,207,'A C G/A T A C G T/C A C',22,700,'#a24a3a')}${box(470,80,400,145,'#fff','#cbdcd0')}${text(495,120,'Variant types',22,700)}${text(495,164,'SNP: one base differs',20)}${text(495,201,'Indel: base(s) inserted/deleted',20)}${text(40,275,'SANGER TRACE · overlapping peaks can indicate two alleles',20,700,'#17856c')}<path d="M60 390H840" stroke="#9baaa2" stroke-width="2"/><path d="M110 390 Q130 380 145 310 Q160 230 175 390 M280 390 Q300 380 315 290 Q330 240 345 390 M460 390 Q480 385 495 290 Q510 230 525 390 M495 390 Q515 380 530 300 Q545 255 560 390 M700 390 Q720 380 735 290 Q750 230 765 390 M735 390 Q755 380 770 300 Q785 250 800 390" fill="none" stroke="#17856c" stroke-width="5"/>${text(465,425,'G/A',18,700)}${text(705,425,'T/C',18,700)}${text(45,425,'Population frequency—not one chromatogram—defines an SNP',18)}`),
+  snp: svg('SNP, indel and heterozygous Sanger peaks', 'Population frequency—not one chromatogram—defines an SNP. An indel inserts or deletes bases; two Sanger peaks at one site can indicate heterozygosity in one diploid sample.',
+    `${text(38,55,'SHARED GENOME · VARIABLE SITES',20,700,'#17856c')}${box(30,80,400,145)}${text(55,120,'Reference',19,700)}${text(55,166,'A C G T A C G T A C',24,700)}${text(55,207,'A C G/A T A C G T/C A C',22,700,'#a24a3a')}${box(470,80,400,145,'#fff','#cbdcd0')}${text(495,120,'Variant types',22,700)}${text(495,164,'SNP: one base differs',20)}${text(495,201,'Indel: base(s) inserted/deleted',20)}${text(40,275,'SANGER TRACE · overlapping peaks can indicate two alleles',20,700,'#17856c')}<path d="M60 390H840" stroke="#9baaa2" stroke-width="2"/><path d="M110 390 Q130 380 145 310 Q160 230 175 390 M280 390 Q300 380 315 290 Q330 240 345 390 M460 390 Q480 385 495 290 Q510 230 525 390 M495 390 Q515 380 530 300 Q545 255 560 390 M700 390 Q720 380 735 290 Q750 230 765 390 M735 390 Q755 380 770 300 Q785 250 800 390" fill="none" stroke="#17856c" stroke-width="5"/>${text(465,425,'G/A',18,700)}${text(705,425,'T/C',18,700)}`),
   genome: svg('Genome size variation and C-value paradox', 'Genome sizes vary greatly and do not directly measure gene number or organismal complexity. Repeats, transposons, polyploidy and introns can increase DNA content.', `${text(35,48,'GENOME SIZE (Mbp) · LOGARITHMIC COMPARISON',20,700,'#17856c')}${[['Saccharomyces cerevisiae',12],['Arabidopsis thaliana',135],['Drosophila melanogaster',140],['Homo sapiens',3200],['Paris japonica',149000],['Amoeba proteus',290000]].map((a,i)=>{let y=88+i*42,w=Math.log10(a[1]+1)*58;return `${text(24,y+21,a[0],18,600)}<rect x="340" y="${y}" width="${w}" height="25" rx="8" fill="url(#leaf)"/>${text(352+w,y+20,`${a[1].toLocaleString()} Mbp`,17,700)}`}).join('')}${text(40,382,'C-value paradox: DNA amount ≠ gene number ≠ organismal complexity',20,700,'#7b5130')}${text(40,415,'Repeats, transposons, introns and polyploidy can expand genomes.',18)}`),
   sequencing: svg('Whole-genome sequencing: speed, cost and applications', 'Sequencing methods have become generally faster and less costly. Whole-genome comparisons support evolutionary relationships and outbreak tracing; precision medicine is an application area.',
     `${text(35,48,'SEQUENCING · SPEED INCREASES, COST DECREASES',20,700,'#17856c')}${line(145,165,750,165)}${[['1990s','Early genomes','slow · costly'],['Later','Faster sequencing','lower cost'],['Current','More genomes','broader comparisons']].map((a,i)=>{let x=95+i*300;return `<circle cx="${x+45}" cy="165" r="14" fill="#17856c"/>${box(x,205,220,115)}${text(x+16,245,a[0],19,700)}${text(x+16,280,a[1],21)}${text(x+16,305,a[2],16)}`}).join('')}${['Evolutionary relationships','Outbreak tracing','Personalized medicine*'].map((a,i)=>`${box(45+i*280,355,250,55,'#e7f1dc','#b3ca8f')}${text(60+i*280,390,a,18,700)}`).join('')}${text(50,430,'*Potential future application',16)}`),
@@ -41,24 +41,31 @@ export const DIAGRAMS = {
 export const DIAGRAM_IMAGES = {
   variation: {
     src: 'assets/study-guide/variation-within-species-examples.png',
-    alt: 'Study-guide figure showing continuous human-height variation, discontinuous ABO blood groups, and variation among dog breeds within one species.',
+    alt: 'Figure showing continuous human-height variation, discontinuous ABO blood groups, and variation among dog breeds within one species.',
   },
   fusion: {
-    src: 'assets/study-guide/shared-primate-ancestor-chromosomes.png',
-    alt: 'Study-guide comparison of chimpanzee chromosome 12 and 13 banding with human chromosome 2, including the active centromere, internal telomeric repeats and vestigial centromere.',
+    src: 'assets/user-provided/chromosome-2-fusion-evidence.png',
+    alt: 'Chromosome-2 fusion evidence showing matching G-banding, internal telomeric repeats at 2q13 and a vestigial centromere at 2q21.',
   },
   sequencing: {
     src: 'assets/study-guide/sequencing-speed-cost-applications.png',
-    alt: 'Study-guide illustration of whole-genome, short-read and long-read sequencing, showing generally faster and less costly sequencing over time and applications in evolutionary research, outbreak tracing and precision medicine.',
+    alt: 'Illustration of whole-genome, short-read and long-read sequencing, showing generally faster and less costly sequencing over time and applications in evolutionary research, outbreak tracing and precision medicine.',
   },
   key: {
     src: 'assets/study-guide/frog-observable-traits-key.png',
-    alt: 'Study-guide frog comparison for a dichotomous key: a small frog with a dark X-shaped mark versus a larger frog with granular olive skin.',
+    alt: 'Frog comparison for a dichotomous key: a small frog with a dark X-shaped mark versus a larger frog with granular olive skin.',
+  },
+  mule: {
+    src: 'assets/user-provided/horse-donkey-mule-pairing.png',
+    alt: 'Horse and donkey gametes contribute 32 and 31 chromosomes; the 63-chromosome mule may have disrupted chromosome pairing and meiosis.',
+  },
+  hgt: {
+    src: 'assets/user-provided/binary-fission-horizontal-gene-transfer.png',
+    alt: 'Diagram of bacterial binary fission and the horizontal gene-transfer routes conjugation, transformation and transduction.',
   },
 };
 
-const cite = (label) => `<a class="slide-cite" href="assets/SLIDE_TEXT_INDEX.md" target="_blank" rel="noopener">${label} · slide text ↗</a>`;
-const note = (heading, points, source) => ({heading, copy: points, source});
+const note = (heading, points) => ({heading, copy: points});
 
 export const SYLLABUS_MODULES = [
   {id:'module-1', title:'Variation, species concepts & scientific names', points:'A3.1.1–5 · A3.1.8', notes:[
@@ -66,23 +73,23 @@ export const SYLLABUS_MODULES = [
       'Variation is the difference in traits among individuals. Individuals of one species share many features but are not identical; variation provides evidence for describing and comparing organisms.',
       'Differences are generally greater between species than within one species. Close relatives such as humans and chimpanzees share more features than distantly related organisms.',
       'Continuous variation forms a range (for example, height); discontinuous variation falls into distinct classes (for example, ABO groups). Genes, environment and their interaction can influence phenotype; variation alone does not define a species.'
-    ], 'Part 1 · printed pp. 105, 107; Part 2 · slides 2–6, 10–11'),
+    ]),
     note('A3.1.2 · Morphological species concept',[
       'Linnaeus grouped organisms by shared morphology: outward form and internal structure.',
       'Morphology is useful for fossils and field identification when breeding cannot be observed.',
       'Sexual dimorphism: males and females of one species can look different. Plasticity: the same genotype can produce different phenotypes in different environments; neither difference alone proves separate species.',
       'Cryptic species are distinct lineages with similar forms. Convergence occurs when unrelated lineages independently evolve similar traits; both can hide species differences from morphology.'
-    ], 'Part 1 · printed p. 105; Part 2 · slides 14–16'),
+    ]),
     note('A3.1.3 · Binomial naming system',[
       'A complete scientific name has two parts: a capitalized genus and a lowercase specific epithet. Members of one genus share traits; the epithet distinguishes species within that genus.',
       'Italicize both words when typed and underline them when handwritten. After first use, abbreviate the genus only: <i>Homo sapiens</i> → <i>H. sapiens</i>.',
       'A binomial avoids confusion among local names and can be used consistently across languages.'
-    ], 'Part 1 · printed p. 105; Part 2 · slide 7'),
+    ]),
     note('A3.1.4 · Biological species concept (BSC)',[
       'A species is a group of natural populations that actually or potentially interbreed and produce viable, fertile offspring. Reproductive isolation limits gene flow with other groups.',
       'Interbreeding cannot be tested in fossils, and the concept does not fit obligately asexual organisms. Some distinct species hybridize; occasional hybrids do not by themselves erase species boundaries.',
       'Use other species concepts when interbreeding cannot be assessed; no single concept fits every organism.'
-    ], 'Part 1 · printed p. 105; Part 2 · slides 3–4, 8')
+    ])
   ], diagrams:['variation','morphology','binomial','speciation']},
   {id:'module-2', title:'Genome unity, SNPs & sequence reading', points:'A3.1.8–9', notes:[
     note('A3.1.8 · Genome unity and diversity',[
@@ -90,11 +97,11 @@ export const SYLLABUS_MODULES = [
       'By a common convention, a SNP is a one-nucleotide difference present in at least 1% of a population. This cutoff describes population frequency, not a different kind of DNA change.',
       'Homozygous: the two alleles at a locus are the same. Heterozygous: they differ. A diploid child can inherit the same or different base variants from the two parents.',
       'An insertion or deletion (indel) adds or removes one or more nucleotides. A coding indel not divisible by three can shift the reading frame.'
-    ], 'Part 1 · printed p. 107; Part 2 · slides 13–15'),
+    ]),
     note('Reading Sanger chromatograms',[
       'Each clear fluorescent peak usually marks one base. Two differently coloured peaks at one site can indicate two alleles (for example, A/G) in a heterozygous diploid sample.',
       'A double peak is not proof: poor trace quality, sequencing noise, contamination or mixed DNA can look similar. Check the trace and repeat if needed; one chromatogram cannot establish population frequency.'
-    ], 'Part 1 · printed pp. 107–108; Part 2 · slides 13–14')
+    ])
   ], diagrams:['snp']},
   {id:'module-3', title:'Chromosome numbers, karyograms & meiosis', points:'A3.1.6–7 · A3.1.13', notes:[
     note('A3.1.6 · Chromosome number and karyograms',[
@@ -102,58 +109,58 @@ export const SYLLABUS_MODULES = [
       'Karyotype means chromosome number and type. A karyogram is an ordered image of chromosomes arranged as homologous pairs, usually by decreasing length.',
       'To prepare a karyogram: select a clear mitotic metaphase spread with condensed, non-overlapping chromosomes; stain to reveal bands; photograph; then pair by banding pattern, length and centromere position.',
       'The centromere separates the short p arm from the long q arm. Position can be metacentric, submetacentric or acrocentric.'
-    ], 'Part 1 · printed p. 106; Part 2 · slides 9–10'),
+    ]),
     note('A3.1.7 · Human chromosome 2 fusion hypothesis',[
       'Hypothesis: two ancestral ape chromosomes fused end-to-end in the human lineage after the lineages diverged. Chimpanzee chromosomes 12 and 13 remain separate; their corresponding regions occur in order on human chromosome 2.',
       'Matching G-band order supports this predicted arrangement: regions from two chromosomes appear along one human chromosome.',
       'Telomeres normally cap chromosome ends. Inverted TTAGGG repeats inside human 2q13 fit the prediction that two ancestral ends met at an internal fusion site.',
       'Each ancestral chromosome had a centromere. Human chromosome 2 has one active centromere and an inactive remnant at 2q21, consistent with fusion. Together, banding and both internal markers support the hypothesis; chromosome count alone does not prove it.'
-    ], 'Part 1 · printed pp. 106–107; Part 2 · slide 10'),
+    ]),
     note('A3.1.13 HL · Chromosome pairing and hybrid fertility',[
       'If parental chromosome numbers or structures differ, hybrid chromosomes may lack homologous partners. Pairing and segregation in meiosis can fail, making viable gametes less likely.',
       'Example: horse 2n = 64 produces n = 32 gametes; donkey 2n = 62 produces n = 31. Their mule has 2n = 63 and is usually sterile because meiosis is disrupted—not merely because the total is odd.'
-    ], 'Part 1 · printed pp. 106, 109; Part 2 · slides 30–32')
-  ], diagrams:['fusion','mule']},
+    ])
+  ], diagrams:['mule']},
   {id:'module-4', title:'Genome size, C-value paradox & sequencing', points:'A3.1.9–11', notes:[
     note('A3.1.9 · Genome-size variation',[
       'C-value (1C) is the DNA amount in one haploid genome, measured as mass (1 pg = 10⁻¹² g) or sequence length (1 Mbp = 10⁶ bp). It measures DNA, not gene number.',
       'The C-value paradox is that genome size does not reliably predict organismal complexity or protein-coding gene number. Repeats, transposons, introns and polyploidy can increase DNA without proportionally increasing distinct protein-coding genes.',
-      'Study-guide comparison (approximate): thale cress has 135 Mbp and about 27,000 protein-coding genes; humans have 3,200 Mbp and about 20,000. A smaller genome can have more annotated genes; estimates depend on annotation.'
-    ], 'Part 1 · printed pp. 107–108; Part 2 · slides 15–21'),
+      'Example comparison (approximate): thale cress has 135 Mbp and about 27,000 protein-coding genes; humans have 3,200 Mbp and about 20,000. A smaller genome can have more annotated genes; estimates depend on annotation.'
+    ]),
     note('A3.1.10 · Application skill: compare genome sizes in databases',[
-      'Find genome-size data for at least two taxonomic groups in the Kew C-values database or the Animal Genome Size Database. Record the organism, value, unit, source and database release/date.',
+      'Find genome-size data for at least two taxonomic groups in reliable reference databases. Record the organism, value, unit, source and database release/date.',
       'Compare genome size with organismal complexity. Explain why a larger DNA amount does not necessarily mean more genes or greater complexity; check whether each value refers to a haploid nuclear genome.'
-    ], 'Part 1 · printed p. 108; database links below'),
+    ]),
     note('A3.1.11 · Whole-genome sequencing',[
       'Whole-genome sequencing reads DNA across a genome. The field has progressed from Sanger to short- and long-read methods, which are generally faster and less costly.',
       'Genome comparisons support research on evolutionary relationships and outbreak tracing. Precision or personalized medicine may use an individual’s variants, but sequence data require careful interpretation.'
-    ], 'Part 1 · printed p. 108; Part 2 · slides 22–23, 26')
+    ])
   ], diagrams:['genome','sequencing']},
   {id:'module-5', title:'Prokaryotic lineages & species identification keys', points:'A3.1.12 · A3.1.14 HL', notes:[
     note('A3.1.12 HL · Asexual reproduction and horizontal gene transfer',[
       'The BSC relies on interbreeding, so it fits poorly for organisms that reproduce only asexually and for bacteria with horizontal gene transfer (HGT).',
       'Asexual reproduction can produce clonal descendants; mutations accumulate between clones. HGT moves genes between lineages, so prokaryotic ancestry is not always a simple branching tree.',
       'Extension mechanisms: conjugation transfers DNA by cell contact; transformation takes up environmental DNA; transduction is mediated by bacteriophages.'
-    ], 'Part 1 · printed p. 108; Part 2 · slides 25–29'),
+    ]),
     note('A3.1.14 HL · Construct a dichotomous key',[
       'A dichotomous key is a series of numbered couplets, each with two mutually exclusive choices based on observable, specific and reliable traits. Each choice leads to another couplet or an identification.',
       'Use contrasting, measurable features rather than vague impressions. Test every specimen; if a trait is hidden or the alternatives are ambiguous, record an inconclusive result and revise the couplet.'
-    ], 'Part 1 · printed p. 109; Part 2 · slides 33–37'),
+    ]),
     note('Worked local example · frog key',[
       '<i>Liuixalus romeri</i> has a dark X-shaped dorsal mark, small adult size and toe pads. <i>Amolops hongkongensis</i> has granular olive skin; use several traits, not one impression.',
       'If a feature is hidden or cannot be judged, record the identification as inconclusive rather than forcing a branch. Observe wildlife without handling it.'
-    ], 'Part 2 · slides 34–37')
+    ])
   ], diagrams:['hgt','key']},
   {id:'module-6', title:'DNA barcoding & environmental DNA', points:'A3.1.15 HL', notes:[
     note('A3.1.15 HL · Identify species from environmental DNA',[
       'A DNA barcode is a short, informative sequence matched to a reference database. Common loci: animal mitochondrial COI; land-plant chloroplast rbcL and matK; fungal nuclear ITS.',
       'Environmental DNA (eDNA) is DNA shed into water, soil or air. Workflow: sample habitat → filter traces → extract and amplify a barcode → sequence → compare with reference sequences.',
       'A reliable reference-library match supports presence in or near the sampled habitat. Contamination, DNA degradation, primer bias and incomplete databases can affect identification; detection or read count alone does not measure abundance.'
-    ], 'Part 1 · printed p. 109; Part 2 · slides 38–43'),
+    ]),
     note('Field example · Pearl River Estuary',[
       'Water samples can reveal traces of the Indo-Pacific humpback dolphin (<i>Sousa chinensis</i>) and other organisms without directly observing them.',
-      'Oxford’s guide gives a separate example: DNA barcodes detected Gouldian finches at Australian waterholes. In both cases, eDNA helps investigate habitat biodiversity.'
-    ], 'Part 2 · slides 40, 43, 46–47; Oxford Biology Study Guide, printed p. 109')
+      'DNA barcodes have also been used to detect Gouldian finches at Australian waterholes. In both examples, eDNA helps investigate habitat biodiversity.'
+    ])
   ], diagrams:['barcode']},
   {id:'module-7', title:'Exam check & syllabus map', points:'A3.1.1–15 · SL & HL', notes:[
     note('Syllabus coverage map',[
@@ -161,11 +168,11 @@ export const SYLLABUS_MODULES = [
       'A3.1.6–9: chromosome number, karyograms, fusion evidence, genomes, SNPs and within-/between-species variation.',
       'A3.1.10–11: compare genome size using databases; explain sequencing speed/cost trends, evolutionary research and potential personalized medicine.',
       'A3.1.12–15 HL: BSC limits for asexual/HGT organisms, chromosome effects on hybrid fertility, construct a dichotomous key, identify species using eDNA barcodes.'
-    ], '2025 IB Biology Guide · A3.1 · syllabus pp. 41–44; supplied Oxford guide · printed pp. 105–109'),
+    ]),
     note('Revision checks',[
       'Distinguish phenotype from species identity, chromosome count from a full species diagnosis, and genome size from gene number or complexity.',
       'For karyograms, describe metaphase selection, staining, photography and pairing criteria. For fusion evidence, state the hypothesis and predicted observations.',
       'For database and eDNA questions, name the source or barcode, state units or workflow, and include one limit on interpretation.'
-    ], 'Part 1 · printed pp. 105–109; Part 2 · slides 14, 17–20, 33, 43, 47')
+    ])
   ], diagrams:[]},
 ];

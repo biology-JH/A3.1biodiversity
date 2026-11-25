@@ -1,4 +1,4 @@
-import { FAUNA, FLASHCARDS, GENOME_DATA, IMAGE_CREDITS, IMAGES, QUIZ } from './data.js';
+import { FAUNA, FLASHCARDS, GENOME_DATA, IMAGES, QUIZ, SESSION_CHECKPOINTS } from './data.js';
 import { DIAGRAMS, DIAGRAM_IMAGES, SYLLABUS_MODULES } from './syllabus.js';
 import { STUDY_GUIDE } from './guide.js';
 
@@ -122,7 +122,7 @@ function setFusionEvidence(key) {
 }
 function renderChromosomeExplorer() {
   setImage($('#karyogram-image'), IMAGES.karyogram, 'Human and chimpanzee karyograms showing the chromosome-number difference');
-  setImage($('#fusion-image'), IMAGES.fusion, 'Slide diagram: chimpanzee chromosomes 12 and 13, labelled 2A and 2B on the site, correspond to human chromosome 2');
+  setImage($('#fusion-image'), IMAGES.fusion, 'Chromosome-2 fusion evidence showing matching bands, internal telomeric repeats at 2q13 and a vestigial centromere at 2q21');
   $$('.fusion-pin').forEach(button => button.addEventListener('click', () => setFusionEvidence(button.dataset.evidence)));
   const evidenceHost = $('#fusion-evidence-list');
   evidenceHost.innerHTML = Object.entries(fusionEvidence).map(([key, item]) => `<button class="evidence-card" type="button" data-evidence-card="${key}"><strong>${item.title}</strong><p>${item.text}</p></button>`).join('');
@@ -176,8 +176,7 @@ function renderGenomeChart() {
       width = item.complexityTier / max * 100;
       valueText = item.organization;
     }
-    const geneSource = item.geneSource ? `<a class="gene-source" href="${item.geneSource}" target="_blank" rel="noopener">annotation ↗</a>` : '';
-    return `<div class="genome-row" role="listitem"><div class="genome-label"><strong>${item.common}</strong><em>${item.name}</em>${mode === 'complexity' ? `<span class="complexity-chip">${item.organization}</span>` : ''}</div><div class="bar-track" aria-label="${mode === 'genome' ? `${item.mbp} megabase pairs` : mode === 'genes' ? (item.geneCount ? `${item.geneCount} protein-coding genes` : 'gene count not reported') : item.organization}"><div class="bar-fill" style="width:${width}%"></div></div><div class="bar-value">${valueText} ${geneSource}</div></div>`;
+    return `<div class="genome-row" role="listitem"><div class="genome-label"><strong>${item.common}</strong><em>${item.name}</em>${mode === 'complexity' ? `<span class="complexity-chip">${item.organization}</span>` : ''}</div><div class="bar-track" aria-label="${mode === 'genome' ? `${item.mbp} megabase pairs` : mode === 'genes' ? (item.geneCount ? `${item.geneCount} protein-coding genes` : 'gene count not reported') : item.organization}"><div class="bar-fill" style="width:${width}%"></div></div><div class="bar-value">${valueText}</div></div>`;
   }).join('');
   const sourceNote = $('#gene-note');
   sourceNote.innerHTML = mode === 'genes'
@@ -186,7 +185,7 @@ function renderGenomeChart() {
   $('#complexity-note').innerHTML = '<strong>Complexity view</strong><span>Organisation is a qualitative grouping—unicellular eukaryotes, multicellular plants, and multicellular animals—not a universal measure of biological complexity.</span>';
 }
 function renderRepeatFigures() {
-  $('#repeat-grid').innerHTML = repeatLabels.map(item => `<article class="repeat-card"><img src="${item.source}" alt="Slide illustration for ${item.title}" loading="lazy"><strong>${item.title}</strong><span>${item.detail}</span></article>`).join('');
+  $('#repeat-grid').innerHTML = repeatLabels.map(item => `<article class="repeat-card"><img src="${item.source}" alt="Illustration of ${item.title}" loading="lazy"><strong>${item.title}</strong><span>${item.detail}</span></article>`).join('');
   $('#genome-sort').addEventListener('change', renderGenomeChart);
   renderGenomeChart();
 }
@@ -209,9 +208,7 @@ function getBirdExpected(specimen) {
 }
 function renderSpecimen() {
   const specimen = currentSpecimen();
-  const source = state.faunaMode === 'birds' ? IMAGE_CREDITS[specimen.id] : {credit: 'Extracted lesson photograph', url: ''};
-  const credit = source?.url ? `<a href="${source.url}" target="_blank" rel="noopener">${source.credit} · source ↗</a>` : '<span>Source: Part 2, slide 34</span>';
-  $('#fauna-specimen').innerHTML = `<img src="${specimen.image}" alt="Mystery specimen photo: ${state.faunaMode === 'birds' ? 'Hong Kong bird reference' : 'Hong Kong native frog'}" loading="lazy"><div class="specimen-info"><span class="eyebrow">MYSTERY SPECIMEN · ${state.faunaMode === 'birds' ? 'BIRD KEY' : 'AMPHIBIAN KEY'}</span><h3>What did you observe?</h3><p>${state.faunaMode === 'birds' ? 'Inspect the crest, wing patches, nape markings and body colour.' : 'Inspect the dorsal pattern, skin texture, toe pads and apparent size.'}</p><p class="image-credit">${credit}</p></div>`;
+  $('#fauna-specimen').innerHTML = `<img src="${specimen.image}" alt="Mystery specimen photograph for the ${state.faunaMode === 'birds' ? 'bird identification' : 'amphibian identification'} key" loading="lazy"><div class="specimen-info"><span class="eyebrow">MYSTERY SPECIMEN · ${state.faunaMode === 'birds' ? 'BIRD KEY' : 'AMPHIBIAN KEY'}</span><h3>What did you observe?</h3><p>${state.faunaMode === 'birds' ? 'Inspect the crest, wing patches, nape markings and body colour.' : 'Inspect the dorsal pattern, skin texture, toe pads and apparent size.'}</p></div>`;
   $('#fauna-feedback').className = 'feedback';
   $('#fauna-feedback').textContent = '';
   $('#fauna-result').className = 'key-result';
@@ -296,10 +293,10 @@ function renderFaunaLab() {
 }
 
 const ednaSteps = [
-  {title: '1 · Water sampling', short: 'Collect', text: 'Collect water from the habitat. Cells, mucus, faeces and other traces can contribute environmental DNA to the sample.', image: IMAGES.water, alt: 'Slide photograph of a field water-sampling location'},
-  {title: '2 · Filtration', short: 'Filter', text: 'Pass the sample through a filter to capture cells and genetic material in the water. Use clean equipment to reduce contamination.', image: IMAGES.filtration, alt: 'Slide image of a filtration manifold'},
-  {title: '3 · PCR amplification', short: 'Amplify', text: 'Extract DNA and amplify a barcode region with polymerase chain reaction. Animal surveys often use the mitochondrial COI marker.', image: IMAGES.pcr, alt: 'Slide lab workflow diagram related to DNA analysis'},
-  {title: '4 · Database match', short: 'Identify', text: 'Compare the barcode sequence with a curated reference database. Reliable identification depends on the sample and accurate references.', image: IMAGES.database, alt: 'Slide image of genomic analysis on a computer'},
+  {title: '1 · Water sampling', short: 'Collect', text: 'Collect water from the habitat. Cells, mucus, faeces and other traces can contribute environmental DNA to the sample.', image: IMAGES.water, alt: 'Water sampling location in a habitat'},
+  {title: '2 · Filtration', short: 'Filter', text: 'Pass the sample through a filter to capture cells and genetic material in the water. Use clean equipment to reduce contamination.', image: IMAGES.filtration, alt: 'Filtration equipment used to capture environmental DNA'},
+  {title: '3 · PCR amplification', short: 'Amplify', text: 'Extract DNA and amplify a barcode region with polymerase chain reaction. Animal surveys often use the mitochondrial COI marker.', image: IMAGES.pcr, alt: 'DNA amplification workflow'},
+  {title: '4 · Database match', short: 'Identify', text: 'Compare the barcode sequence with a curated reference database. Reliable identification depends on the sample and accurate references.', image: IMAGES.database, alt: 'Sequence comparison with a reference database'},
 ];
 function setEdnaStep(index) {
   state.ednaStep = index;
@@ -327,7 +324,7 @@ function renderEdnaLab() {
       buttons[next].tabIndex = 0; buttons[index].tabIndex = -1; buttons[next].focus(); setEdnaStep(next);
     });
   });
-  setImage($('#dolphin-image'), IMAGES.dolphin, 'Illustration of Indo-Pacific humpback dolphins from Part 2, slide 40');
+  setImage($('#dolphin-image'), IMAGES.dolphin, 'Indo-Pacific humpback dolphins in coastal water');
   setEdnaStep(0);
 }
 
@@ -441,7 +438,7 @@ function renderQuiz() {
   QUIZ.forEach((question, index) => {
     const article = document.createElement('article');
     article.className = 'quiz-question';
-    article.innerHTML = `<div class="quiz-question-head"><div><span class="eyebrow">CHECKPOINT 0${index + 1} · ${question.type === 'choice' ? 'MULTIPLE CHOICE' : question.type === 'truefalse' ? 'TRUE / FALSE' : question.type === 'order' ? 'ORDERING' : 'MATCHING'}</span><h4>${formatScientificText(question.prompt)}</h4></div><span class="question-source">${question.source}</span></div>`;
+    article.innerHTML = `<div class="quiz-question-head"><div><span class="eyebrow">FINAL REVIEW 0${index + 1} · ${question.type === 'choice' ? 'MULTIPLE CHOICE' : question.type === 'truefalse' ? 'TRUE / FALSE' : question.type === 'order' ? 'ORDERING' : 'MATCHING'}</span><h4>${formatScientificText(question.prompt)}</h4></div></div>`;
     if (question.type === 'choice' || question.type === 'truefalse') renderChoiceQuestion(question, article);
     if (question.type === 'order') renderOrderQuestion(question, article);
     if (question.type === 'match') renderMatchQuestion(question, article);
@@ -457,13 +454,42 @@ function renderQuiz() {
 function finishQuiz() {
   const summary = $('#quiz-summary');
   const percent = state.answered ? Math.round(state.score / state.answered * 100) : 0;
-  const misses = QUIZ.filter(question => state.answers[question.id] === false).map(question => question.source);
-  const advice = misses.length ? `Revisit ${[...new Set(misses)].join(' and ')} before trying again.` : 'Strong work—review the evidence markers and data notes to reinforce the reasoning.';
+  const misses = QUIZ.filter(question => state.answers[question.id] === false).length;
+  const advice = misses ? `Review the ideas behind the ${misses} question${misses === 1 ? '' : 's'} you missed before trying again.` : 'Strong work—review the evidence and data limits to reinforce the reasoning.';
   summary.hidden = false;
   summary.innerHTML = `<h3>Field check complete</h3><p><strong>${state.score} correct</strong> out of ${state.answered} answered (${percent}%). ${state.answered < QUIZ.length ? `${QUIZ.length - state.answered} checkpoint(s) were left unanswered. ` : ''}${advice}</p><button type="button" id="restart-quiz">Try the questions again</button>`;
   $('#restart-quiz').addEventListener('click', renderQuiz);
   summary.scrollIntoView({behavior: 'smooth', block: 'center'});
 }
+function renderStarterActivity() {
+  const buttons = $$('.starter-option');
+  const feedback = $('#starter-feedback');
+  buttons.forEach(button => button.addEventListener('click', () => {
+    if (buttons.some(option => option.disabled)) return;
+    const correct = button.dataset.starterAnswer === 'true';
+    buttons.forEach(option => {
+      option.disabled = true;
+      if (option.dataset.starterAnswer === 'true') option.classList.add('is-correct');
+      if (option === button && !correct) option.classList.add('is-wrong');
+    });
+    feedback.className = `starter-feedback ${correct ? '' : 'is-incorrect'}`;
+    feedback.textContent = correct
+      ? 'Good diagnostic choice. Appearance can be useful, but reproductive and molecular evidence may be needed to assess species boundaries.'
+      : 'Not quite. A single visible trait or habitat difference is not enough by itself; compare multiple kinds of evidence.';
+  }));
+}
+
+function renderPlenary() {
+  const button = $('#show-plenary-guide');
+  const guide = $('#plenary-model');
+  button.addEventListener('click', () => {
+    const show = guide.hidden;
+    guide.hidden = !show;
+    button.setAttribute('aria-expanded', String(show));
+    button.textContent = show ? 'Hide reflection guide' : 'Show reflection guide';
+  });
+}
+
 function renderThemeToggle() {
   const button = $('#theme-toggle');
   button.addEventListener('click', () => {
@@ -497,16 +523,16 @@ function renderGuideEnhancements(host, module) {
   if (guide.terms?.length) {
     const glossary = document.createElement('section');
     glossary.className = 'guide-glossary';
-    glossary.setAttribute('aria-label', `${guide.title} bilingual key terms`);
-    glossary.innerHTML = `<div class="guide-glossary-heading"><span class="eyebrow">TERMS FROM THE SUPPLIED STUDY GUIDE</span><h3>Key terms · English and 繁體中文</h3></div><ul class="guide-term-list">${guide.terms.map(([english, chinese]) => `<li class="guide-term"><strong>${escapeHtml(english)}</strong><span lang="zh-Hant">${escapeHtml(chinese)}</span></li>`).join('')}</ul>`;
+    glossary.setAttribute('aria-label', `${guide.title} key terms`);
+    glossary.innerHTML = `<div class="guide-glossary-heading"><span class="eyebrow">KEY TERMS</span><h3>Key terms · English and 繁體中文</h3></div><ul class="guide-term-list">${guide.terms.map(([english, chinese]) => `<li class="guide-term"><strong>${escapeHtml(english)}</strong><span lang="zh-Hant">${escapeHtml(chinese)}</span></li>`).join('')}</ul>`;
     const heading = host.querySelector('.section-heading');
     if (heading) heading.insertAdjacentElement('afterend', glossary);
   }
   guide.galleries?.forEach((gallery, index) => {
     const section = document.createElement('section');
     section.className = 'guide-gallery';
-    section.setAttribute('aria-label', `${gallery.title} study-guide figures`);
-    section.innerHTML = `<div class="guide-gallery-heading"><span class="eyebrow">ATTACHED STUDY-GUIDE FIGURES · ${String(index + 1).padStart(2, '0')}</span><h3>${escapeHtml(gallery.title)}</h3><p>${escapeHtml(gallery.intro)}</p></div><div class="guide-figure-grid">${gallery.figures.map((item, figureIndex) => {
+    section.setAttribute('aria-label', gallery.title);
+    section.innerHTML = `<div class="guide-gallery-heading"><span class="eyebrow">VISUAL EVIDENCE · ${String(index + 1).padStart(2, '0')}</span><h3>${escapeHtml(gallery.title)}</h3><p>${escapeHtml(gallery.intro)}</p></div><div class="guide-figure-grid">${gallery.figures.map((item, figureIndex) => {
       const image = `<img src="${escapeHtml(item.asset)}" alt="${escapeHtml(item.alt)}" loading="lazy" decoding="async">`;
       const visual = item.kind === 'diagram' ? `<div class="guide-image-pan" tabindex="0" aria-label="${escapeHtml(item.alt)}; scroll horizontally to inspect the full figure">${image}</div>` : image;
       const caption = escapeHtml(item.caption).replace(/&lt;i&gt;(.*?)&lt;\/i&gt;/g, '<i>$1</i>');
@@ -516,34 +542,74 @@ function renderGuideEnhancements(host, module) {
   });
 }
 
+function renderSessionCheckpoint(host, module, index) {
+  const checkpoint = SESSION_CHECKPOINTS.find(item => item.module === module.id);
+  if (!checkpoint) return;
+  const sessionNumber = String(index + 1).padStart(2, '0');
+  const rootId = `session-check-${index + 1}`;
+  const section = document.createElement('section');
+  section.className = 'session-checkpoint';
+  section.setAttribute('aria-labelledby', `${rootId}-title`);
+  section.innerHTML = `<div class="checkpoint-heading"><span class="eyebrow">SESSION ${sessionNumber} · REVIEW</span><h3 id="${rootId}-title">Pause and check your understanding</h3><p>Answer one multiple-choice question, then explain the idea in your own words.</p></div><div class="checkpoint-question-grid"><article class="checkpoint-question" data-checkpoint-choice><span class="eyebrow">01 · MULTIPLE CHOICE</span><h4>${escapeHtml(checkpoint.multipleChoice.prompt)}</h4><div class="checkpoint-options" role="group" aria-label="Multiple-choice responses">${checkpoint.multipleChoice.options.map((option, choiceIndex) => `<button type="button" class="checkpoint-option" data-review-option="${choiceIndex}">${escapeHtml(option)}</button>`).join('')}</div><p class="checkpoint-feedback" aria-live="polite">Choose an option for immediate feedback.</p></article><article class="checkpoint-question"><span class="eyebrow">02 · OPEN RESPONSE</span><h4>${escapeHtml(checkpoint.openResponse.prompt)}</h4><label class="visually-hidden" for="${rootId}-response">Your response</label><textarea id="${rootId}-response" placeholder="Write a brief response, then compare it with the model answer."></textarea><button type="button" class="model-answer-toggle" aria-expanded="false" aria-controls="${rootId}-model">Show Model Answer</button><div class="model-answer" id="${rootId}-model" hidden>${escapeHtml(checkpoint.openResponse.modelAnswer)}</div></article></div>`;
+  host.append(section);
+
+  const choiceCard = $('[data-checkpoint-choice]', section);
+  const options = $$('.checkpoint-option', choiceCard);
+  const feedback = $('.checkpoint-feedback', choiceCard);
+  options.forEach(button => button.addEventListener('click', () => {
+    if (choiceCard.dataset.answered) return;
+    choiceCard.dataset.answered = 'true';
+    const correct = Number(button.dataset.reviewOption) === checkpoint.multipleChoice.answer;
+    options.forEach((option, choiceIndex) => {
+      option.disabled = true;
+      option.setAttribute('aria-pressed', String(option === button));
+      if (choiceIndex === checkpoint.multipleChoice.answer) option.classList.add('is-correct');
+      if (option === button && !correct) option.classList.add('is-wrong');
+    });
+    feedback.className = `checkpoint-feedback ${correct ? 'is-correct' : 'is-incorrect'}`;
+    feedback.textContent = `${correct ? 'Correct.' : 'Not quite.'} ${checkpoint.multipleChoice.explanation}`;
+  }));
+
+  const toggle = $('.model-answer-toggle', section);
+  const answer = $(`#${rootId}-model`, section);
+  toggle.addEventListener('click', () => {
+    const show = answer.hidden;
+    answer.hidden = !show;
+    toggle.setAttribute('aria-expanded', String(show));
+    toggle.textContent = show ? 'Hide Model Answer' : 'Show Model Answer';
+  });
+}
+
 function renderSyllabus() {
-  SYLLABUS_MODULES.forEach(module => {
+  SYLLABUS_MODULES.forEach((module, index) => {
     const host = document.getElementById(module.id);
     if (!host) return;
     const notes = document.createElement('details');
     notes.className = 'study-notes';
-    const scienceRefs = module.id === 'module-1' ? '<a href="https://evolution.berkeley.edu/biological-species-concept/" target="_blank" rel="noopener">Berkeley · biological species concept ↗</a>' : module.id === 'module-3' ? '<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC52649/" target="_blank" rel="noopener">IJdo et al. · chromosome 2 fusion evidence ↗</a>' : module.id === 'module-4' ? '<a href="https://cvalues.science.kew.org/" target="_blank" rel="noopener">Kew Plant DNA C-values Database ↗</a> · <a href="https://www.genomesize.com/" target="_blank" rel="noopener">Animal Genome Size Database ↗</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/32445179/" target="_blank" rel="noopener">C-value and genome architecture review ↗</a>' : module.id === 'module-5' ? '<a href="https://www.afcd.gov.hk/english/conservation/hkbiodiversity/speciesgroup/speciesgroup_amphibians.html" target="_blank" rel="noopener">Hong Kong AFCD · amphibian traits ↗</a>' : module.id === 'module-6' ? '<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12415808/" target="_blank" rel="noopener">Shaffer et al. · metabarcoding bias ↗</a> · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC2722355/" target="_blank" rel="noopener">land-plant rbcL + matK ↗</a> · <a href="https://cdnsciencepub.com/doi/full/10.1139/gen-2016-0046@gen-iblf.issue01" target="_blank" rel="noopener">fungal ITS barcode ↗</a>' : '';
-    notes.innerHTML = `<summary><span><span class="eyebrow">EXPANDABLE LESSON NOTES · ${module.points}</span><strong>${module.title}</strong></span><span class="notes-toggle" aria-hidden="true">＋</span></summary><div class="study-notes-content">${module.notes.map(item => `<article class="note-topic"><h3>${item.heading}</h3><ul class="note-points">${item.copy.map(point => `<li>${formatScientificMarkup(point)}</li>`).join('')}</ul><p class="note-source">Source: <a href="assets/SLIDE_TEXT_INDEX.md" target="_blank" rel="noopener">${item.source} · supplied slide text ↗</a>${scienceRefs ? ` · ${scienceRefs}` : ''}</p></article>`).join('')}</div>`;
+    notes.innerHTML = `<summary><span><span class="eyebrow">LESSON NOTES · ${module.points}</span><strong>${module.title}</strong></span><span class="notes-toggle" aria-hidden="true">＋</span></summary><div class="study-notes-content">${module.notes.map(item => `<article class="note-topic"><h3>${item.heading}</h3><ul class="note-points">${item.copy.map(point => `<li>${formatScientificMarkup(point)}</li>`).join('')}</ul></article>`).join('')}</div>`;
     host.append(notes);
     renderGuideEnhancements(host, module);
-    if (!module.diagrams.length) return;
-    const gallery = document.createElement('section');
-    gallery.className = 'diagram-gallery';
-    gallery.setAttribute('aria-label', `${module.title} diagram gallery`);
-    gallery.innerHTML = `<div class="diagram-gallery-heading"><span class="eyebrow">VISUAL FIELD GUIDE</span><h3>Diagram gallery</h3><p>Original, labelled diagrams paired with the lesson slide visuals above.</p></div><div class="diagram-gallery-grid">${module.diagrams.map(key => {
-      const item = DIAGRAMS[key];
-      if (!item) return '';
-      const title = item.match(/<title>(.*?)<\/title>/)?.[1] ?? 'Biology diagram';
-      const desc = item.match(/<desc>(.*?)<\/desc>/)?.[1] ?? '';
-      const supplied = DIAGRAM_IMAGES[key];
-      const visual = supplied
-        ? `<img class="diagram-image" src="${escapeHtml(supplied.src)}" alt="${escapeHtml(supplied.alt)}" loading="lazy" decoding="async">`
-        : `<div class="diagram-scroll" tabindex="0" aria-label="Diagram viewport. On a narrow screen, inspect the full diagram.">${item}</div>`;
-      return `<figure class="diagram-card">${visual}<figcaption><strong>${title}</strong><span>${desc}</span></figcaption></figure>`;
-    }).join('')}</div>`;
-    host.append(gallery);
+    if (module.diagrams.length) {
+      const gallery = document.createElement('section');
+      gallery.className = 'diagram-gallery';
+      gallery.setAttribute('aria-label', `${module.title} visual evidence`);
+      gallery.innerHTML = `<div class="diagram-gallery-grid">${module.diagrams.map(key => {
+        const item = DIAGRAMS[key];
+        if (!item) return '';
+        const title = item.match(/<title>(.*?)<\/title>/)?.[1] ?? 'Biology diagram';
+        const desc = item.match(/<desc>(.*?)<\/desc>/)?.[1] ?? '';
+        const supplied = DIAGRAM_IMAGES[key];
+        const visual = supplied
+          ? `<img class="diagram-image" src="${escapeHtml(supplied.src)}" alt="${escapeHtml(supplied.alt)}" loading="lazy" decoding="async">`
+          : `<div class="diagram-scroll" tabindex="0" aria-label="Diagram viewport. On a narrow screen, inspect the full diagram.">${item}</div>`;
+        return `<figure class="diagram-card">${visual}<figcaption><strong>${escapeHtml(title)}</strong><span>${escapeHtml(desc)}</span></figcaption></figure>`;
+      }).join('')}</div>`;
+      host.append(gallery);
+    }
+    renderSessionCheckpoint(host, module, index);
   });
 }
+
 function revealToast(message) {
   const toast = $('#toast');
   toast.textContent = message;
@@ -564,6 +630,8 @@ function init() {
   renderQuiz();
   renderThemeToggle();
   renderModuleProgress();
+  renderStarterActivity();
+  renderPlenary();
   $('#finish-quiz').addEventListener('click', finishQuiz);
   document.addEventListener('error', event => {
     const element = event.target;
