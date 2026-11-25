@@ -618,7 +618,56 @@ function revealToast(message) {
   revealToast.timer = window.setTimeout(() => toast.classList.remove('is-visible'), 2200);
 }
 
+function renderModuleNavigation() {
+  const header = $('.site-header');
+  const toggle = $('#module-nav-toggle');
+  const nav = $('#module-nav');
+  if (!header || !toggle || !nav) return;
+
+  const setOpen = open => {
+    header.classList.toggle('is-nav-open', open);
+    toggle.setAttribute('aria-expanded', String(open));
+    toggle.setAttribute('aria-label', open ? 'Hide learning modules' : 'Show learning modules');
+    nav.setAttribute('aria-hidden', String(!open));
+    nav.inert = !open;
+  };
+
+  header.classList.add('nav-collapsible');
+  toggle.hidden = false;
+  setOpen(false);
+
+  toggle.addEventListener('click', () => {
+    setOpen(toggle.getAttribute('aria-expanded') !== 'true');
+  });
+
+  const headerInner = header.querySelector('.header-inner');
+  headerInner?.addEventListener('click', event => {
+    if (header.classList.contains('is-nav-open')) return;
+    const target = event.target;
+    if (target instanceof Element && target.closest('a, button')) return;
+    setOpen(true);
+  });
+
+  nav.querySelectorAll('a[href^="#module-"]').forEach(link => {
+    link.addEventListener('click', () => setOpen(false));
+  });
+
+  document.addEventListener('pointerdown', event => {
+    if (!header.classList.contains('is-nav-open')) return;
+    const target = event.target;
+    if (target instanceof Node && header.contains(target)) return;
+    setOpen(false);
+  });
+
+  document.addEventListener('keydown', event => {
+    if (event.key !== 'Escape' || !header.classList.contains('is-nav-open')) return;
+    setOpen(false);
+    toggle.focus({preventScroll: true});
+  });
+}
+
 function init() {
+  renderModuleNavigation();
   renderSyllabus();
   renderFlashcards();
   renderBinomialTrainer();

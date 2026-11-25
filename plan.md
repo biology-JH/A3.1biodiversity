@@ -20,6 +20,8 @@ Keep the supplied figures under `assets/study-guide/` with a machine-readable ma
 
 Preserve the BioAtlas emerald/slate/warm-white visual system, botanical/sequence motifs, Tailwind CDN utilities and hand-authored responsive CSS. Enforce a **20 px minimum for every visible text element throughout the blog**, including navigation, labels, metadata, credits, captions, controls, mobile views and SVG diagrams. Keep instructional text at 24 px or larger, headings clearly larger, and metadata visually subordinate through weight, colour and spacing rather than smaller type. Give the new figure galleries a calm editorial-card treatment with generous spacing and full, uncropped image display. On narrow screens, wrap content and stack figure cards; allow horizontal scrolling only for wide diagrams where necessary. Retain high contrast, keyboard operation, alt text and reduced-motion handling.
 
+Keep the seven-module navigation collapsed by default to recover vertical room. Retain all seven links in a smooth, responsive panel opened by a compact header toggle; close it on outside interaction or after module selection, and expose its state to assistive technology while respecting reduced-motion preferences.
+
 ## Project layout
 
 - `index.html`: semantic one-page shell, seven module mounts and global document metadata.

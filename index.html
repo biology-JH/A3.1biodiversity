@@ -19,6 +19,10 @@
         <img src="assets/bioatlas-dna-mark.png" alt="" class="brand-mark">
         <span class="brand-copy"><strong>BioAtlas</strong><small>SPECIES · GENOMES</small></span>
       </a>
+      <button id="module-nav-toggle" class="module-nav-toggle" type="button" aria-controls="module-nav" aria-expanded="false" aria-label="Show learning modules" hidden>
+        <span class="module-nav-toggle-label" aria-hidden="true">Modules</span>
+        <span class="module-nav-toggle-icon" aria-hidden="true">⌄</span>
+      </button>
       <div class="header-progress" aria-live="polite">
         <span class="eyebrow">EXAM CHECK</span>
         <strong id="score-live">0 / 17</strong>
@@ -26,7 +30,7 @@
       </div>
       <button id="theme-toggle" class="theme-toggle" type="button" aria-pressed="false" aria-label="Toggle dark colour theme"><span class="theme-icon">◐</span><span class="theme-label">Theme</span></button>
     </div>
-    <nav class="module-nav" aria-label="Learning modules">
+    <nav id="module-nav" class="module-nav" aria-label="Learning modules">
       <a href="#module-1"><span>01</span> Species & names</a>
       <a href="#module-2"><span>02</span> SNP chromatogram</a>
       <a href="#module-3"><span>03</span> Chromosome 2</a>
